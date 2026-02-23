@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Políticas de Privacidad - FreshStock FIFO - Softify</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+  <header class="bg-gradient-to-r from-green-700 to-green-500 text-white shadow-lg">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+      <a href="index.html" class="text-3xl font-bold flex items-center gap-2">
+        <i class="fas fa-boxes-stacked"></i>
+        <span>FreshStock FIFO</span>
+      </a>
+      <div class="flex gap-4 items-center">
+        <a href="index.html" class="text-white hover:text-gray-200 transition-colors">Inicio</a>
+        <a href="https://softify.cl" class="px-4 py-2 bg-white text-green-600 rounded-md hover:bg-gray-100 transition-all font-medium">Volver a Softify</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-10 flex-grow">
+    <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-8">
+      <h1 class="text-3xl font-bold text-green-600 mb-6 border-b pb-3">Políticas de Privacidad</h1>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Información que recopilamos</h2>
+        <p class="text-gray-600 leading-relaxed">
+          FreshStock FIFO recopila información relacionada con el inventario y productos de las tiendas Shopify donde está instalada nuestra aplicación.
+          Esto incluye:
+        </p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2 mt-4">
+          <li>Información de productos (ID, título, SKU, variantes)</li>
+          <li>Datos de inventario (cantidades, fechas de ingreso, fechas de vencimiento)</li>
+          <li>Información de órdenes para el seguimiento del método FIFO</li>
+          <li>Configuraciones de alertas y ofertas</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Uso de la información</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          La información recopilada es utilizada exclusivamente para:
+        </p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2">
+          <li>Gestionar y organizar el inventario utilizando el método FIFO (First In, First Out).</li>
+          <li>Generar alertas de vencimiento para productos próximos a caducar.</li>
+          <li>Crear y gestionar ofertas y descuentos automáticos en Shopify para productos por vencer.</li>
+          <li>Proporcionar reportes y métricas de rotación de inventario.</li>
+          <li>Sincronizar información de stock con la tienda Shopify.</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Permisos de Shopify</h2>
+        <p class="text-gray-600 leading-relaxed">
+          Nuestra aplicación requiere los siguientes permisos de Shopify para funcionar correctamente:
+        </p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2 mt-4">
+          <li><strong>write_products:</strong> Para acceder y sincronizar información de productos y variantes.</li>
+          <li><strong>read_orders:</strong> Para leer órdenes y aplicar correctamente el método FIFO.</li>
+          <li><strong>write_discounts:</strong> Para crear ofertas y descuentos automáticos en productos próximos a vencer.</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Protección de datos</h2>
+        <p class="text-gray-600 leading-relaxed">
+          Nos comprometemos a mantener la información de las tiendas segura. Implementamos medidas de seguridad
+          diseñadas para proteger los datos de inventario de accesos no autorizados y garantizar su confidencialidad.
+          No compartimos, vendemos ni transferimos los datos a terceros que no estén directamente involucrados en
+          proporcionar nuestros servicios.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Almacenamiento de datos</h2>
+        <p class="text-gray-600 leading-relaxed">
+          Los datos de inventario se almacenan de forma segura en servidores protegidos. Mantenemos copias de seguridad
+          regulares para garantizar la integridad de la información. Los datos se conservan mientras la aplicación
+          esté instalada en la tienda, y son eliminados cuando la aplicación es desinstalada.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Webhooks y eventos</h2>
+        <p class="text-gray-600 leading-relaxed">
+          Nuestra aplicación recibe notificaciones de Shopify (webhooks) para los siguientes eventos:
+        </p>
+        <ul class="list-disc pl-6 text-gray-600 space-y-2 mt-4">
+          <li>Creación, actualización y cancelación de órdenes (para mantener el inventario FIFO actualizado)</li>
+          <li>Desinstalación de la aplicación (para limpiar datos asociados)</li>
+          <li>Actualización de permisos</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Derechos de los usuarios</h2>
+        <p class="text-gray-600 leading-relaxed">
+          Los propietarios de las tiendas tienen derecho a solicitar acceso, rectificación o eliminación de su información
+          en cualquier momento. Para ejercer estos derechos o realizar consultas sobre nuestra política de privacidad, pueden
+          contactarnos a través de nuestro sitio web o dirección de correo de soporte.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Cambios en esta política</h2>
+        <p class="text-gray-600 leading-relaxed">
+          Nos reservamos el derecho de actualizar o modificar esta política de privacidad en cualquier momento.
+          Los cambios entrarán en vigor inmediatamente después de su publicación en nuestra página web.
+        </p>
+      </section>
+
+      <div class="mt-8 pt-4 border-t">
+        <p class="text-gray-500 text-sm">
+          Última actualización: Diciembre 2025
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-gray-300 py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h3 class="text-xl font-bold mb-2">FreshStock FIFO</h3>
+          <p class="text-sm text-gray-400">Gestión inteligente de inventario para Shopify</p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+          <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Inicio</a>
+          <a href="politicas-privacidad.html" class="text-gray-300 hover:text-white transition-colors">Políticas de Privacidad</a>
+          <a href="https://softify.cl" class="text-gray-300 hover:text-white transition-colors">Softify</a>
+        </div>
+      </div>
+      <div class="mt-6 text-center text-sm text-gray-400">
+        <p>&copy; 2024 Softify. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
