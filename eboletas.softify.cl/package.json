@@ -1,0 +1,8 @@
+{
+  "name": "eboletas-softify",
+  "version": "1.0.0",
+  "description": "E-Boletas Softify - App de facturaciÃ³n electrÃ³nica",
+  "scripts": {
+    "build": "echo 'No build needed - static HTML'"
+  }
+}
