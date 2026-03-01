@@ -3,7 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>e-Boleta Chile - Softify</title>
+  <title>e-Boleta Chile - Facturación Electrónica Automática para Shopify | Softify</title>
+  <meta name="description" content="Genera boletas electrónicas automáticas en tu tienda Shopify. Conversión a facturas, integración con marketplaces (Walmart, Paris) vía AnyMarket, y cumplimiento SII garantizado.">
+  <meta name="keywords" content="boletas electrónicas chile, facturación shopify, SII chile, AnyMarket, marketplaces chile, e-boleta">
+  <meta name="author" content="Softify">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="e-Boleta Chile - Facturación Electrónica para Shopify">
+  <meta property="og:description" content="Automatiza la generación de boletas y facturas electrónicas en tu tienda Shopify. Integración con marketplaces.">
+  <meta property="og:url" content="https://eboletas.softify.cl">
+  
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "e-Boleta Chile",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CLP"
+    },
+    "description": "Aplicación de Shopify para generación automática de boletas electrónicas, conversión a facturas y envío a marketplaces chilenos",
+    "provider": {
+      "@type": "Organization",
+      "name": "Softify"
+    }
+  }
+  </script>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -15,6 +46,9 @@
         <span>e-Boleta Chile</span>
       </a>
       <div class="flex gap-4 items-center">
+        <a href="documentacion.html" class="text-white hover:text-gray-200 transition-colors">
+          <i class="fas fa-book mr-1"></i> Documentación
+        </a>
         <a href="politicas-privacidad.html" class="text-white hover:text-gray-200 transition-colors">Políticas de Privacidad</a>
         <a href="https://softify.cl" class="px-4 py-2 bg-white text-blue-600 rounded-md hover:bg-gray-100 transition-all font-medium">Volver a Softify</a>
       </div>
@@ -56,6 +90,26 @@
           <h3 class="text-2xl font-bold text-gray-800 mb-3">Historial</h3>
           <p class="text-gray-600 leading-relaxed">Consulta el historial completo de boletas y facturas generadas. Accede fácilmente a todos tus documentos tributarios desde un solo lugar.</p>
         </div>
+        <!-- NUEVA: Funcionalidad 4 - Marketplaces -->
+        <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow transform hover:-translate-y-1 transition-transform duration-300 border-2 border-green-400">
+          <div class="flex items-start justify-between mb-3">
+            <div class="text-green-600 text-4xl">
+              <i class="fas fa-store"></i>
+            </div>
+            <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full uppercase">Nuevo</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Integración Marketplaces</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Envía boletas electrónicas automáticas de pedidos de <strong>Walmart, Paris y otros marketplaces</strong> directamente a sus plataformas.
+          </p>
+          <p class="text-sm text-gray-500 mb-3">
+            Integración vía <a href="https://anymarket.cl/?utm_source=softify&utm_medium=referral&utm_campaign=eboletas-integration" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800 font-medium underline">AnyMarket</a>, el integrador #1 de marketplaces en LATAM.
+          </p>
+          <a href="mailto:hola@programaemprender.com?subject=Solicitud%20activación%20integración%20marketplaces" class="inline-flex items-center text-green-600 hover:text-green-800 font-medium">
+            <i class="fas fa-envelope mr-2"></i>
+            Solicitar activación
+          </a>
+        </div>
       </div>
     </section>
     
@@ -83,6 +137,7 @@
         </div>
         <div class="flex flex-col md:flex-row gap-4 md:gap-8">
           <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Inicio</a>
+          <a href="documentacion.html" class="text-gray-300 hover:text-white transition-colors">Documentación</a>
           <a href="politicas-privacidad.html" class="text-gray-300 hover:text-white transition-colors">Políticas de Privacidad</a>
           <a href="https://softify.cl" class="text-gray-300 hover:text-white transition-colors">Softify</a>
         </div>
