@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roadmap — e-Boleta Chile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <header class="bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-lg">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold flex items-center gap-2">
+        <i class="fas fa-receipt"></i>
+        <span>e-Boleta Chile</span>
+      </a>
+      <nav class="flex gap-6 items-center text-sm font-medium">
+        <a href="index.html" class="hover:text-blue-200 transition-colors">Inicio</a>
+        <a href="documentacion.html" class="hover:text-blue-200 transition-colors">Documentación</a>
+        <a href="changelog.html" class="hover:text-blue-200 transition-colors">Changelog</a>
+        <a href="roadmap.html" class="text-white border-b-2 border-white pb-0.5">Roadmap</a>
+        <a href="https://apps.shopify.com" class="px-4 py-2 bg-white text-blue-600 rounded-md hover:bg-gray-100 transition-all font-medium">Instalar app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12 flex-grow max-w-3xl">
+    <div class="mb-10">
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">Roadmap</h1>
+      <p class="text-gray-500 mb-1">Las mejoras que estamos construyendo para e-Boleta Chile.</p>
+      <p class="text-gray-500 text-sm">¿Tienes una idea o sugerencia? Déjala en los comentarios — leemos todo.</p>
+    </div>
+
+    <!-- Leyenda -->
+    <div class="flex flex-wrap gap-3 mb-10 text-xs font-semibold">
+      <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">🚀 En desarrollo</span>
+      <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">📋 Planificado</span>
+      <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">💡 En evaluación</span>
+      <span class="bg-gray-100 text-gray-500 px-3 py-1 rounded-full">✅ Completado</span>
+    </div>
+
+    <div class="space-y-4">
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-blue-50 text-blue-500 rounded-lg flex items-center justify-center text-xl"><i class="fas fa-language"></i></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Soporte en inglés</span>
+            <span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold">📋 Planificado</span>
+          </div>
+          <p class="text-gray-500 text-sm">Ficha App Store, onboarding, documentación y soporte en inglés para ampliar el mercado internacional.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-blue-50 text-blue-500 rounded-lg flex items-center justify-center text-xl"><i class="fas fa-barcode"></i></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Validación funcional con SII (Simple API)</span>
+            <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-xs font-semibold">🚀 En desarrollo</span>
+          </div>
+          <p class="text-gray-500 text-sm">Prueba end-to-end del flujo de envío al SII con documentos reales en ambiente de certificación y producción.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-purple-50 text-purple-500 rounded-lg flex items-center justify-center text-xl"><i class="fas fa-store"></i></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">AnyMarket: disponibilidad general</span>
+            <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-xs font-semibold">💡 En evaluación</span>
+          </div>
+          <p class="text-gray-500 text-sm">Salida de beta de la integración con marketplaces (Walmart, Paris) vía AnyMarket para todos los usuarios.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-purple-50 text-purple-500 rounded-lg flex items-center justify-center text-xl"><i class="fas fa-chart-bar"></i></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Reportes avanzados</span>
+            <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-xs font-semibold">💡 En evaluación</span>
+          </div>
+          <p class="text-gray-500 text-sm">Exportación de documentos a Excel/CSV, reportes por período y resumen tributario mensual.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-gray-50 text-gray-400 rounded-lg flex items-center justify-center text-xl"><i class="fas fa-check"></i></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">API intermediaria multi-proveedor</span>
+            <span class="bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full text-xs font-semibold">✅ Completado — v1.5</span>
+          </div>
+          <p class="text-gray-500 text-sm">Endpoint unificado POST /v1/documents/boleta compatible con Haulmer, Simple API y BSale.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-gray-50 text-gray-400 rounded-lg flex items-center justify-center text-xl"><i class="fas fa-check"></i></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Resolución SII automática en wizard</span>
+            <span class="bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full text-xs font-semibold">✅ Completado — v1.7</span>
+          </div>
+          <p class="text-gray-500 text-sm">Consulta automática de N° y fecha de resolución SII por RUT, sin ingreso manual.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Giscus -->
+    <div class="mt-16 border-t pt-10">
+      <h2 class="text-xl font-bold text-gray-800 mb-2">Sugiere una mejora</h2>
+      <p class="text-gray-500 text-sm mb-6">¿Qué funcionalidad te haría la vida más fácil? Déjalo aquí.</p>
+      <script src="https://giscus.app/client.js"
+        data-repo="softifycl/softify-web"
+        data-repo-id="R_kgDORWemDA"
+        data-category="Ideas"
+        data-category-id="DIC_kwDORWemDM4C7Yfl"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="es"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <h3 class="text-lg font-bold">e-Boleta Chile</h3>
+        <p class="text-sm text-gray-400">Facturación electrónica para Shopify</p>
+      </div>
+      <div class="flex gap-6 text-sm">
+        <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+        <a href="documentacion.html" class="hover:text-white transition-colors">Documentación</a>
+        <a href="changelog.html" class="hover:text-white transition-colors">Changelog</a>
+        <a href="roadmap.html" class="hover:text-white transition-colors">Roadmap</a>
+        <a href="politicas-privacidad.html" class="hover:text-white transition-colors">Privacidad</a>
+      </div>
+    </div>
+    <div class="text-center text-sm text-gray-500 mt-4">&copy; 2025 Softify. Todos los derechos reservados.</div>
+  </footer>
+
+</body>
+</html>

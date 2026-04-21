@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog — e-Boleta Chile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <header class="bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-lg">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold flex items-center gap-2">
+        <i class="fas fa-receipt"></i>
+        <span>e-Boleta Chile</span>
+      </a>
+      <nav class="flex gap-6 items-center text-sm font-medium">
+        <a href="index.html" class="hover:text-blue-200 transition-colors">Inicio</a>
+        <a href="documentacion.html" class="hover:text-blue-200 transition-colors">Documentación</a>
+        <a href="changelog.html" class="text-white border-b-2 border-white pb-0.5">Changelog</a>
+        <a href="roadmap.html" class="hover:text-blue-200 transition-colors">Roadmap</a>
+        <a href="https://apps.shopify.com" class="px-4 py-2 bg-white text-blue-600 rounded-md hover:bg-gray-100 transition-all font-medium">Instalar app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12 flex-grow max-w-3xl">
+
+    <div class="mb-10">
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">Changelog</h1>
+      <p class="text-gray-500">Historial de actualizaciones de e-Boleta Chile. La app recibe mantenimiento y mejoras continuas.</p>
+      <div class="flex gap-6 mt-6">
+        <div><p class="text-xl font-bold text-gray-900">3</p><p class="text-xs text-gray-400 uppercase tracking-wider">Emisores</p></div>
+        <div><p class="text-xl font-bold text-gray-900">8</p><p class="text-xs text-gray-400 uppercase tracking-wider">Versiones</p></div>
+        <div><p class="text-xl font-bold text-gray-900">Abr 2026</p><p class="text-xs text-gray-400 uppercase tracking-wider">Última actualización</p></div>
+      </div>
+    </div>
+
+    <!-- Leyenda -->
+    <div class="flex flex-wrap gap-2 mb-10 text-xs font-semibold">
+      <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">✨ Nueva función</span>
+      <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">🐛 Corrección</span>
+      <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">🔬 Investigación técnica</span>
+      <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">⚠️ Limitaciones</span>
+      <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full">📁 Archivos modificados</span>
+    </div>
+
+    <!-- ===== v1.8.0 ===== -->
+    <div class="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v180')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5"><span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">Último</span></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="text-xl font-bold text-gray-900">v1.8.0</span>
+            <span class="text-sm text-gray-400">Abril 2026</span>
+          </div>
+          <p class="text-gray-700 font-medium">Trigger por Nota Mejorado + API Factura y Nota de Crédito</p>
+          <p class="text-gray-400 text-sm mt-1">Emisión automática basada en el estado real de la orden y expansión del API para soportar factura y nota de crédito en tres proveedores.</p>
+        </div>
+        <span id="icon-v180" class="text-gray-400 text-sm mt-1">▲</span>
+      </button>
+      <div id="body-v180" class="border-t border-gray-100 px-6 py-5 space-y-4">
+
+        <div class="rounded-xl border border-purple-200 bg-purple-50 overflow-hidden">
+          <button onclick="toggleSection('v180-fix')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-purple-700 uppercase tracking-wider">🐛 Corrección</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v180-fix" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Trigger ORDERS_CREATE con estado real de orden</p><p class="text-xs text-gray-500 mt-0.5">El flujo ahora consulta el estado actualizado de la orden en Shopify antes de decidir si emite boleta, en lugar de depender solo del payload inicial del webhook. Elimina falsos negativos causados por notas incompletas o datos aún no disponibles al momento del evento.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Candidatos de búsqueda más robustos</p><p class="text-xs text-gray-500 mt-0.5">Se construyen candidatos desde la nota completa, sus líneas individuales y valores de customAttributes. El payload original actúa como fallback cuando no es posible refrescar la orden en vivo.</p></div></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-blue-200 bg-blue-50 overflow-hidden">
+          <button onclick="toggleSection('v180-feature')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">✨ Nueva Funcionalidad</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v180-feature" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Modo simple y modo regex para trigger por nota</p><p class="text-xs text-gray-500 mt-0.5">Dos modos de operación: búsqueda simple (texto fijo) y búsqueda avanzada por regex para casos complejos. Simplifica la configuración para usuarios no técnicos.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Nuevos campos de configuración: triggerNotePattern / triggerNoteSearchMode</p><p class="text-xs text-gray-500 mt-0.5">Se extendió la configuración de tienda con los nuevos campos. El campo legacy triggerNoteRegex se mantiene temporalmente para compatibilidad.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">UI de configuración actualizada con diagnóstico mejorado</p><p class="text-xs text-gray-500 mt-0.5">La pantalla incorpora selector de modo, validaciones específicas y mensajes de ayuda. Los logs registran origen de datos evaluados, cantidad de candidatos y contexto del match.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">API Fase 3: POST /v1/documents/factura y /v1/documents/nota-credito</p><p class="text-xs text-gray-500 mt-0.5">Nuevos endpoints públicos para emitir facturas y notas de crédito. Compatibles con los tres proveedores (Haulmer, Simple API, BSale) sin ruptura de compatibilidad con endpoints previos.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Nota de crédito referenciada por document_id interno</p><p class="text-xs text-gray-500 mt-0.5">La nota de crédito debe referenciarse por el document_id del API. El proveedor se deriva del documento origen, que debe estar en estado "emitido" y pertenecer al mismo tenant.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Trazabilidad de anulación entre documentos</p><p class="text-xs text-gray-500 mt-0.5">Al emitir una nota de crédito, el documento origen pasa a estado "anulado" y la respuesta incluye documento_referencia. Mejora auditoría y consistencia del flujo.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Separación request_id / document id público</p><p class="text-xs text-gray-500 mt-0.5">Se separaron el request_id (trazabilidad de respuesta) del document id público persistido (identificador estable del recurso). Elimina colisión de identificadores entre reinicios.</p></div></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-gray-200 bg-gray-50 overflow-hidden">
+          <button onclick="toggleSection('v180-files')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">📁 Archivos Modificados</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v180-files" class="px-4 pb-4 space-y-2">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800 font-mono text-xs">app/utils/simpleapi.server.ts</p><p class="text-xs text-gray-500">Lógica de emisión Simple API actualizada.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800 font-mono text-xs">app/utils/dte-simpleapi.server.ts</p><p class="text-xs text-gray-500">Flujo DTE Simple API refactorizado.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800 font-mono text-xs">app/routes/app.dtes.tsx</p><p class="text-xs text-gray-500">Listado de documentos con nuevo estado SII.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800 font-mono text-xs">prisma/schema.prisma</p><p class="text-xs text-gray-500">Nuevos campos de trazabilidad y configuración.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== v1.7.0 ===== -->
+    <div class="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v170')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5"><span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1"><span class="text-xl font-bold text-gray-900">v1.7.0</span><span class="text-sm text-gray-400">16 Abril 2026</span></div>
+          <p class="text-gray-700 font-medium">Automatización Resolución SII en Wizard</p>
+          <p class="text-gray-400 text-sm mt-1">El wizard deja de pedir manualmente fecha y número de resolución SII y los consulta automáticamente por RUT emisor.</p>
+        </div>
+        <span id="icon-v170" class="text-gray-400 text-sm mt-1">▼</span>
+      </button>
+      <div id="body-v170" class="hidden border-t border-gray-100 px-6 py-5 space-y-4">
+
+        <div class="rounded-xl border border-blue-200 bg-blue-50 overflow-hidden">
+          <button onclick="toggleSection('v170-feature')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">✨ Nueva Funcionalidad</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v170-feature" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Lookup automático de resolución SII por RUT</p><p class="text-xs text-gray-500 mt-0.5">El wizard consulta automáticamente el endpoint del SII y parsea la respuesta para obtener N° Resolución y Fecha Resolución. Los datos se persisten si la consulta fue exitosa.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Fallback controlado a configuración gestionada</p><p class="text-xs text-gray-500 mt-0.5">Si el lookup automático falla, se habilita acceso a configuración manual como alternativa. Al guardar correctamente, el flag de fallback se limpia.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Clasificación de errores del SII</p><p class="text-xs text-gray-500 mt-0.5">Se diferencia entre: not_found (contribuyente no autorizado), network (fallo de red o timeout) y parse (cambio en el formato de respuesta del SII). El wizard muestra un banner con CTA según el tipo de fallo.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Normalización automática de fecha</p><p class="text-xs text-gray-500 mt-0.5">La fecha obtenida del SII en formato DD-MM-YYYY se normaliza automáticamente a YYYY-MM-DD antes de persistirse.</p></div></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-yellow-200 bg-yellow-50 overflow-hidden">
+          <button onclick="toggleSection('v170-constraint')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-yellow-700 uppercase tracking-wider">⚠️ Limitaciones y Riesgos</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v170-constraint" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Dependencia del formato de respuesta del SII</p><p class="text-xs text-gray-500 mt-0.5">El parser depende del formato actual de respuesta del SII. Si cambia, el parseo falla — se mitiga con clasificación de error y fallback manual.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Ambiente de certificación pendiente validación funcional</p><p class="text-xs text-gray-500 mt-0.5">Se recomienda prueba adicional en ambiente de certificación del SII para confirmar comportamiento completo.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== v1.6.0 ===== -->
+    <div class="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v160')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5"><span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1"><span class="text-xl font-bold text-gray-900">v1.6.0</span><span class="text-sm text-gray-400">Marzo–Abril 2026</span></div>
+          <p class="text-gray-700 font-medium">Simple API: Flujo Completo de Envío al SII</p>
+          <p class="text-gray-400 text-sm mt-1">La integración cubre el ciclo completo: DTE → sobre → envío SII → TrackID → estado tributario.</p>
+        </div>
+        <span id="icon-v160" class="text-gray-400 text-sm mt-1">▼</span>
+      </button>
+      <div id="body-v160" class="hidden border-t border-gray-100 px-6 py-5 space-y-4">
+        <div class="rounded-xl border border-blue-200 bg-blue-50 overflow-hidden">
+          <button onclick="toggleSection('v160-feature')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">✨ Nueva Funcionalidad</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v160-feature" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Ciclo completo de emisión Simple API</p><p class="text-xs text-gray-500 mt-0.5">5 pasos implementados: (1) generación del DTE, (2) construcción del sobre, (3) envío al SII, (4) captura del TrackID, (5) consulta del estado del envío.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Trazabilidad tributaria por documento</p><p class="text-xs text-gray-500 mt-0.5">Cada documento almacena: TrackID, estado SII, mensaje de respuesta, fecha de envío, fecha de última consulta y sobre XML asociado.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Validación antes de operaciones derivadas</p><p class="text-xs text-gray-500 mt-0.5">Se bloquean conversiones, anulaciones, notas de crédito y refunds si el documento base aún no está aceptado por el SII.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Estado SII visible en interfaz</p><p class="text-xs text-gray-500 mt-0.5">El estado tributario aparece en el listado de documentos, el detalle y el portal público. Se puede actualizar manualmente cuando existe TrackID.</p></div></div>
+          </div>
+        </div>
+        <div class="rounded-xl border border-yellow-200 bg-yellow-50 overflow-hidden">
+          <button onclick="toggleSection('v160-constraint')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-yellow-700 uppercase tracking-wider">⚠️ Pendiente</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v160-constraint" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Validación funcional con SII real</p><p class="text-xs text-gray-500 mt-0.5">La base técnica está implementada. Falta validación en ambiente real o de certificación del SII con documentos reales.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== v1.5.0 ===== -->
+    <div class="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v150')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5"><span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1"><span class="text-xl font-bold text-gray-900">v1.5.0</span><span class="text-sm text-gray-400">4 Marzo 2026</span></div>
+          <p class="text-gray-700 font-medium">MVP API Intermediaria + AnyMarket Beta + Fix Make</p>
+          <p class="text-gray-400 text-sm mt-1">Servicio API independiente multi-proveedor para emitir boletas, configuración AnyMarket y corrección de fechas en Make.</p>
+        </div>
+        <span id="icon-v150" class="text-gray-400 text-sm mt-1">▼</span>
+      </button>
+      <div id="body-v150" class="hidden border-t border-gray-100 px-6 py-5 space-y-4">
+        <div class="rounded-xl border border-blue-200 bg-blue-50 overflow-hidden">
+          <button onclick="toggleSection('v150-feature')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">✨ Nueva Funcionalidad</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v150-feature" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">MVP API Intermediaria Multi-Proveedor</p><p class="text-xs text-gray-500 mt-0.5">Servicio backend independiente para emitir boletas con una sola API frente a múltiples proveedores (Haulmer, Simple API, BSale). Endpoint público POST /v1/documents/boleta con autenticación por API key, control de duplicados e idempotencia.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Seguridad base del API</p><p class="text-xs text-gray-500 mt-0.5">Hash SHA-256 para API keys, cifrado AES-256-GCM para secretos de proveedores y scope dte:write.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Configuración AnyMarket Beta</p><p class="text-xs text-gray-500 mt-0.5">La sección "Envío de boletas a terceros" aparece solo en tiendas con AnyMarket beta activo. Permite enviar boletas electrónicas a marketplaces como Walmart y Paris.</p></div></div>
+          </div>
+        </div>
+        <div class="rounded-xl border border-purple-200 bg-purple-50 overflow-hidden">
+          <button onclick="toggleSection('v150-fix')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-purple-700 uppercase tracking-wider">🐛 Corrección</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v150-fix" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Fechas incorrectas en escenario Make</p><p class="text-xs text-gray-500 mt-0.5">Se agregó un módulo de parseo de fechas y se reforzó la validación de formato para evitar el envío de fechas inconsistentes al SII.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- v1.4.0 -->
+    <div class="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v140')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5"><span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1"><span class="text-xl font-bold text-gray-900">v1.4.0</span><span class="text-sm text-gray-400">23 Enero 2026</span></div>
+          <p class="text-gray-700 font-medium">Google Analytics GA4 + Mejoras Wizard</p>
+          <p class="text-gray-400 text-sm mt-1">Arquitectura híbrida de analytics cliente+servidor y wizard mejorado con soporte beta.</p>
+        </div>
+        <span id="icon-v140" class="text-gray-400 text-sm mt-1">▼</span>
+      </button>
+      <div id="body-v140" class="hidden border-t border-gray-100 px-6 py-5 space-y-4">
+        <div class="rounded-xl border border-blue-200 bg-blue-50 overflow-hidden">
+          <button onclick="toggleSection('v140-feature')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">✨ Nueva Funcionalidad</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v140-feature" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Google Analytics GA4 (híbrido cliente + servidor)</p><p class="text-xs text-gray-500 mt-0.5">El tracking server-side garantiza que conversiones críticas (boletas generadas, errores, anulaciones) lleguen a GA4 aun cuando bloqueadores de anuncios afecten el cliente.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Wizard: banner beta con requisitos previos</p><p class="text-xs text-gray-500 mt-0.5">Al seleccionar Simple API o BSale se muestra advertencia con lista de requisitos. Botón de soporte integrado directamente en el wizard.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Wizard: cotejo y bloqueo de navegación</p><p class="text-xs text-gray-500 mt-0.5">El botón "Continuar" permanece desactivado hasta confirmar disponibilidad de requisitos. El cotejo se resetea al cambiar de proveedor.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- v1.3.0 -->
+    <div class="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v130')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5"><span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1"><span class="text-xl font-bold text-gray-900">v1.3.0</span><span class="text-sm text-gray-400">Enero 2026</span></div>
+          <p class="text-gray-700 font-medium">Nueva Integración: BSale (Beta)</p>
+          <p class="text-gray-400 text-sm mt-1">Soporte para BSale como tercer emisor de facturación electrónica.</p>
+        </div>
+        <span id="icon-v130" class="text-gray-400 text-sm mt-1">▼</span>
+      </button>
+      <div id="body-v130" class="hidden border-t border-gray-100 px-6 py-5">
+        <div class="rounded-xl border border-blue-200 bg-blue-50 overflow-hidden">
+          <button onclick="toggleSection('v130-feature')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">✨ Nueva Funcionalidad</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v130-feature" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Integración BSale Beta</p><p class="text-xs text-gray-500 mt-0.5">e-Boleta ahora soporta BSale como emisor. No requiere migración del sistema existente y abre el mercado de PyMEs que ya usan BSale como POS.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- v1.2.0 -->
+    <div class="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v120')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5"><span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1"><span class="text-xl font-bold text-gray-900">v1.2.0</span><span class="text-sm text-gray-400">9 Enero 2026</span></div>
+          <p class="text-gray-700 font-medium">Bloqueo por Límite de Uso</p>
+          <p class="text-gray-400 text-sm mt-1">El sistema bloquea la generación de documentos cuando el plan está agotado.</p>
+        </div>
+        <span id="icon-v120" class="text-gray-400 text-sm mt-1">▼</span>
+      </button>
+      <div id="body-v120" class="hidden border-t border-gray-100 px-6 py-5">
+        <div class="rounded-xl border border-purple-200 bg-purple-50 overflow-hidden">
+          <button onclick="toggleSection('v120-fix')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-purple-700 uppercase tracking-wider">🐛 Corrección</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v120-fix" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Bloqueo efectivo al superar límite de plan</p><p class="text-xs text-gray-500 mt-0.5">El comportamiento anterior solo enviaba notificaciones. Ahora se bloquea la generación cuando el límite está agotado. Los pedidos bloqueados reciben el tag DTE-NO-GENERADO.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Respuesta 403 en APIs manuales</p><p class="text-xs text-gray-500 mt-0.5">Las APIs de generación manual retornan HTTP 403 con upgradeRequired:true cuando el límite está agotado. Los webhooks retornan 200 para evitar reintentos de Shopify.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- v1.1.0 -->
+    <div class="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v110')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5"><span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1"><span class="text-xl font-bold text-gray-900">v1.1.0</span><span class="text-sm text-gray-400">Diciembre 2024</span></div>
+          <p class="text-gray-700 font-medium">Funcionalidades Core</p>
+          <p class="text-gray-400 text-sm mt-1">Emisión automática de boletas, portal de autoservicio, etiquetado, POS y dashboard.</p>
+        </div>
+        <span id="icon-v110" class="text-gray-400 text-sm mt-1">▼</span>
+      </button>
+      <div id="body-v110" class="hidden border-t border-gray-100 px-6 py-5">
+        <div class="rounded-xl border border-blue-200 bg-blue-50 overflow-hidden">
+          <button onclick="toggleSection('v110-feature')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">✨ Funcionalidades Core</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v110-feature" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Emisión automática de boletas</p><p class="text-xs text-gray-500 mt-0.5">Webhook orders/paid genera la boleta y envía email con enlace de descarga al cliente.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Notas de crédito automáticas</p><p class="text-xs text-gray-500 mt-0.5">Generadas desde cancelaciones y reembolsos. Anula automáticamente la boleta original.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Portal de autoservicio Boleta → Factura</p><p class="text-xs text-gray-500 mt-0.5">Formulario público con token único por pedido para que el cliente solicite factura con RUT, Razón Social, Giro y Dirección.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Etiquetado automático</p><p class="text-xs text-gray-500 mt-0.5">Tags #BO-{folio} y #NC-{folio} en pedidos para trazabilidad directa boleta-pedido.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Compatibilidad Shopify POS</p><p class="text-xs text-gray-500 mt-0.5">Genera boletas en ventas físicas y las envía por email al momento de la venta.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Dashboard de gestión</p><p class="text-xs text-gray-500 mt-0.5">Estadísticas, filtros por fecha/estado/tipo y visualización de uso vs límite del plan.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- v1.0.0 -->
+    <div class="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v100')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5"><span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1"><span class="text-xl font-bold text-gray-900">v1.0.0</span><span class="text-sm text-gray-400">2024</span></div>
+          <p class="text-gray-700 font-medium">Release Inicial: Integración Openfactura (Haulmer)</p>
+          <p class="text-gray-400 text-sm mt-1">Primera versión con soporte para Boleta, Factura y Nota de Crédito Electrónica.</p>
+        </div>
+        <span id="icon-v100" class="text-gray-400 text-sm mt-1">▼</span>
+      </button>
+      <div id="body-v100" class="hidden border-t border-gray-100 px-6 py-5">
+        <div class="rounded-xl border border-blue-200 bg-blue-50 overflow-hidden">
+          <button onclick="toggleSection('v100-feature')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">✨ Funcionalidades Iniciales</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v100-feature" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Integración base Openfactura (Haulmer)</p><p class="text-xs text-gray-500 mt-0.5">Soporte para documentos tipo 39 (boleta), 41 (boleta exenta), 33 (factura), 34 (factura exenta) y 61 (nota de crédito). Requiere cuenta Openfactura, certificación SII y API Key.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Giscus -->
+    <div class="mt-16 border-t pt-10">
+      <h2 class="text-xl font-bold text-gray-800 mb-2">Comentarios y preguntas</h2>
+      <p class="text-gray-500 text-sm mb-6">¿Tienes preguntas sobre alguna versión? Déjalas aquí.</p>
+      <script src="https://giscus.app/client.js"
+        data-repo="softifycl/softify-web"
+        data-repo-id="R_kgDORWemDA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDORWemDM4C7Yfi"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="es"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </div>
+
+  </main>
+
+  <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <h3 class="text-lg font-bold">e-Boleta Chile</h3>
+        <p class="text-sm text-gray-400">Facturación electrónica para Shopify</p>
+      </div>
+      <div class="flex gap-6 text-sm">
+        <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+        <a href="documentacion.html" class="hover:text-white transition-colors">Documentación</a>
+        <a href="changelog.html" class="hover:text-white transition-colors">Changelog</a>
+        <a href="roadmap.html" class="hover:text-white transition-colors">Roadmap</a>
+        <a href="politicas-privacidad.html" class="hover:text-white transition-colors">Privacidad</a>
+      </div>
+    </div>
+    <div class="text-center text-sm text-gray-500 mt-4">&copy; 2025 Softify. Todos los derechos reservados.</div>
+  </footer>
+
+  <script>
+    function toggleVersion(id) {
+      const body = document.getElementById('body-' + id);
+      const icon = document.getElementById('icon-' + id);
+      body.classList.toggle('hidden');
+      icon.textContent = body.classList.contains('hidden') ? 'V' : 'A';
+    }
+    function toggleSection(id) {
+      const body = document.getElementById(id);
+      const btn = body.previousElementSibling;
+      const arrow = btn.querySelector('span:last-child');
+      body.classList.toggle('hidden');
+      arrow.textContent = body.classList.contains('hidden') ? '+' : '-';
+    }
+  </script>
+
+</body>
+</html>
