@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -6,6 +6,11 @@
   <title>Changelog — FreshStock FIFO</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .section-toggle { cursor: pointer; }
+    .section-body { display: block; }
+    .section-body.hidden { display: none; }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 
@@ -26,42 +31,209 @@
   </header>
 
   <main class="container mx-auto px-4 py-12 flex-grow max-w-3xl">
+
     <div class="mb-10">
       <h1 class="text-3xl font-bold text-gray-900 mb-2">Changelog</h1>
-      <p class="text-gray-500">Historial de actualizaciones y mejoras de FreshStock FIFO. La app recibe mantenimiento continuo.</p>
+      <p class="text-gray-500">Historial de actualizaciones de FreshStock FIFO. La app recibe mantenimiento y mejoras continuas.</p>
     </div>
 
-    <!-- Leyenda de etiquetas -->
-    <div class="flex flex-wrap gap-3 mb-10 text-xs font-semibold">
+    <!-- Leyenda -->
+    <div class="flex flex-wrap gap-2 mb-10 text-xs font-semibold">
       <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">✨ Nueva función</span>
-      <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">⚡ Mejora</span>
-      <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">🐛 Fix</span>
-      <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full">🔧 Mantenimiento</span>
+      <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">🔗 Integración</span>
+      <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">⚡ Impacto en sistema</span>
+      <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">📋 Estados</span>
+      <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full">⚠️ Limitaciones</span>
     </div>
 
-    <!-- Entradas del changelog — agregar aquí -->
-    <div class="space-y-10" id="changelog-entries">
-
-      <!-- Placeholder hasta recibir changelog real -->
-      <div class="border-l-4 border-green-400 pl-6">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="text-lg font-bold text-gray-900">v1.0.0</span>
-          <span class="text-sm text-gray-400">Lanzamiento inicial</span>
+    <!-- ===== v1.3.0 ===== -->
+    <div class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v130')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5">
+          <span class="bg-green-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">Último</span>
         </div>
-        <ul class="space-y-2 text-gray-700 text-sm">
-          <li class="flex gap-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold whitespace-nowrap">✨ Nueva función</span> Dashboard de métricas con inventario próximo a vencer</li>
-          <li class="flex gap-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold whitespace-nowrap">✨ Nueva función</span> Control de inventario por lotes con método FIFO</li>
-          <li class="flex gap-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold whitespace-nowrap">✨ Nueva función</span> Alertas automáticas de vencimiento configurables</li>
-          <li class="flex gap-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold whitespace-nowrap">✨ Nueva función</span> Creación automática de ofertas en Shopify para productos próximos a vencer</li>
-          <li class="flex gap-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold whitespace-nowrap">✨ Nueva función</span> Reportes y análisis de rotación de inventario</li>
-        </ul>
-      </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="text-xl font-bold text-gray-900">v1.3.0</span>
+            <span class="text-sm text-gray-400">Abril 2026</span>
+          </div>
+          <p class="text-gray-700 font-medium">Transferencias por Lote entre Sucursales</p>
+          <p class="text-gray-400 text-sm mt-1">Implementación completa del flujo formal de transferencias de inventario entre sucursales con trazabilidad por lote.</p>
+        </div>
+        <span id="icon-v130" class="text-gray-400 text-sm mt-1">▲</span>
+      </button>
 
+      <div id="body-v130" class="border-t border-gray-100 px-6 py-5 space-y-4">
+
+        <!-- Nueva Funcionalidad -->
+        <div class="rounded-xl border border-green-200 bg-green-50 overflow-hidden">
+          <button onclick="toggleSection('v130-feature')" class="section-toggle w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-green-700 uppercase tracking-wider">✨ Nueva Funcionalidad</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v130-feature" class="section-body px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Stock en Transferencia</p><p class="text-xs text-gray-500 mt-0.5">Nueva dimensión de inventario: unidades comprometidas a una transferencia que ya no están disponibles en origen. La fórmula de disponibilidad ahora es: disponible = quantity − sold − reserved − transferredOut.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Transferencia como Entidad de Dominio</p><p class="text-xs text-gray-500 mt-0.5">La transferencia es ahora un objeto explícito del sistema con estado propio: tienda, sucursal origen/destino, producto/variante, cantidad solicitada, cantidad recibida, vínculo con Shopify y detalle de lotes.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Asignaciones por Lote Origen</p><p class="text-xs text-gray-500 mt-0.5">Una transferencia puede consumir uno o varios lotes. Se registra un detalle interno con unidades comprometidas, unidades recibidas y snapshot del lote (número, vencimiento, costo, fecha de recepción original).</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Recepciones Parciales y Totales</p><p class="text-xs text-gray-500 mt-0.5">Cada recepción confirmada por Shopify crea nuevos lotes en destino sin fusionar con lotes existentes. El lote hereda número, vencimiento y costo del origen, pero la fecha de recepción corresponde al momento real de llegada.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Sugerencia Automática FEFO/FIFO</p><p class="text-xs text-gray-500 mt-0.5">FreshStock calcula automáticamente qué lotes usar al crear una transferencia: primero prioriza la fecha de vencimiento más próxima; en empate, la fecha de recepción más antigua. El usuario puede ajustar manualmente antes de confirmar.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Distribución Proporcional de Recepciones</p><p class="text-xs text-gray-500 mt-0.5">Si la transferencia usa varios lotes origen, las recepciones parciales se distribuyen en el orden confirmado al crear la transferencia, generando lotes destino separados con metadata correcta por cada lote origen.</p></div></div>
+          </div>
+        </div>
+
+        <!-- Estados -->
+        <div class="rounded-xl border border-purple-200 bg-purple-50 overflow-hidden">
+          <button onclick="toggleSection('v130-states')" class="section-toggle w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-purple-700 uppercase tracking-wider">📋 Estados de Transferencia</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v130-states" class="section-body px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">CREATING</p><p class="text-xs text-gray-500 mt-0.5">FreshStock está registrando y creando la transferencia.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">READY_TO_SHIP</p><p class="text-xs text-gray-500 mt-0.5">Transferencia creada y pendiente de recepción en destino.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">PARTIALLY_RECEIVED</p><p class="text-xs text-gray-500 mt-0.5">Shopify confirmó recepción parcial de la transferencia.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">COMPLETED</p><p class="text-xs text-gray-500 mt-0.5">Toda la cantidad fue recibida en destino.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">CANCELLED</p><p class="text-xs text-gray-500 mt-0.5">Shopify canceló la transferencia; se restaura stock no recibido en origen.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">FAILED</p><p class="text-xs text-gray-500 mt-0.5">Falló la creación o sincronización crítica con Shopify.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">MANUAL_REVIEW</p><p class="text-xs text-gray-500 mt-0.5">Shopify modificó la transferencia externamente; requiere revisión humana.</p></div></div>
+          </div>
+        </div>
+
+        <!-- Integración Shopify -->
+        <div class="rounded-xl border border-blue-200 bg-blue-50 overflow-hidden">
+          <button onclick="toggleSection('v130-integration')" class="section-toggle w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">🔗 Integración Shopify</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v130-integration" class="section-body px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">API de Transferencias de Inventario</p><p class="text-xs text-gray-500 mt-0.5">FreshStock crea activamente transferencias en Shopify. Si Shopify rechaza la creación, se revierte el estado local sin dejar inconsistencias.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Webhooks Nuevos</p><p class="text-xs text-gray-500 mt-0.5">Se agregaron listeners para: recepción de items, completado, cancelación y cambios externos en cantidades.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Nuevos Permisos Requeridos</p><p class="text-xs text-gray-500 mt-0.5">La app requiere permisos adicionales para operar sobre transferencias y leer recepciones desde Shopify.</p></div></div>
+          </div>
+        </div>
+
+        <!-- Impacto -->
+        <div class="rounded-xl border border-yellow-200 bg-yellow-50 overflow-hidden">
+          <button onclick="toggleSection('v130-impact')" class="section-toggle w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-yellow-700 uppercase tracking-wider">⚡ Impacto en el Sistema</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v130-impact" class="section-body px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Ventas y Reservas</p><p class="text-xs text-gray-500 mt-0.5">Ahora consideran el stock en transferencia para calcular disponibilidad, evitando sobreasignación.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Discrepancias por Bodega</p><p class="text-xs text-gray-500 mt-0.5">La comparación entre stock local y Shopify locations ahora incluye el stock en tránsito.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Vista de Inventario</p><p class="text-xs text-gray-500 mt-0.5">Muestra explícitamente unidades "en transferencia" para mejorar la interpretación operativa.</p></div></div>
+          </div>
+        </div>
+
+        <!-- Limitaciones -->
+        <div class="rounded-xl border border-gray-200 bg-gray-50 overflow-hidden">
+          <button onclick="toggleSection('v130-constraint')" class="section-toggle w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">⚠️ Limitaciones Deliberadas v1.3</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v130-constraint" class="section-body px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Una variante por documento</p><p class="text-xs text-gray-500 mt-0.5">Cada transferencia mueve solo una variante.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Solo transferencias desde FreshStock</p><p class="text-xs text-gray-500 mt-0.5">No se reconstruye trazabilidad de transferencias creadas manualmente en Shopify.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Cambios externos → revisión manual</p><p class="text-xs text-gray-500 mt-0.5">Si Shopify modifica una transferencia por fuera, el sistema no reconcilia automáticamente.</p></div></div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <!-- Giscus — comentarios/discusiones del changelog -->
+    <!-- ===== v1.2.0 ===== -->
+    <div class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v120')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5">
+          <span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="text-xl font-bold text-gray-900">v1.2.0</span>
+            <span class="text-sm text-gray-400">Enero 2026</span>
+          </div>
+          <p class="text-gray-700 font-medium">Reporte Competitivo y Hoja de Ruta Estratégica</p>
+          <p class="text-gray-400 text-sm mt-1">Análisis comparativo completo vs competidores y definición de prioridades de crecimiento.</p>
+        </div>
+        <span id="icon-v120" class="text-gray-400 text-sm mt-1">▼</span>
+      </button>
+
+      <div id="body-v120" class="hidden border-t border-gray-100 px-6 py-5 space-y-4">
+
+        <div class="rounded-xl border border-rose-200 bg-rose-50 overflow-hidden">
+          <button onclick="toggleSection('v120-analysis')" class="section-toggle w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-rose-700 uppercase tracking-wider">🔍 Diagnóstico</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v120-analysis" class="section-body px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-rose-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Alcance estrecho</p><p class="text-xs text-gray-500 mt-0.5">FreshStock resuelve lote, expiración y ofertas pero queda corto en trazabilidad completa, operaciones físicas y flujos de trabajo end-to-end.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-rose-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Barrera de idioma</p><p class="text-xs text-gray-500 mt-0.5">App en español sin soporte en inglés, mientras los competidores con mayor tracción operan en inglés.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-rose-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Mensaje técnico</p><p class="text-xs text-gray-500 mt-0.5">El mercado responde mejor a trazabilidad, cumplimiento normativo y reducción de merma que a FIFO/alertas.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-rose-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Integraciones insuficientes</p><p class="text-xs text-gray-500 mt-0.5">Falta POS, escáner, kits y sincronización avanzada; la app se percibe menos integrada al día a día.</p></div></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-green-200 bg-green-50 overflow-hidden">
+          <button onclick="toggleSection('v120-roadmap')" class="section-toggle w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-green-700 uppercase tracking-wider">🚀 Prioridades de Crecimiento</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v120-roadmap" class="section-body px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">P1 — Inglés completo</p><p class="text-xs text-gray-500 mt-0.5">Ficha, onboarding, ayuda y soporte en inglés. Amplía el mercado y elimina la barrera comercial más fuerte.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">P2 — Reposicionamiento</p><p class="text-xs text-gray-500 mt-0.5">Ampliar el mensaje más allá de FIFO: trazabilidad, cumplimiento normativo y reducción de merma.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">P3 — Código de barras y POS</p><p class="text-xs text-gray-500 mt-0.5">Ingreso con escáner y flujos de trabajo en Shopify POS para acercar la app a operaciones físicas.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">P4 — Carga masiva robusta</p><p class="text-xs text-gray-500 mt-0.5">Herramientas más potentes de importación/exportación para reducir fricción de adopción.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">P5 — Kits y paquetes</p><p class="text-xs text-gray-500 mt-0.5">Soporte a kits y paquetes para ampliar el mercado dentro de Shopify.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">P6 — Recursos públicos de confianza</p><p class="text-xs text-gray-500 mt-0.5">FAQ, tutoriales, documentación y demos para subir conversión con poca prueba social.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">P7 — Reportes de negocio</p><p class="text-xs text-gray-500 mt-0.5">Stock salvado, valor en riesgo, stock bajo e indicadores de cumplimiento normativo.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">P8 — Sincronización profunda</p><p class="text-xs text-gray-500 mt-0.5">Sincronización más profunda con el inventario de Shopify para que la app opere, no solo observe.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">P9 — Visibilidad en App Store</p><p class="text-xs text-gray-500 mt-0.5">Optimizar el posicionamiento y coherencia con la categoría real del producto.</p></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== v1.1.0 ===== -->
+    <div class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v110')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5">
+          <span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="text-xl font-bold text-gray-900">v1.1.0</span>
+            <span class="text-sm text-gray-400">Diciembre 2025</span>
+          </div>
+          <p class="text-gray-700 font-medium">Core: Lotes, FEFO/FIFO y Vencimientos</p>
+          <p class="text-gray-400 text-sm mt-1">Funcionalidades base: trazabilidad por lote, rotación automática, alertas de expiración y ofertas de liquidación.</p>
+        </div>
+        <span id="icon-v110" class="text-gray-400 text-sm mt-1">▼</span>
+      </button>
+
+      <div id="body-v110" class="hidden border-t border-gray-100 px-6 py-5">
+        <div class="rounded-xl border border-green-200 bg-green-50 overflow-hidden">
+          <button onclick="toggleSection('v110-feature')" class="section-toggle w-full flex items-center justify-between px-4 py-3">
+                        <span class="text-xs font-bold text-green-700 uppercase tracking-wider">✨ Funcionalidades Core</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v110-feature" class="section-body px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Trazabilidad por lote</p><p class="text-xs text-gray-500 mt-0.5">Control completo de inventario por número de lote.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">FEFO/FIFO automático</p><p class="text-xs text-gray-500 mt-0.5">Rotación automática priorizando fecha de vencimiento o fecha de recepción.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Control de vencimientos</p><p class="text-xs text-gray-500 mt-0.5">Seguimiento de fechas de expiración por lote.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Alertas por expiración</p><p class="text-xs text-gray-500 mt-0.5">Notificaciones configurables antes del vencimiento.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Ofertas de liquidación</p><p class="text-xs text-gray-500 mt-0.5">Descuentos automáticos para lotes cercanos a vencer.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Multi-bodega básica</p><p class="text-xs text-gray-500 mt-0.5">Soporte a múltiples sucursales conectadas con Shopify Locations.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Discrepancias por bodega</p><p class="text-xs text-gray-500 mt-0.5">Comparación entre stock local y stock en Shopify.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Importación/exportación CSV</p><p class="text-xs text-gray-500 mt-0.5">Carga y descarga masiva de datos de inventario.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Giscus -->
     <div class="mt-16 border-t pt-10">
-      <h2 class="text-xl font-bold text-gray-800 mb-6">Comentarios y preguntas</h2>
+      <h2 class="text-xl font-bold text-gray-800 mb-2">Comentarios y preguntas</h2>
+      <p class="text-gray-500 text-sm mb-6">¿Tienes preguntas sobre alguna versión? Déjalas aquí.</p>
       <script src="https://giscus.app/client.js"
         data-repo="softifycl/softify-web"
         data-repo-id="R_kgDORWemDA"
@@ -78,6 +250,7 @@
         async>
       </script>
     </div>
+
   </main>
 
   <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
@@ -96,6 +269,22 @@
     </div>
     <div class="text-center text-sm text-gray-500 mt-4">&copy; 2025 Softify. Todos los derechos reservados.</div>
   </footer>
+
+  <script>
+    function toggleVersion(id) {
+      const body = document.getElementById('body-' + id);
+      const icon = document.getElementById('icon-' + id);
+      body.classList.toggle('hidden');
+      icon.textContent = body.classList.contains('hidden') ? '▼' : '▲';
+    }
+    function toggleSection(id) {
+      const body = document.getElementById(id);
+      const btn = body.previousElementSibling;
+      const arrow = btn.querySelector('span:last-child');
+      body.classList.toggle('hidden');
+      arrow.textContent = body.classList.contains('hidden') ? '+' : '−';
+    }
+  </script>
 
 </body>
 </html>
