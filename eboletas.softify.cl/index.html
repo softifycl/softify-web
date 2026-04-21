@@ -1,36 +1,69 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>e-Boleta Chile - Facturación Electrónica Automática para Shopify | Softify</title>
-  <meta name="description" content="Genera boletas electrónicas automáticas en tu tienda Shopify. Conversión a facturas, integración con marketplaces (Walmart, Paris) vía AnyMarket, y cumplimiento SII garantizado.">
-  <meta name="keywords" content="boletas electrónicas chile, facturación shopify, SII chile, AnyMarket, marketplaces chile, e-boleta">
+  <title>e-Boleta Chile — Boletas Electrónicas Automáticas para Shopify | Softify</title>
+  <meta name="description" content="Genera boletas electrónicas automáticas en Shopify con integración SII. Conversión a facturas, notas de crédito, portal de autoservicio y envío a marketplaces como Walmart y Paris vía AnyMarket. Compatible con Haulmer, Simple API y BSale.">
+  <meta name="keywords" content="boletas electrónicas shopify, facturación electrónica chile, SII shopify, e-boleta chile, factura electrónica shopify, nota de crédito shopify, AnyMarket boletas, Walmart boleta, Paris boleta, haulmer shopify, simple api shopify, bsale shopify, DTE shopify">
   <meta name="author" content="Softify">
-  
+  <link rel="canonical" href="https://eboletas.softify.cl/">
+
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="e-Boleta Chile - Facturación Electrónica para Shopify">
-  <meta property="og:description" content="Automatiza la generación de boletas y facturas electrónicas en tu tienda Shopify. Integración con marketplaces.">
-  <meta property="og:url" content="https://eboletas.softify.cl">
-  
+  <meta property="og:title" content="e-Boleta Chile — Boletas Electrónicas Automáticas para Shopify">
+  <meta property="og:description" content="Genera boletas y facturas electrónicas en Shopify con integración SII. Compatible con Haulmer, Simple API y BSale. Portal de autoservicio boleta → factura incluido.">
+  <meta property="og:url" content="https://eboletas.softify.cl/">
+  <meta property="og:site_name" content="Softify">
+  <meta property="og:locale" content="es_CL">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="e-Boleta Chile — Facturación Electrónica para Shopify">
+  <meta name="twitter:description" content="Boletas y facturas electrónicas automáticas en Shopify. Compatible con SII, Haulmer, Simple API y BSale.">
+
   <!-- Schema.org structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "e-Boleta Chile",
+    "alternateName": ["e-Boleta", "eboleta chile"],
     "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Accounting & Tax",
     "operatingSystem": "Web",
+    "url": "https://eboletas.softify.cl/",
+    "downloadUrl": "https://apps.shopify.com/e-boleta",
+    "description": "Aplicación de Shopify para generación automática de boletas electrónicas, conversión a facturas, emisión de notas de crédito y envío a marketplaces chilenos. Compatible con Haulmer (Openfactura), Simple API y BSale.",
+    "featureList": [
+      "Emisión automática de boletas electrónicas SII",
+      "Conversión de boleta a factura electrónica",
+      "Notas de crédito automáticas por cancelaciones",
+      "Portal de autoservicio boleta-a-factura para clientes",
+      "Compatibilidad con Haulmer, Simple API y BSale",
+      "Integración con marketplaces vía AnyMarket (Walmart, Paris)",
+      "Etiquetado automático de pedidos Shopify",
+      "Compatibilidad con Shopify POS",
+      "API intermediaria multi-proveedor",
+      "Lookup automático de resolución SII por RUT"
+    ],
+    "softwareVersion": "1.8.0",
+    "datePublished": "2024-01-01",
+    "dateModified": "2026-04-01",
+    "inLanguage": "es",
     "offers": {
       "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "CLP"
+      "priceCurrency": "CLP",
+      "availability": "https://schema.org/InStock"
     },
-    "description": "Aplicación de Shopify para generación automática de boletas electrónicas, conversión a facturas y envío a marketplaces chilenos",
     "provider": {
       "@type": "Organization",
-      "name": "Softify"
+      "name": "Softify",
+      "url": "https://softify.cl"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Dueños de tiendas Shopify en Chile que necesitan cumplir con normativas SII de facturación electrónica"
     }
   }
   </script>
@@ -50,18 +83,28 @@
         <a href="documentacion.html" class="hover:text-blue-200 transition-colors">Documentación</a>
         <a href="changelog.html" class="hover:text-blue-200 transition-colors">Changelog</a>
         <a href="roadmap.html" class="hover:text-blue-200 transition-colors">Roadmap</a>
-        <a href="https://apps.shopify.com" class="px-4 py-2 bg-white text-blue-600 rounded-md hover:bg-gray-100 transition-all font-medium">Instalar app</a>
+        <a href="https://apps.shopify.com/e-boleta" class="px-4 py-2 bg-white text-blue-600 rounded-md hover:bg-gray-100 transition-all font-medium">Instalar app</a>
       </nav>
     </div>
   </header>
 
   <main class="container mx-auto px-4 py-10 flex-grow">
     <section class="text-center mb-12 max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-blue-600 mb-4">Gestión de boletas electrónicas</h2>
+      <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+        <i class="fab fa-shopify"></i> Disponible en Shopify App Store
+      </div>
+      <h1 class="text-3xl font-bold text-blue-600 mb-4">Boletas Electrónicas Automáticas para Shopify</h1>
       <p class="text-gray-600 text-lg leading-relaxed">
-        Con e-Boleta Chile, puedes generar, gestionar y convertir boletas electrónicas en tu tienda Shopify. 
-        Cumple con las normativas tributarias de manera simple y eficiente.
+        e-Boleta Chile genera, gestiona y convierte boletas electrónicas en tu tienda Shopify con integración directa al SII. Compatible con Haulmer, Simple API y BSale. Cumple con la normativa tributaria chilena de forma automática.
       </p>
+      <div class="mt-8 flex justify-center gap-4 flex-wrap">
+        <a href="https://apps.shopify.com/e-boleta" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-md">
+          <i class="fab fa-shopify mr-2"></i>Instalar gratis
+        </a>
+        <a href="documentacion.html" class="px-6 py-3 border border-blue-600 text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+          <i class="fas fa-book mr-2"></i>Ver documentación
+        </a>
+      </div>
     </section>
 
     <section>
@@ -120,7 +163,11 @@
           Nuestro servicio utiliza únicamente el correo electrónico de los clientes de las tiendas para enviarles enlaces de acceso 
           seguro al portal de autoservicio. Allí podrán gestionar sus boletas y convertirlas a facturas cuando lo necesiten.
         </p>
-        <a href="politicas-privacidad.html" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+        <a href="https://apps.shopify.com/e-boleta" class="inline-block mt-2 mb-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-md">
+          <i class="fab fa-shopify mr-2"></i>Instalar e-Boleta Chile gratis
+        </a>
+        <br>
+        <a href="politicas-privacidad.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm mt-2">
           Conoce más sobre nuestra política de privacidad
           <i class="fas fa-arrow-right ml-2"></i>
         </a>
@@ -138,12 +185,14 @@
         <div class="flex flex-col md:flex-row gap-4 md:gap-8">
           <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Inicio</a>
           <a href="documentacion.html" class="text-gray-300 hover:text-white transition-colors">Documentación</a>
-          <a href="politicas-privacidad.html" class="text-gray-300 hover:text-white transition-colors">Políticas de Privacidad</a>
+          <a href="changelog.html" class="text-gray-300 hover:text-white transition-colors">Changelog</a>
+          <a href="roadmap.html" class="text-gray-300 hover:text-white transition-colors">Roadmap</a>
+          <a href="politicas-privacidad.html" class="text-gray-300 hover:text-white transition-colors">Privacidad</a>
           <a href="https://softify.cl" class="text-gray-300 hover:text-white transition-colors">Softify</a>
         </div>
       </div>
       <div class="mt-6 text-center text-sm text-gray-400">
-        <p>&copy; 2024 Softify. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Softify. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>

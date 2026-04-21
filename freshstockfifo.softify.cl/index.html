@@ -1,9 +1,74 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FreshStock FIFO - Softify</title>
+
+  <!-- SEO primario -->
+  <title>FreshStock FIFO — Control de Inventario FIFO y Vencimientos para Shopify | Softify</title>
+  <meta name="description" content="Gestiona el inventario de productos perecederos en Shopify con método FIFO. Controla fechas de vencimiento, recibe alertas automáticas y crea ofertas para reducir pérdidas. Ideal para alimentos, cosméticos y medicamentos.">
+  <meta name="keywords" content="inventario FIFO shopify, control vencimiento productos, app shopify perecederos, gestión inventario alimentos, FIFO shopify chile, freshstock, alertas vencimiento shopify">
+  <meta name="author" content="Softify">
+  <link rel="canonical" href="https://freshstockfifo.softify.cl/">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FreshStock FIFO — Inventario FIFO y Vencimientos para Shopify">
+  <meta property="og:description" content="Controla fechas de vencimiento, recibe alertas automáticas y crea ofertas para productos próximos a expirar. Reducción real de pérdidas para tiendas Shopify con productos perecederos.">
+  <meta property="og:url" content="https://freshstockfifo.softify.cl/">
+  <meta property="og:site_name" content="Softify">
+  <meta property="og:locale" content="es_CL">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="FreshStock FIFO — Inventario FIFO para Shopify">
+  <meta name="twitter:description" content="Gestiona productos perecederos con método FIFO, alertas de vencimiento y ofertas automáticas en Shopify.">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FreshStock FIFO",
+    "alternateName": "FreshStock",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Inventory Management",
+    "operatingSystem": "Web",
+    "url": "https://freshstockfifo.softify.cl/",
+    "downloadUrl": "https://apps.shopify.com/freshstock-fifo",
+    "description": "Aplicación de Shopify para gestión de inventario con método FIFO, control de fechas de vencimiento, alertas automáticas y creación de ofertas para productos perecederos.",
+    "featureList": [
+      "Control de inventario por lotes con fechas de vencimiento",
+      "Método FIFO (First In, First Out) automático",
+      "Alertas de vencimiento configurables",
+      "Creación automática de ofertas en Shopify",
+      "Dashboard con métricas en tiempo real",
+      "Reportes de rotación de inventario",
+      "Transferencias de stock por lote",
+      "Reporte competitivo comparativo"
+    ],
+    "screenshot": "https://freshstockfifo.softify.cl/",
+    "softwareVersion": "1.3.0",
+    "datePublished": "2024-01-01",
+    "dateModified": "2026-04-01",
+    "inLanguage": "es",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Softify",
+      "url": "https://softify.cl"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Dueños de tiendas Shopify con productos perecederos: alimentos, cosméticos, medicamentos"
+    }
+  }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -19,19 +84,30 @@
         <a href="docs/index.html" class="hover:text-green-200 transition-colors">Documentación</a>
         <a href="changelog.html" class="hover:text-green-200 transition-colors">Changelog</a>
         <a href="roadmap.html" class="hover:text-green-200 transition-colors">Roadmap</a>
-        <a href="https://apps.shopify.com" class="px-4 py-2 bg-white text-green-600 rounded-md hover:bg-gray-100 transition-all font-medium">Instalar app</a>
+        <a href="https://apps.shopify.com/freshstock-fifo" class="px-4 py-2 bg-white text-green-600 rounded-md hover:bg-gray-100 transition-all font-medium">Instalar app</a>
       </nav>
     </div>
   </header>
 
   <main class="container mx-auto px-4 py-10 flex-grow">
     <section class="text-center mb-12 max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-green-600 mb-4">Gestión inteligente de inventario con método FIFO</h2>
+      <div class="inline-flex items-center gap-2 bg-green-100 text-green-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+        <i class="fab fa-shopify"></i> Disponible en Shopify App Store
+      </div>
+      <h1 class="text-3xl font-bold text-green-600 mb-4">Gestión inteligente de inventario con método FIFO</h1>
       <p class="text-gray-600 text-lg leading-relaxed">
         FreshStock FIFO te ayuda a gestionar el inventario de productos perecederos en tu tienda Shopify.
         Controla fechas de vencimiento, recibe alertas automáticas y crea ofertas para productos próximos a expirar,
         reduciendo pérdidas y maximizando ventas.
       </p>
+      <div class="mt-8 flex justify-center gap-4 flex-wrap">
+        <a href="https://apps.shopify.com/freshstock-fifo" class="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-md">
+          <i class="fab fa-shopify mr-2"></i>Instalar gratis
+        </a>
+        <a href="docs/index.html" class="px-6 py-3 border border-green-600 text-green-700 font-semibold rounded-lg hover:bg-green-50 transition-colors">
+          <i class="fas fa-book mr-2"></i>Ver documentación
+        </a>
+      </div>
     </section>
 
     <section>
@@ -95,7 +171,11 @@
           cosméticos o medicamentos. FreshStock FIFO te ayuda a vender primero los productos más antiguos, crear ofertas
           atractivas para inventario próximo a vencer y tomar decisiones informadas con métricas en tiempo real.
         </p>
-        <a href="politicas-privacidad.html" class="inline-flex items-center text-green-600 hover:text-green-800">
+        <a href="https://apps.shopify.com/freshstock-fifo" class="inline-block mt-2 mb-4 px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-md">
+          <i class="fab fa-shopify mr-2"></i>Instalar FreshStock FIFO gratis
+        </a>
+        <br>
+        <a href="politicas-privacidad.html" class="inline-flex items-center text-green-600 hover:text-green-800 text-sm mt-2">
           Conoce más sobre nuestra política de privacidad
           <i class="fas fa-arrow-right ml-2"></i>
         </a>
@@ -112,12 +192,15 @@
         </div>
         <div class="flex flex-col md:flex-row gap-4 md:gap-8">
           <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Inicio</a>
-          <a href="politicas-privacidad.html" class="text-gray-300 hover:text-white transition-colors">Políticas de Privacidad</a>
+          <a href="docs/index.html" class="text-gray-300 hover:text-white transition-colors">Documentación</a>
+          <a href="changelog.html" class="text-gray-300 hover:text-white transition-colors">Changelog</a>
+          <a href="roadmap.html" class="text-gray-300 hover:text-white transition-colors">Roadmap</a>
+          <a href="politicas-privacidad.html" class="text-gray-300 hover:text-white transition-colors">Privacidad</a>
           <a href="https://softify.cl" class="text-gray-300 hover:text-white transition-colors">Softify</a>
         </div>
       </div>
       <div class="mt-6 text-center text-sm text-gray-400">
-        <p>&copy; 2024 Softify. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Softify. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
