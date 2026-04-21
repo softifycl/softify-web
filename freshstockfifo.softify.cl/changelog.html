@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog — FreshStock FIFO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <header class="bg-gradient-to-r from-green-700 to-green-500 text-white shadow-lg">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold flex items-center gap-2">
+        <i class="fas fa-boxes-stacked"></i>
+        <span>FreshStock FIFO</span>
+      </a>
+      <nav class="flex gap-6 items-center text-sm font-medium">
+        <a href="index.html" class="hover:text-green-200 transition-colors">Inicio</a>
+        <a href="docs/index.html" class="hover:text-green-200 transition-colors">Documentación</a>
+        <a href="changelog.html" class="text-white border-b-2 border-white pb-0.5">Changelog</a>
+        <a href="roadmap.html" class="hover:text-green-200 transition-colors">Roadmap</a>
+        <a href="https://apps.shopify.com" class="px-4 py-2 bg-white text-green-600 rounded-md hover:bg-gray-100 transition-all font-medium">Instalar app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12 flex-grow max-w-3xl">
+    <div class="mb-10">
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">Changelog</h1>
+      <p class="text-gray-500">Historial de actualizaciones y mejoras de FreshStock FIFO. La app recibe mantenimiento continuo.</p>
+    </div>
+
+    <!-- Leyenda de etiquetas -->
+    <div class="flex flex-wrap gap-3 mb-10 text-xs font-semibold">
+      <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">✨ Nueva función</span>
+      <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">⚡ Mejora</span>
+      <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">🐛 Fix</span>
+      <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full">🔧 Mantenimiento</span>
+    </div>
+
+    <!-- Entradas del changelog — agregar aquí -->
+    <div class="space-y-10" id="changelog-entries">
+
+      <!-- Placeholder hasta recibir changelog real -->
+      <div class="border-l-4 border-green-400 pl-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="text-lg font-bold text-gray-900">v1.0.0</span>
+          <span class="text-sm text-gray-400">Lanzamiento inicial</span>
+        </div>
+        <ul class="space-y-2 text-gray-700 text-sm">
+          <li class="flex gap-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold whitespace-nowrap">✨ Nueva función</span> Dashboard de métricas con inventario próximo a vencer</li>
+          <li class="flex gap-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold whitespace-nowrap">✨ Nueva función</span> Control de inventario por lotes con método FIFO</li>
+          <li class="flex gap-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold whitespace-nowrap">✨ Nueva función</span> Alertas automáticas de vencimiento configurables</li>
+          <li class="flex gap-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold whitespace-nowrap">✨ Nueva función</span> Creación automática de ofertas en Shopify para productos próximos a vencer</li>
+          <li class="flex gap-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold whitespace-nowrap">✨ Nueva función</span> Reportes y análisis de rotación de inventario</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Giscus — comentarios/discusiones del changelog -->
+    <div class="mt-16 border-t pt-10">
+      <h2 class="text-xl font-bold text-gray-800 mb-6">Comentarios y preguntas</h2>
+      <script src="https://giscus.app/client.js"
+        data-repo="softifycl/softify-web"
+        data-repo-id="R_kgDORWemDA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDORWemDM4C7Yfi"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="es"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <h3 class="text-lg font-bold">FreshStock FIFO</h3>
+        <p class="text-sm text-gray-400">Gestión inteligente de inventario para Shopify</p>
+      </div>
+      <div class="flex gap-6 text-sm">
+        <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+        <a href="docs/index.html" class="hover:text-white transition-colors">Documentación</a>
+        <a href="changelog.html" class="hover:text-white transition-colors">Changelog</a>
+        <a href="roadmap.html" class="hover:text-white transition-colors">Roadmap</a>
+        <a href="politicas-privacidad.html" class="hover:text-white transition-colors">Privacidad</a>
+      </div>
+    </div>
+    <div class="text-center text-sm text-gray-500 mt-4">&copy; 2025 Softify. Todos los derechos reservados.</div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentación — FreshStock FIFO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <header class="bg-gradient-to-r from-green-700 to-green-500 text-white shadow-lg">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold flex items-center gap-2">
+        <i class="fas fa-boxes-stacked"></i>
+        <span>FreshStock FIFO</span>
+      </a>
+      <nav class="flex gap-6 items-center text-sm font-medium">
+        <a href="../index.html" class="hover:text-green-200 transition-colors">Inicio</a>
+        <a href="index.html" class="text-white border-b-2 border-white pb-0.5">Documentación</a>
+        <a href="../changelog.html" class="hover:text-green-200 transition-colors">Changelog</a>
+        <a href="../roadmap.html" class="hover:text-green-200 transition-colors">Roadmap</a>
+        <a href="https://apps.shopify.com" class="px-4 py-2 bg-white text-green-600 rounded-md hover:bg-gray-100 transition-all font-medium">Instalar app</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container mx-auto px-4 py-12 flex-grow flex gap-10">
+
+    <!-- Sidebar -->
+    <aside class="hidden md:block w-64 flex-shrink-0">
+      <div class="sticky top-8">
+        <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Primeros pasos</h3>
+        <ul class="space-y-1 mb-6">
+          <li><a href="#instalacion" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Instalación</a></li>
+          <li><a href="#configuracion-inicial" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Configuración inicial</a></li>
+        </ul>
+        <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Funcionalidades</h3>
+        <ul class="space-y-1 mb-6">
+          <li><a href="#dashboard" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Dashboard de métricas</a></li>
+          <li><a href="#inventario-fifo" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Control de inventario FIFO</a></li>
+          <li><a href="#alertas" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Alertas de vencimiento</a></li>
+          <li><a href="#ofertas" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Ofertas automáticas</a></li>
+          <li><a href="#reportes" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Reportes y análisis</a></li>
+        </ul>
+        <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Ayuda</h3>
+        <ul class="space-y-1">
+          <li><a href="../roadmap.html" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Sugerir una mejora</a></li>
+          <li><a href="../changelog.html" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Ver changelog</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="flex-grow max-w-2xl">
+
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">Documentación</h1>
+      <p class="text-gray-500 mb-10">Guía completa para configurar y aprovechar al máximo FreshStock FIFO.</p>
+
+      <!-- Instalación -->
+      <section id="instalacion" class="mb-12 scroll-mt-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <i class="fas fa-download text-green-500"></i> Instalación
+        </h2>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-6 space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>1. Ve a la <strong>Shopify App Store</strong> y busca <strong>FreshStock FIFO</strong>.</p>
+          <p>2. Haz clic en <strong>Agregar app</strong> y selecciona la tienda donde instalarla.</p>
+          <p>3. Acepta los permisos requeridos — la app necesita acceso a productos e inventario para funcionar.</p>
+          <p>4. Una vez instalada, serás redirigido al <strong>Dashboard</strong> de la app dentro de tu admin de Shopify.</p>
+        </div>
+      </section>
+
+      <!-- Configuración inicial -->
+      <section id="configuracion-inicial" class="mb-12 scroll-mt-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <i class="fas fa-sliders text-green-500"></i> Configuración inicial
+        </h2>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-6 space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>Al abrir la app por primera vez, configura:</p>
+          <ul class="list-disc list-inside space-y-2 ml-2">
+            <li><strong>Días de anticipación para alertas:</strong> cuántos días antes del vencimiento quieres recibir una notificación.</li>
+            <li><strong>Ubicaciones:</strong> selecciona las ubicaciones de tu tienda que quieres gestionar con FIFO.</li>
+            <li><strong>Notificaciones:</strong> activa o desactiva alertas por email (próximamente).</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Dashboard -->
+      <section id="dashboard" class="mb-12 scroll-mt-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <i class="fas fa-chart-pie text-green-500"></i> Dashboard de métricas
+        </h2>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-6 space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>El dashboard es la pantalla principal de la app. Muestra en tiempo real:</p>
+          <ul class="list-disc list-inside space-y-2 ml-2">
+            <li><strong>Inventario próximo a vencer:</strong> productos que vencen dentro del rango configurado.</li>
+            <li><strong>Costos en riesgo:</strong> valor monetario del inventario próximo a expirar.</li>
+            <li><strong>Productos expirados:</strong> lotes que ya superaron su fecha de vencimiento.</li>
+            <li><strong>Ofertas activas:</strong> descuentos automáticos creados por la app actualmente vigentes.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Inventario FIFO -->
+      <section id="inventario-fifo" class="mb-12 scroll-mt-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <i class="fas fa-layer-group text-green-500"></i> Control de inventario FIFO
+        </h2>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-6 space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>El módulo de inventario permite gestionar tu stock por <strong>lotes</strong>, cada uno con fecha de ingreso y fecha de vencimiento.</p>
+          <p><strong>Cómo agregar un lote:</strong></p>
+          <ol class="list-decimal list-inside space-y-1 ml-2">
+            <li>Ve a la sección <em>Inventario</em> en la app.</li>
+            <li>Selecciona el producto y variante.</li>
+            <li>Ingresa la cantidad, fecha de ingreso y fecha de vencimiento.</li>
+            <li>Guarda el lote.</li>
+          </ol>
+          <p class="mt-2">El sistema priorizará automáticamente los lotes más antiguos al mostrar alertas y al crear ofertas (First In, First Out).</p>
+        </div>
+      </section>
+
+      <!-- Alertas -->
+      <section id="alertas" class="mb-12 scroll-mt-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <i class="fas fa-bell text-green-500"></i> Alertas de vencimiento
+        </h2>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-6 space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>La app genera alertas automáticas cuando algún lote está próximo a vencer, según los días de anticipación configurados.</p>
+          <p>Las alertas aparecen en el <strong>Dashboard</strong> y en la sección <em>Alertas</em> de la app.</p>
+          <p><strong>Configurar días de anticipación:</strong></p>
+          <ol class="list-decimal list-inside space-y-1 ml-2">
+            <li>Ve a <em>Configuración</em> en la app.</li>
+            <li>Ajusta el campo <em>Días de anticipación</em> (por defecto: 30 días).</li>
+            <li>Guarda los cambios.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Ofertas automáticas -->
+      <section id="ofertas" class="mb-12 scroll-mt-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <i class="fas fa-tags text-green-500"></i> Ofertas automáticas
+        </h2>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-6 space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>FreshStock FIFO puede crear descuentos automáticos en Shopify para los productos próximos a vencer, ayudándote a recuperar el valor del inventario.</p>
+          <p><strong>Cómo crear una oferta automática:</strong></p>
+          <ol class="list-decimal list-inside space-y-1 ml-2">
+            <li>Ve a la sección <em>Ofertas</em> en la app.</li>
+            <li>Selecciona el lote al que quieres aplicar descuento.</li>
+            <li>Define el porcentaje de descuento, fecha de inicio y fecha de término.</li>
+            <li>La app crea automáticamente el descuento en tu tienda Shopify.</li>
+          </ol>
+          <p class="mt-2 text-yellow-700 bg-yellow-50 px-3 py-2 rounded-lg text-xs"><strong>Nota:</strong> Los descuentos creados por la app aparecerán en la sección <em>Descuentos</em> de tu admin de Shopify.</p>
+        </div>
+      </section>
+
+      <!-- Reportes -->
+      <section id="reportes" class="mb-12 scroll-mt-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <i class="fas fa-chart-line text-green-500"></i> Reportes y análisis
+        </h2>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-6 space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>La sección de reportes muestra estadísticas históricas de tu inventario:</p>
+          <ul class="list-disc list-inside space-y-2 ml-2">
+            <li><strong>Rotación de inventario:</strong> qué tan rápido se mueven tus productos.</li>
+            <li><strong>Productos vencidos:</strong> historial de lotes expirados y costos asociados.</li>
+            <li><strong>Costos recuperados:</strong> valor recuperado gracias a las ofertas automáticas.</li>
+            <li><strong>Tendencias de stock:</strong> evolución del inventario en el tiempo.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Giscus Q&A -->
+      <div class="mt-16 border-t pt-10">
+        <h2 class="text-xl font-bold text-gray-800 mb-2">¿Tienes dudas?</h2>
+        <p class="text-gray-500 text-sm mb-6">Deja tu pregunta en los comentarios y te respondemos.</p>
+        <script src="https://giscus.app/client.js"
+          data-repo="softifycl/softify-web"
+          data-repo-id="R_kgDORWemDA"
+          data-category="Q&A"
+          data-category-id="DIC_kwDORWemDM4C7Yfk"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="light"
+          data-lang="es"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <h3 class="text-lg font-bold">FreshStock FIFO</h3>
+        <p class="text-sm text-gray-400">Gestión inteligente de inventario para Shopify</p>
+      </div>
+      <div class="flex gap-6 text-sm">
+        <a href="../index.html" class="hover:text-white transition-colors">Inicio</a>
+        <a href="index.html" class="hover:text-white transition-colors">Documentación</a>
+        <a href="../changelog.html" class="hover:text-white transition-colors">Changelog</a>
+        <a href="../roadmap.html" class="hover:text-white transition-colors">Roadmap</a>
+        <a href="../politicas-privacidad.html" class="hover:text-white transition-colors">Privacidad</a>
+      </div>
+    </div>
+    <div class="text-center text-sm text-gray-500 mt-4">&copy; 2025 Softify. Todos los derechos reservados.</div>
+  </footer>
+
+</body>
+</html>
