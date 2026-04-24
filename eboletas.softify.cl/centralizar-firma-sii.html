@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo Centralizar tu Firma Electrónica en el SII | e-Boleta Chile</title>
+  <meta name="description" content="Guía paso a paso para centralizar tu certificado digital y habilitar la autenticación con firma electrónica en el portal del SII. Requisito previo para usar facturadores electrónicos en Chile.">
+  <meta name="keywords" content="centralizar firma electrónica SII, certificado digital SII, habilitar autenticación SII, factura electrónica Chile, e-boleta configuración">
+  <link rel="canonical" href="https://eboletas.softify.cl/centralizar-firma-sii.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo centralizar la Firma Electrónica en el SII",
+    "description": "Guía para centralizar el certificado digital y habilitar autenticación con firma electrónica en el portal del Servicio de Impuestos Internos de Chile",
+    "step": [
+      { "@type": "HowToStep", "name": "Ingresar al SII", "text": "Accede a homer.sii.cl con tu RUT y contraseña" },
+      { "@type": "HowToStep", "name": "Navegar a Facturación Electrónica", "text": "Ir a Servicios Online → Facturación Electrónica → Certificado Digital" },
+      { "@type": "HowToStep", "name": "Centralizar certificado", "text": "Cargar el archivo .pfx y establecer contraseña de seguridad" },
+      { "@type": "HowToStep", "name": "Habilitar autenticación con firma", "text": "Recuperar clave y activar la opción de autenticación con Certificado Digital" }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-lg">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+      <a href="index.html" class="text-3xl font-bold flex items-center gap-2">
+        <i class="fas fa-receipt"></i>
+        <span>e-Boleta Chile</span>
+      </a>
+      <nav class="flex gap-6 items-center text-sm font-medium">
+        <a href="index.html" class="hover:text-blue-200 transition-colors">Inicio</a>
+        <a href="documentacion.html" class="hover:text-blue-200 transition-colors">Documentación</a>
+        <a href="changelog.html" class="hover:text-blue-200 transition-colors">Changelog</a>
+        <a href="roadmap.html" class="hover:text-blue-200 transition-colors">Roadmap</a>
+        <a href="https://apps.shopify.com/e-boleta" class="px-4 py-2 bg-white text-blue-600 rounded-md hover:bg-gray-100 transition-all font-medium">Instalar app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-10 flex-grow max-w-4xl">
+
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-gray-500 mb-6">
+      <a href="documentacion.html" class="hover:text-blue-600">← Volver a Documentación</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="text-center mb-10">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+        <i class="fas fa-certificate text-blue-600 text-2xl"></i>
+      </div>
+      <h1 class="text-4xl font-bold text-blue-600 mb-4">
+        Cómo Centralizar tu Firma Electrónica en el SII
+      </h1>
+      <p class="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
+        Antes de configurar cualquier facturador electrónico, debes centralizar tu certificado digital en el Servicio de Impuestos Internos. Este proceso solo se realiza una vez y aplica para todos los sistemas de facturación que uses.
+      </p>
+    </section>
+
+    <!-- Aviso: sin certificado todavía -->
+    <div class="bg-amber-50 border-l-4 border-amber-400 rounded-lg p-5 mb-10">
+      <div class="flex items-start gap-3">
+        <i class="fas fa-shopping-cart text-amber-500 text-xl mt-0.5"></i>
+        <div>
+          <p class="font-semibold text-amber-800 mb-1">¿Aún no tienes una Firma Electrónica o Certificado Digital?</p>
+          <p class="text-amber-700 text-sm leading-relaxed">
+            Puedes adquirirla en <strong>Haulmer</strong>, proveedor autorizado en Chile. Este certificado te servirá no solo para facturación electrónica, sino también para otros procesos de validación ante el SII y organismos del Estado.
+          </p>
+          <a href="https://www.haulmer.com/firma-electronica/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-3 px-4 py-2 bg-amber-500 text-white rounded-md hover:bg-amber-600 transition-colors text-sm font-medium">
+            <i class="fas fa-external-link-alt"></i>
+            Obtener Firma Electrónica en Haulmer →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla de contenidos -->
+    <nav class="bg-blue-50 rounded-lg p-5 mb-10 border-l-4 border-blue-500">
+      <h2 class="text-lg font-bold text-blue-700 mb-3">
+        <i class="fas fa-list mr-2"></i>Contenidos
+      </h2>
+      <ul class="space-y-1 text-sm">
+        <li><a href="#paso1" class="text-blue-600 hover:underline">Paso 1 — Centralizar el certificado digital en el SII</a></li>
+        <li><a href="#paso2" class="text-blue-600 hover:underline">Paso 2 — Habilitar autenticación con Firma Electrónica</a></li>
+        <li><a href="#siguiente" class="text-blue-600 hover:underline">¿Qué sigue después?</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===================== PASO 1 ===================== -->
+    <section id="paso1" class="mb-14 scroll-mt-20">
+      <div class="bg-white rounded-xl shadow-md p-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2 flex items-center gap-3">
+          <span class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold shrink-0">1</span>
+          Centralizar el Certificado Digital en el SII
+        </h2>
+        <p class="text-gray-500 text-sm mb-8 ml-14">Este proceso carga tu firma electrónica (.pfx) en los servidores del SII para que cualquier facturador autorizado pueda usarla sin que entregues tu contraseña personal.</p>
+
+        <div class="space-y-10">
+
+          <!-- Sub-paso 1 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">1</span>
+              Ingresar al SII con tu RUT
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              Ve a <a href="https://homer.sii.cl/" target="_blank" rel="noopener" class="text-blue-600 hover:underline font-medium">homer.sii.cl</a> y haz clic en <strong>Mi SII</strong> para iniciar sesión. Debes ingresar con el <strong>RUT de la persona asociada a la firma electrónica</strong> (representante legal de la empresa).
+            </p>
+            <img src="img/firma-sii/paso1-1-mi-sii.png" alt="Página principal del SII — botón Mi SII" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 2 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">2</span>
+              Autenticarse con RUT y contraseña
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              El sistema te solicitará tu RUT y contraseña tributaria.
+            </p>
+            <img src="img/firma-sii/paso1-2-login-rut.png" alt="Formulario de inicio de sesión SII" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 3 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">3</span>
+              Ir a Servicios Online → Facturación Electrónica
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              Una vez dentro, dirígete al menú superior: <strong>Servicios Online → Facturación Electrónica</strong>.
+            </p>
+            <img src="img/firma-sii/paso1-3-servicios-online.gif" alt="Navegación a Servicios Online y Facturación Electrónica" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 4 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">4</span>
+              Seleccionar "Conozca sobre Factura Electrónica"
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              En la lista de opciones, haz clic en <strong>Conozca sobre Factura Electrónica</strong>.
+            </p>
+            <img src="img/firma-sii/paso1-4-factura-electronica.gif" alt="Seleccionar opción Conozca sobre Factura Electrónica" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 5 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">5</span>
+              Ingresar a "Certificado Digital" → "Centralizar certificado digital"
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              Busca la sección <a href="https://www.sii.cl/servicios_online/1039-1182.html#collapseOne" target="_blank" rel="noopener" class="text-blue-600 hover:underline font-medium">Certificado Digital</a> y luego haz clic en <strong>Centralizar certificado digital</strong>.
+            </p>
+            <img src="img/firma-sii/paso1-5-centralizar-certificado.gif" alt="Ingresar a Certificado Digital y centralizar" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 6 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">6</span>
+              Cargar el archivo de la firma y contraseña
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              Sube el archivo de tu firma electrónica (.pfx o .p12) y luego ingresa su clave de seguridad. Cuando estés listo, haz clic en <strong>Enviar</strong>.
+            </p>
+            <img src="img/firma-sii/paso1-6-cargar-firma.png" alt="Formulario para cargar firma electrónica" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 7 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">7</span>
+              Confirmación exitosa
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              Si el proceso fue correcto, verás el mensaje <strong>"Se guardó archivo OK"</strong>. Luego presiona <em>Cerrar</em> y <em>Salir</em>.
+            </p>
+            <img src="img/firma-sii/paso1-7-confirmacion.png" alt="Confirmación: Se guardó archivo OK" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+            <div class="mt-3 ml-9 bg-green-50 border-l-4 border-green-500 rounded p-3">
+              <p class="text-green-800 text-sm"><i class="fas fa-check-circle mr-2"></i><strong>✅ Certificado centralizado correctamente.</strong> Ya puedes continuar con el Paso 2.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PASO 2 ===================== -->
+    <section id="paso2" class="mb-14 scroll-mt-20">
+      <div class="bg-white rounded-xl shadow-md p-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2 flex items-center gap-3">
+          <span class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold shrink-0">2</span>
+          Habilitar la Autenticación con Firma Electrónica
+        </h2>
+        <p class="text-gray-500 text-sm mb-8 ml-14">Este paso activa el método de autenticación por firma digital, que es requerido por los facturadores electrónicos para operar en tu nombre.</p>
+
+        <div class="space-y-10">
+
+          <!-- Sub-paso 1 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">1</span>
+              Cerrar sesión e ingresar a "Mi SII"
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              Si tienes sesión activa, ciérrala. Luego, en la página principal del SII, haz clic en el botón naranja <strong>"Ingresar a Mi SII"</strong> (esquina superior izquierda).
+            </p>
+            <img src="img/firma-sii/paso2-1-ingresar-mi-sii.png" alt="Botón Ingresar a Mi SII en escritorio" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 2 y 3: mobile -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">2</span>
+              En tablet o teléfono
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              En dispositivos móviles, busca el ícono de persona en la parte superior derecha. Al presionarlo, aparecerá el menú — selecciona <strong>"Ingresar a Mi SII"</strong>.
+            </p>
+            <div class="flex gap-4 ml-9 flex-wrap">
+              <img src="img/firma-sii/paso2-2-mobile.png" alt="Vista móvil del SII" class="rounded-lg border border-gray-200 shadow-sm max-w-xs">
+              <img src="img/firma-sii/paso2-3-mobile-menu.png" alt="Menú móvil del SII" class="rounded-lg border border-gray-200 shadow-sm max-w-xs">
+            </div>
+          </div>
+
+          <!-- Sub-paso 4 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">3</span>
+              No inicies sesión — haz clic en "Recuperar clave"
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              En la sección de identificación, <strong>no ingreses tu contraseña</strong>. En cambio, haz clic en <strong>"Recuperar clave"</strong>.
+            </p>
+            <img src="img/firma-sii/paso2-4-recuperar-clave.png" alt="Opción Recuperar clave en el SII" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 5 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">4</span>
+              Ingresar el RUT del representante legal
+            </h3>
+            <div class="ml-9 mb-3 bg-blue-50 border-l-4 border-blue-400 rounded p-3">
+              <p class="text-blue-800 text-sm"><i class="fas fa-info-circle mr-2"></i><strong>Importante:</strong> Debes usar el RUT del representante legal de la empresa, no el RUT de la empresa.</p>
+            </div>
+            <p class="text-gray-700 text-sm mb-3 ml-9">Acepta la cláusula y presiona <strong>CONTINUAR</strong>.</p>
+            <img src="img/firma-sii/paso2-5-ingresar-rut.png" alt="Formulario ingreso RUT para recuperar clave" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 6 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">5</span>
+              El sistema enviará un código provisorio por correo
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              El SII te mostrará el correo registrado (con algunas letras ocultas). Si lo reconoces, presiona <strong>CONTINUAR</strong>.
+            </p>
+            <img src="img/firma-sii/paso2-6-correo-enviado.png" alt="Confirmación envío correo SII" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 7 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">6</span>
+              Presionar "IR A RECUPERAR CLAVE"
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              Se mostrará un mensaje de confirmación. Haz clic en <strong>IR A RECUPERAR CLAVE</strong> para continuar.
+            </p>
+            <img src="img/firma-sii/paso2-7-ir-recuperar.png" alt="Mensaje ir a recuperar clave" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 8 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">7</span>
+              Ingresar nuevamente el RUT y seleccionar "INGRESAR CÓDIGO PROVISORIO"
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              Acepta la cláusula, presiona continuar y luego haz clic en <strong>"INGRESAR CÓDIGO PROVISORIO"</strong>.
+            </p>
+            <img src="img/firma-sii/paso2-8-codigo-provisorio.png" alt="Botón ingresar código provisorio" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 9 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">8</span>
+              Revisar el correo y copiar el código
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              Busca en tu bandeja de entrada un correo del SII con el asunto exacto <strong>"Clave Tributaria SII"</strong>. Copia el código que viene dentro.
+            </p>
+            <img src="img/firma-sii/paso2-9-email-sii.png" alt="Correo del SII con código provisorio" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 10 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">9</span>
+              Ingresar el código y presionar "ENVIAR CÓDIGO"
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              En la ventana que se abre, ingresa el código del correo y presiona <strong>ENVIAR CÓDIGO</strong>.
+            </p>
+            <img src="img/firma-sii/paso2-10-ingresar-codigo.png" alt="Ventana para ingresar código provisorio" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+          </div>
+
+          <!-- Sub-paso 11 -->
+          <div>
+            <h3 class="text-lg font-semibold text-blue-700 mb-2">
+              <span class="bg-blue-100 text-blue-700 rounded-full w-7 h-7 inline-flex items-center justify-center text-sm font-bold mr-2">10</span>
+              Configurar la nueva clave y habilitar Certificado Digital
+            </h3>
+            <p class="text-gray-700 text-sm mb-3 ml-9">
+              Ingresa tu nueva contraseña (puedes mantener la misma). Luego, en las opciones de acceso, <strong>marca obligatoriamente la primera opción:</strong>
+            </p>
+            <div class="ml-9 mb-3 bg-yellow-50 border-l-4 border-yellow-400 rounded p-3">
+              <p class="text-yellow-800 text-sm font-medium"><i class="fas fa-check-square mr-2"></i>"Utilizando Clave Tributaria <strong>o</strong> Certificado Digital"</p>
+              <p class="text-yellow-700 text-xs mt-1">Esta opción es imprescindible para que el facturador electrónico pueda autenticarse en tu nombre.</p>
+            </div>
+            <p class="text-gray-700 text-sm mb-3 ml-9">Finalmente, haz clic en <strong>Enviar formulario</strong>.</p>
+            <img src="img/firma-sii/paso2-11-configurar-clave.png" alt="Configuración de nueva clave y opción Certificado Digital" class="rounded-lg border border-gray-200 shadow-sm w-full max-w-2xl ml-9">
+            <div class="mt-3 ml-9 bg-green-50 border-l-4 border-green-500 rounded p-3">
+              <p class="text-green-800 text-sm"><i class="fas fa-check-circle mr-2"></i><strong>✅ Tu firma electrónica está habilitada.</strong> Verás un mensaje confirmando que tu nueva clave tributaria fue configurada exitosamente.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Siguiente paso -->
+    <section id="siguiente" class="mb-12 scroll-mt-20">
+      <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-8 text-white text-center">
+        <i class="fas fa-check-circle text-4xl mb-4 opacity-90"></i>
+        <h2 class="text-2xl font-bold mb-3">¡Todo listo!</h2>
+        <p class="text-blue-100 mb-6 max-w-xl mx-auto">
+          Ya tienes tu firma electrónica centralizada y habilitada en el SII. Ahora puedes continuar con la configuración de e-Boleta Chile en tu tienda Shopify.
+        </p>
+        <a href="documentacion.html#configuracion-sii" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-700 rounded-lg hover:bg-blue-50 font-semibold transition-colors">
+          <i class="fas fa-arrow-right"></i>
+          Continuar con la configuración en e-Boleta →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-8 mt-auto">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-center md:text-left">
+          <p class="font-bold text-white text-lg mb-1">e-Boleta Chile</p>
+          <p class="text-sm">Boletas electrónicas automáticas para Shopify</p>
+        </div>
+        <nav class="flex gap-6 text-sm">
+          <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+          <a href="documentacion.html" class="hover:text-white transition-colors">Documentación</a>
+          <a href="changelog.html" class="hover:text-white transition-colors">Changelog</a>
+          <a href="roadmap.html" class="hover:text-white transition-colors">Roadmap</a>
+        </nav>
+        <a href="https://apps.shopify.com/e-boleta" target="_blank" rel="noopener" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-all text-sm font-medium">Instalar app</a>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-6 pt-4 text-center text-xs text-gray-500">
+      &copy; 2025 Softify &mdash; <a href="https://softify.cl" class="hover:text-gray-300">softify.cl</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
