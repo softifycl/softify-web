@@ -72,19 +72,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
-  <header class="bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-lg">
+  <header class="bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-lg relative">
     <div class="container mx-auto px-4 py-6 flex justify-between items-center">
       <a href="index.html" class="text-3xl font-bold flex items-center gap-2">
         <i class="fas fa-receipt"></i>
         <span>e-Boleta Chile</span>
       </a>
-      <nav class="flex gap-6 items-center text-sm font-medium">
+      <nav class="hidden md:flex gap-6 items-center text-sm font-medium" id="main-nav">
         <a href="index.html" class="text-white border-b-2 border-white pb-0.5">Inicio</a>
         <a href="documentacion.html" class="hover:text-blue-200 transition-colors">Documentación</a>
         <a href="changelog.html" class="hover:text-blue-200 transition-colors">Changelog</a>
         <a href="roadmap.html" class="hover:text-blue-200 transition-colors">Roadmap</a>
         <a href="https://apps.shopify.com/e-boleta" class="px-4 py-2 bg-white text-blue-600 rounded-md hover:bg-gray-100 transition-all font-medium">Instalar app</a>
-      </nav>
+      
+        <!-- Hamburger mobile -->
+        <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5 focus:outline-none" aria-label="Menú">
+          <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="bar1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="bar2"></span>
+          <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="bar3"></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -198,4 +205,5 @@
   </footer>
 </body>
 </html>
+
 

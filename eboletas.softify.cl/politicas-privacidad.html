@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
-  <header class="bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-lg">
+  <header class="bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-lg relative">
     <div class="container mx-auto px-4 py-6 flex justify-between items-center">
       <a href="index.html" class="text-3xl font-bold flex items-center gap-2">
         <i class="fas fa-receipt"></i>
@@ -98,5 +98,34 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const btn = document.getElementById("menu-btn");
+    const nav = document.getElementById("main-nav");
+    const bar1 = document.getElementById("bar1");
+    const bar2 = document.getElementById("bar2");
+    const bar3 = document.getElementById("bar3");
+    if (btn && nav) {
+      btn.addEventListener("click", () => {
+        const open = nav.classList.toggle("flex");
+        nav.classList.toggle("hidden", !open);
+        nav.classList.toggle("flex-col", open);
+        nav.classList.toggle("absolute", open);
+        nav.classList.toggle("top-16", open);
+        nav.classList.toggle("right-0", open);
+        nav.classList.toggle("left-0", open);
+        nav.classList.toggle("bg-blue-700", open);
+        nav.classList.toggle("px-6", open);
+        nav.classList.toggle("py-4", open);
+        nav.classList.toggle("z-50", open);
+        nav.classList.toggle("gap-4", open);
+        // Animate bars
+        bar1.style.transform = open ? "translateY(8px) rotate(45deg)" : "";
+        bar2.style.opacity = open ? "0" : "1";
+        bar3.style.transform = open ? "translateY(-8px) rotate(-45deg)" : "";
+      });
+    }
+  </script>
 </body>
 </html>
+
