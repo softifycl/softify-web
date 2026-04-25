@@ -479,7 +479,6 @@
       </div>
     </div>
   </footer>
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var btn = document.getElementById('menu-btn');
@@ -491,12 +490,14 @@
       btn.addEventListener('click', function() {
         var isOpen = nav.classList.contains('mobile-open');
         if (isOpen) {
+          // CERRAR: quitar clase y resetear TODOS los estilos inline
           nav.classList.remove('mobile-open');
-          nav.style.display = '';
+          nav.removeAttribute('style');
           bar1.style.transform = '';
           bar2.style.opacity = '1';
           bar3.style.transform = '';
         } else {
+          // ABRIR: aplicar estilos del menú desplegado
           nav.classList.add('mobile-open');
           nav.style.display = 'flex';
           nav.style.flexDirection = 'column';
@@ -508,6 +509,7 @@
           nav.style.padding = '16px 24px';
           nav.style.zIndex = '100';
           nav.style.gap = '16px';
+          nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
           bar1.style.transform = 'translateY(8px) rotate(45deg)';
           bar2.style.opacity = '0';
           bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
@@ -515,6 +517,7 @@
       });
     });
   </script>
+
 
 </body>
 </html>
