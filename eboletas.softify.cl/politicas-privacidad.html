@@ -6,9 +6,10 @@
   <title>Políticas de Privacidad - e-Boleta Chile - Softify</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>@media(min-width:768px){#main-nav{display:flex!important;}#menu-btn{display:none!important;}}</style>
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
-  <header class="bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-lg relative">
+  <header class="bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-lg" style="position:relative;">
     <div class="container mx-auto px-4 py-6 flex justify-between items-center">
       <a href="index.html" class="text-3xl font-bold flex items-center gap-2">
         <i class="fas fa-receipt"></i>
@@ -100,32 +101,41 @@
   </footer>
 
   <script>
-    const btn = document.getElementById("menu-btn");
-    const nav = document.getElementById("main-nav");
-    const bar1 = document.getElementById("bar1");
-    const bar2 = document.getElementById("bar2");
-    const bar3 = document.getElementById("bar3");
-    if (btn && nav) {
-      btn.addEventListener("click", () => {
-        const open = nav.classList.toggle("flex");
-        nav.classList.toggle("hidden", !open);
-        nav.classList.toggle("flex-col", open);
-        nav.classList.toggle("absolute", open);
-        nav.classList.toggle("top-16", open);
-        nav.classList.toggle("right-0", open);
-        nav.classList.toggle("left-0", open);
-        nav.classList.toggle("bg-blue-700", open);
-        nav.classList.toggle("px-6", open);
-        nav.classList.toggle("py-4", open);
-        nav.classList.toggle("z-50", open);
-        nav.classList.toggle("gap-4", open);
-        // Animate bars
-        bar1.style.transform = open ? "translateY(8px) rotate(45deg)" : "";
-        bar2.style.opacity = open ? "0" : "1";
-        bar3.style.transform = open ? "translateY(-8px) rotate(-45deg)" : "";
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('menu-btn');
+      var nav = document.getElementById('main-nav');
+      var bar1 = document.getElementById('bar1');
+      var bar2 = document.getElementById('bar2');
+      var bar3 = document.getElementById('bar3');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function() {
+        var isOpen = nav.classList.contains('mobile-open');
+        if (isOpen) {
+          nav.classList.remove('mobile-open');
+          nav.style.display = '';
+          bar1.style.transform = '';
+          bar2.style.opacity = '1';
+          bar3.style.transform = '';
+        } else {
+          nav.classList.add('mobile-open');
+          nav.style.display = 'flex';
+          nav.style.flexDirection = 'column';
+          nav.style.position = 'absolute';
+          nav.style.top = '100%';
+          nav.style.left = '0';
+          nav.style.right = '0';
+          nav.style.backgroundColor = '#1d4ed8';
+          nav.style.padding = '16px 24px';
+          nav.style.zIndex = '100';
+          nav.style.gap = '16px';
+          bar1.style.transform = 'translateY(8px) rotate(45deg)';
+          bar2.style.opacity = '0';
+          bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+        }
       });
-    }
+    });
   </script>
+
 </body>
 </html>
 

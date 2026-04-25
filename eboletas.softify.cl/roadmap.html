@@ -6,27 +6,28 @@
   <title>Roadmap — e-Boleta Chile</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>@media(min-width:768px){#main-nav{display:flex!important;}#menu-btn{display:none!important;}}</style>
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 
-  <header class="bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-lg relative">
+  <header class="bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-lg" style="position:relative;">
     <div class="container mx-auto px-4 py-6 flex justify-between items-center">
       <a href="index.html" class="text-2xl font-bold flex items-center gap-2">
         <i class="fas fa-receipt"></i>
         <span>e-Boleta Chile</span>
       </a>
-      <nav class="hidden md:flex gap-6 items-center text-sm font-medium" id="main-nav">
+      <nav id="main-nav" class="md:flex gap-6 items-center text-sm font-medium" style="display:none;">
         <a href="index.html" class="hover:text-blue-200 transition-colors">Inicio</a>
         <a href="documentacion.html" class="hover:text-blue-200 transition-colors">Documentación</a>
         <a href="changelog.html" class="hover:text-blue-200 transition-colors">Changelog</a>
         <a href="roadmap.html" class="text-white border-b-2 border-white pb-0.5">Roadmap</a>
         <a href="https://apps.shopify.com/e-boleta" class="px-4 py-2 bg-white text-blue-600 rounded-md hover:bg-gray-100 transition-all font-medium">Instalar app</a>
       </nav>
-        <!-- Hamburger mobile -->
-        <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5 focus:outline-none z-50" aria-label="Menú">
-          <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="bar1"></span>
-          <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="bar2"></span>
-          <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="bar3"></span>
+        <!-- Hamburger button -->
+        <button id="menu-btn" style="display:flex;flex-direction:column;justify-content:center;align-items:center;width:36px;height:36px;gap:6px;background:none;border:none;cursor:pointer;padding:0;" aria-label="Menu">
+          <span id="bar1" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span id="bar2" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+          <span id="bar3" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
         </button>
     </div>
   </header>
@@ -154,6 +155,43 @@
     </div>
     <div class="text-center text-sm text-gray-500 mt-4">&copy; 2025 Softify. Todos los derechos reservados.</div>
   </footer>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('menu-btn');
+      var nav = document.getElementById('main-nav');
+      var bar1 = document.getElementById('bar1');
+      var bar2 = document.getElementById('bar2');
+      var bar3 = document.getElementById('bar3');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function() {
+        var isOpen = nav.classList.contains('mobile-open');
+        if (isOpen) {
+          nav.classList.remove('mobile-open');
+          nav.style.display = '';
+          bar1.style.transform = '';
+          bar2.style.opacity = '1';
+          bar3.style.transform = '';
+        } else {
+          nav.classList.add('mobile-open');
+          nav.style.display = 'flex';
+          nav.style.flexDirection = 'column';
+          nav.style.position = 'absolute';
+          nav.style.top = '100%';
+          nav.style.left = '0';
+          nav.style.right = '0';
+          nav.style.backgroundColor = '#1d4ed8';
+          nav.style.padding = '16px 24px';
+          nav.style.zIndex = '100';
+          nav.style.gap = '16px';
+          bar1.style.transform = 'translateY(8px) rotate(45deg)';
+          bar2.style.opacity = '0';
+          bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
