@@ -87,10 +87,11 @@
           </ul>
         </li>
         <li><a href="#generar-boletas" class="text-blue-600 hover:text-blue-800 hover:underline">3. Generar boletas automáticas</a></li>
-        <li><a href="#conversion-facturas" class="text-blue-600 hover:text-blue-800 hover:underline">4. Conversión de boletas a facturas</a></li>
-        <li><a href="#marketplaces" class="text-blue-600 hover:text-blue-800 hover:underline">5. Integración con marketplaces (AnyMarket)</a></li>
-        <li><a href="#faq" class="text-blue-600 hover:text-blue-800 hover:underline">6. Preguntas frecuentes (FAQ)</a></li>
-        <li><a href="#troubleshooting" class="text-blue-600 hover:text-blue-800 hover:underline">7. Solución de problemas</a></li>
+        <li><a href="#crear-boletas-manual" class="text-blue-600 hover:text-blue-800 hover:underline">4. Crear boletas manualmente</a></li>
+        <li><a href="#conversion-facturas" class="text-blue-600 hover:text-blue-800 hover:underline">5. Conversión de boletas a facturas</a></li>
+        <li><a href="#marketplaces" class="text-blue-600 hover:text-blue-800 hover:underline">6. Integración con marketplaces (AnyMarket)</a></li>
+        <li><a href="#faq" class="text-blue-600 hover:text-blue-800 hover:underline">7. Preguntas frecuentes (FAQ)</a></li>
+        <li><a href="#troubleshooting" class="text-blue-600 hover:text-blue-800 hover:underline">8. Solución de problemas</a></li>
       </ul>
     </nav>
 
@@ -219,11 +220,154 @@
       </div>
     </section>
 
-    <!-- Sección 4: Conversión a facturas -->
-    <section id="conversion-facturas" class="mb-12 scroll-mt-20">
+    <!-- Sección 4: Crear boletas manualmente -->
+    <section id="crear-boletas-manual" class="mb-12 scroll-mt-20">
       <div class="bg-white rounded-lg shadow-md p-8">
         <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
           <span class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">4</span>
+          Crear boletas manualmente
+        </h2>
+        
+        <p class="text-gray-700 leading-relaxed mb-6">
+          Además de la generación automática, e-Boleta Chile permite crear boletas de forma manual desde el panel de la aplicación. Esto es útil para ventas presenciales, ajustes, correcciones o cualquier situación donde necesites emitir una boleta fuera del flujo automático de Shopify.
+        </p>
+
+        <!-- Datos generales -->
+        <div class="mb-8">
+          <h3 class="text-xl font-semibold text-blue-600 mb-4">
+            <i class="fas fa-file-alt mr-2"></i>
+            Datos generales
+          </h3>
+          
+          <img src="img/creador-manual-general.jpg" 
+               alt="Crear boleta manual - Datos generales" 
+               class="w-full max-w-md rounded-lg shadow-md mb-4 border border-gray-200"
+               loading="lazy">
+
+          <h4 class="text-lg font-semibold text-gray-700 mb-2">Referencia interna</h4>
+          <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
+            <p class="text-gray-700 leading-relaxed">
+              La referencia interna es un dato <strong>opcional</strong> que sirve para que la tienda pueda identificar o buscar la boleta después en el listado.
+            </p>
+            <p class="text-gray-700 leading-relaxed mt-2">
+              No se imprime en la boleta ni se envía al SII. Solo queda como información interna de la tienda.
+            </p>
+            <p class="text-gray-700 leading-relaxed mt-2">Puede usarse, por ejemplo, para indicar:</p>
+            <ul class="list-disc list-inside text-gray-700 mt-1 ml-4">
+              <li>Número de pedido externo</li>
+              <li>Nombre del evento</li>
+              <li>Número de mesa</li>
+              <li>Alguna nota interna de la venta</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mt-2">Si no se necesita, se puede dejar en blanco.</p>
+          </div>
+
+          <div class="mb-4">
+            <p class="text-gray-700 leading-relaxed">
+              <strong>Nombre cliente</strong> y <strong>Correo cliente</strong> son los datos del comprador. El correo es donde se enviará la boleta una vez generada.
+            </p>
+          </div>
+        </div>
+
+        <!-- Línea de detalle -->
+        <div class="mb-8">
+          <h3 class="text-xl font-semibold text-blue-600 mb-4">
+            <i class="fas fa-list-ol mr-2"></i>
+            Cantidad, precio unitario y descuento
+          </h3>
+
+          <img src="img/creador-manual-linea.jpg" 
+               alt="Crear boleta manual - Línea de detalle" 
+               class="w-full max-w-md rounded-lg shadow-md mb-4 border border-gray-200"
+               loading="lazy">
+
+          <p class="text-gray-700 leading-relaxed mb-3">
+            Cada línea corresponde a un producto o servicio vendido. La forma correcta de completar los campos es:
+          </p>
+
+          <ul class="space-y-2 text-gray-700 mb-4">
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-green-500 mt-1"></i>
+              <span><strong>Cantidad:</strong> número de unidades vendidas.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-green-500 mt-1"></i>
+              <span><strong>Precio unitario bruto:</strong> precio de una unidad, con IVA incluido.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check text-green-500 mt-1"></i>
+              <span><strong>Descuento bruto:</strong> descuento aplicado a esa línea, en pesos.</span>
+            </li>
+          </ul>
+
+          <div class="bg-gray-50 border-l-4 border-gray-400 p-4 mb-4">
+            <p class="text-gray-700 font-medium mb-2">Ejemplo:</p>
+            <p class="text-gray-700">Si el cliente compró 2 unidades del mismo producto a $10.000 cada una:</p>
+            <ul class="list-disc list-inside text-gray-700 mt-1 ml-4">
+              <li>Cantidad: <strong>2</strong></li>
+              <li>Precio unitario bruto: <strong>10000</strong></li>
+              <li>Descuento bruto: <strong>0</strong></li>
+            </ul>
+            <p class="text-gray-700 mt-2">El total de la línea sería: <strong>2 × $10.000 = $20.000</strong></p>
+            <p class="text-gray-700 mt-1">Si se aplica un descuento, ese descuento se resta al total de la línea.</p>
+          </div>
+
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4">
+            <p class="text-sm text-yellow-800 font-medium mb-2">
+              <i class="fas fa-exclamation-triangle mr-2"></i>Reglas importantes:
+            </p>
+            <ul class="list-disc list-inside text-sm text-yellow-800 space-y-1">
+              <li>El precio unitario bruto siempre corresponde al precio de <strong>una sola unidad</strong>.</li>
+              <li>El precio unitario bruto debe ingresarse <strong>con IVA incluido</strong>.</li>
+              <li>El sistema calcula automáticamente el neto y el IVA.</li>
+              <li>El descuento bruto <strong>no es un porcentaje</strong>. Es un monto en pesos.</li>
+              <li>El descuento bruto <strong>no debe ser mayor</strong> que el subtotal de la línea.</li>
+              <li>Si se venden productos distintos, cada uno debe ir en una <strong>línea separada</strong>.</li>
+              <li>Solo se debe usar la misma línea cuando se repite el <strong>mismo producto</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Línea exenta -->
+        <div>
+          <h3 class="text-xl font-semibold text-blue-600 mb-4">
+            <i class="fas fa-ban mr-2"></i>
+            Línea exenta
+          </h3>
+
+          <p class="text-gray-700 leading-relaxed mb-3">
+            Por defecto, la opción <strong>"Línea exenta"</strong> no debe marcarse.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed mb-3">
+            Solo se debe marcar cuando ese producto o servicio específico está <strong>exento de IVA</strong>.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed mb-2">Ejemplos posibles:</p>
+          <ul class="list-disc list-inside text-gray-700 mb-4 ml-4 space-y-1">
+            <li>Servicios exentos</li>
+            <li>Propinas</li>
+            <li>Productos sin IVA</li>
+            <li>Gift cards</li>
+            <li>Otros ítems que legalmente correspondan como exentos</li>
+          </ul>
+
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-4">
+            <p class="text-sm text-blue-800">
+              <i class="fas fa-lightbulb mr-2"></i>
+              <strong>Regla práctica:</strong> Si la tienda vende productos normales con IVA, que es lo más común en retail, se dejan <strong>todas las casillas sin marcar</strong> y el sistema calcula el IVA automáticamente. Si una línea está marcada como exenta, esa línea <strong>no generará IVA</strong>.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sección 5: Conversión a facturas -->
+    <section id="conversion-facturas" class="mb-12 scroll-mt-20">
+      <div class="bg-white rounded-lg shadow-md p-8">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+          <span class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">5</span>
           Conversión de boletas a facturas
         </h2>
         
@@ -253,11 +397,11 @@
       </div>
     </section>
 
-    <!-- Sección 5: Integración Marketplaces -->
+    <!-- Sección 6: Integración Marketplaces -->
     <section id="marketplaces" class="mb-12 scroll-mt-20">
       <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-lg shadow-md p-8 border-2 border-green-400">
         <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
-          <span class="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">5</span>
+          <span class="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">6</span>
           Integración con marketplaces (AnyMarket)
           <span class="ml-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Nuevo</span>
         </h2>
@@ -309,11 +453,11 @@
       </div>
     </section>
 
-    <!-- Sección 6: FAQ -->
+    <!-- Sección 7: FAQ -->
     <section id="faq" class="mb-12 scroll-mt-20">
       <div class="bg-white rounded-lg shadow-md p-8">
         <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
-          <span class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">6</span>
+          <span class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">7</span>
           Preguntas frecuentes (FAQ)
         </h2>
         
@@ -376,11 +520,11 @@
       </div>
     </section>
 
-    <!-- Sección 7: Troubleshooting -->
+    <!-- Sección 8: Troubleshooting -->
     <section id="troubleshooting" class="mb-12 scroll-mt-20">
       <div class="bg-white rounded-lg shadow-md p-8">
         <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
-          <span class="bg-red-500 text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">7</span>
+          <span class="bg-red-500 text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">8</span>
           Solución de problemas
         </h2>
         
