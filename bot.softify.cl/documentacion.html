@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentación Softify Bot — Guía de Configuración y Uso | Softify</title>
+  <meta name="description" content="Guía completa para configurar Softify Bot: conexión a Shopify, WhatsApp, Instagram y Messenger, configuración de carritos abandonados, personalización Klaviyo y handoff a equipo humano.">
+  <meta name="keywords" content="configurar chatbot shopify, whatsapp bot shopify tutorial, instagram bot shopify, carrito abandonado configuracion, bot shopify documentacion">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo configurar Softify Bot en tu tienda Shopify",
+    "description": "Guía paso a paso para instalar y configurar el chatbot multi-canal en tu tienda Shopify",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Conectar canales",
+        "text": "Conecta WhatsApp Business, Instagram y Facebook Messenger a Softify Bot"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Sincronizar catálogo",
+        "text": "El bot importa automáticamente tu catálogo de Shopify para responder con productos reales"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Configurar carritos abandonados",
+        "text": "Define delay, horario y límite diario de mensajes de recuperación"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Activar personalización",
+        "text": "Conecta Klaviyo para personalizar respuestas por perfil de cliente"
+      }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>#main-nav{display:none;}#menu-btn{display:flex;}@media(min-width:1024px){#main-nav{display:flex!important;flex-direction:row!important;position:static!important;background:none!important;padding:0!important;box-shadow:none!important;gap:24px!important;}#menu-btn{display:none!important;}}</style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col overflow-x-hidden">
+  <header class="bg-gradient-to-r from-purple-700 to-purple-500 text-white shadow-lg" style="position:relative;">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+      <a href="index.html" class="text-3xl font-bold flex items-center gap-2">
+        <i class="fas fa-robot"></i>
+        <span>Softify Bot</span>
+      </a>
+      <nav id="main-nav" class="md:flex gap-6 items-center text-sm font-medium">
+        <a href="index.html" class="hover:text-purple-200 transition-colors">Inicio</a>
+        <a href="documentacion.html" class="text-white border-b-2 border-white pb-0.5">Documentación</a>
+        <a href="changelog.html" class="hover:text-purple-200 transition-colors">Changelog</a>
+        <a href="roadmap.html" class="hover:text-purple-200 transition-colors">Roadmap</a>
+        <a href="mailto:hola@softify.cl?subject=Demo%20Softify%20Bot" class="px-4 py-2 bg-white text-purple-600 rounded-md hover:bg-gray-100 transition-all font-medium">Solicitar demo</a>
+      </nav>
+      <button id="menu-btn" style="display:flex;flex-direction:column;justify-content:center;align-items:center;width:36px;height:36px;gap:6px;background:none;border:none;cursor:pointer;padding:0;" aria-label="Menu">
+        <span id="bar1" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+        <span id="bar2" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+        <span id="bar3" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-10 flex-grow max-w-5xl">
+    <section class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-purple-600 mb-4">
+        <i class="fas fa-book-open mr-2"></i>
+        Documentación Softify Bot
+      </h1>
+      <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+        Guía completa para instalar, configurar y sacar el máximo provecho a tu chatbot multi-canal para Shopify.
+      </p>
+    </section>
+
+    <nav class="bg-purple-50 rounded-lg p-6 mb-10 border-l-4 border-purple-500">
+      <h2 class="text-xl font-bold text-purple-700 mb-4">
+        <i class="fas fa-list mr-2"></i>Contenidos
+      </h2>
+      <ol class="list-decimal list-inside space-y-2 text-purple-800">
+        <li><a href="#instalacion" class="hover:text-purple-600 underline">Instalación y requisitos</a></li>
+        <li><a href="#canales" class="hover:text-purple-600 underline">Conexión de canales (WhatsApp, Instagram, Messenger)</a></li>
+        <li><a href="#catalogo" class="hover:text-purple-600 underline">Sincronización del catálogo Shopify</a></li>
+        <li><a href="#carrito" class="hover:text-purple-600 underline">Configuración de carritos abandonados</a></li>
+        <li><a href="#personalizacion" class="hover:text-purple-600 underline">Personalización por cliente (Klaviyo)</a></li>
+        <li><a href="#campanas" class="hover:text-purple-600 underline">Modo campaña (Cyber, promos, lanzamientos)</a></li>
+        <li><a href="#handoff" class="hover:text-purple-600 underline">Handoff a equipo humano</a></li>
+        <li><a href="#metricas" class="hover:text-purple-600 underline">Métricas y monitoreo</a></li>
+        <li><a href="#arquitectura" class="hover:text-purple-600 underline">Arquitectura del sistema</a></li>
+        <li><a href="#faq" class="hover:text-purple-600 underline">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <!-- 1. Instalación -->
+    <section id="instalacion" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">1</span>
+        Instalación y requisitos
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <h3 class="font-semibold text-gray-800 mb-2">Requisitos previos</h3>
+        <ul class="list-disc list-inside space-y-2 text-gray-600 mb-4">
+          <li>Tienda Shopify activa (cualquier plan)</li>
+          <li>Cuenta de WhatsApp Business API (Meta)</li>
+          <li>Cuenta de Instagram Business vinculada a tu página de Facebook</li>
+          <li>Página de Facebook vinculada a WhatsApp Business</li>
+          <li>Cuenta de Klaviyo (opcional, para personalización)</li>
+        </ul>
+        <h3 class="font-semibold text-gray-800 mb-2">Proceso de instalación</h3>
+        <p class="text-gray-600">Softify Bot es un servicio gestionado. Nuestro equipo configura la infraestructura, conecta tus canales y ajusta el tono de respuestas a tu marca. El proceso toma 2-3 días hábiles desde la solicitud.</p>
+      </div>
+    </section>
+
+    <!-- 2. Canales -->
+    <section id="canales" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">2</span>
+        Conexión de canales
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">Softify Bot opera en tres canales simultáneamente:</p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <i class="fab fa-whatsapp text-green-500 text-2xl mt-1"></i>
+            <div>
+              <h4 class="font-semibold text-gray-800">WhatsApp</h4>
+              <p class="text-gray-600 text-sm">Canal principal. Soporta mensajes de texto, imágenes, product cards y quick replies. Los mensajes de carrito abandonado se envían por este canal.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <i class="fab fa-instagram text-pink-500 text-2xl mt-1"></i>
+            <div>
+              <h4 class="font-semibold text-gray-800">Instagram</h4>
+              <p class="text-gray-600 text-sm">Responde mensajes directos, solicitudes y menciones en historias. Detecta mensajes de todas las bandejas (General y Requests) mediante polling cada 15 minutos.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <i class="fab fa-facebook-messenger text-blue-500 text-2xl mt-1"></i>
+            <div>
+              <h4 class="font-semibold text-gray-800">Messenger</h4>
+              <p class="text-gray-600 text-sm">Responde mensajes de la página de Facebook. Polling cada 15 minutos para capturar mensajes que no disparan webhook.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Catálogo -->
+    <section id="catalogo" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">3</span>
+        Sincronización del catálogo Shopify
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">El bot se sincroniza con tu catálogo de Shopify en tiempo real. Cuando un cliente pregunta por un producto, el bot busca en tu inventario real y responde con:</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-600 mb-4">
+          <li>Nombre del producto</li>
+          <li>Precio actual (incluye precio de oferta si aplica)</li>
+          <li>Disponibilidad (en stock / agotado)</li>
+          <li>Variantes (talla, color, tamaño)</li>
+          <li>Enlace directo al producto</li>
+        </ul>
+        <div class="bg-purple-50 border-l-4 border-purple-500 p-3 rounded">
+          <p class="text-sm text-purple-800"><strong>Importante:</strong> El bot solo recomienda productos que existen en tu catálogo. Si no encuentra lo que el cliente busca, lo dice directo. Sin alucinaciones.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Carrito Abandonado -->
+    <section id="carrito" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">4</span>
+        Carritos abandonados
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">Softify Bot detecta carritos abandonados en Shopify y envía un recordatorio por WhatsApp con:</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-600 mb-4">
+          <li>Nombre de los productos abandonados</li>
+          <li>Precio y disponibilidad</li>
+          <li>Enlace directo para completar la compra</li>
+        </ul>
+        <h3 class="font-semibold text-gray-800 mb-2">Parámetros configurables</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left">
+            <thead class="bg-gray-100">
+              <tr><th class="p-2">Parámetro</th><th class="p-2">Descripción</th><th class="p-2">Default</th></tr>
+            </thead>
+            <tbody class="text-gray-600">
+              <tr><td class="p-2">Delay</td><td class="p-2">Minutos de espera tras abandono</td><td class="p-2">45 min</td></tr>
+              <tr><td class="p-2">Horario</td><td class="p-2">Ventana de envío</td><td class="p-2">10:00 - 22:00</td></tr>
+              <tr><td class="p-2">Límite diario</td><td class="p-2">Máximo de mensajes por día</td><td class="p-2">5</td></tr>
+              <tr><td class="p-2">Verificación</td><td class="p-2">Revisa si ya compró antes de enviar</td><td class="p-2">Activado</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Personalización -->
+    <section id="personalizacion" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">5</span>
+        Personalización por cliente (Klaviyo)
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">Si un cliente comparte su email en Instagram o Messenger, Softify Bot lo cruza automáticamente con Klaviyo y personaliza las respuestas según:</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-600 mb-4">
+          <li>Tipo de piel (grasa, seca, mixta, normal, sensible)</li>
+          <li>Preocupaciones principales (poros, pigmentación, arrugas, acné, etc.)</li>
+          <li>Historial de compras en Shopify</li>
+        </ul>
+        <p class="text-gray-600">Esto permite respuestas como <em>"Vi que tienes piel mixta, esta crema ligera te puede ir mejor que la versión densa"</em> en vez de un copy-paste genérico.</p>
+      </div>
+    </section>
+
+    <!-- 6. Campañas -->
+    <section id="campanas" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">6</span>
+        Modo campaña
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">Activa contexto de campaña para que el bot responda con promociones activas. Ideal para:</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-600 mb-4">
+          <li>Cyber Days (Cyber Junio, Cyber Monday)</li>
+          <li>Black Friday</li>
+          <li>Lanzamientos de productos</li>
+          <li>Fechas especiales (Día de la Madre, Navidad)</li>
+        </ul>
+        <p class="text-gray-600">El bot inyecta automáticamente el contexto de campaña en cada respuesta, incluyendo descuentos, condiciones y códigos de promoción. Probado con 88 mensajes en Cyber Junio 2026.</p>
+      </div>
+    </section>
+
+    <!-- 7. Handoff -->
+    <section id="handoff" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">7</span>
+        Handoff a equipo humano
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">El bot escala automáticamente a tu equipo humano cuando:</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-600 mb-4">
+          <li>El cliente pide hablar con una persona real</li>
+          <li>La consulta es un reclamo o problema complejo</li>
+          <li>El bot no puede resolver después de varios intentos</li>
+        </ul>
+        <p class="text-gray-600">Las alertas llegan por Slack con el contexto completo de la conversación, para que tu equipo retome sin hacer repetir al cliente.</p>
+      </div>
+    </section>
+
+    <!-- 8. Métricas -->
+    <section id="metricas" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">8</span>
+        Métricas y monitoreo
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">Todo se monitorea en tiempo real vía Slack:</p>
+        <ul class="list-disc list-inside space-y-2 text-gray-600">
+          <li>Mensajes recibidos y respondidos por canal</li>
+          <li>Carritos abandonados detectados y recuperados</li>
+          <li>Handoffs a equipo humano</li>
+          <li>Errores y excepciones</li>
+          <li>Costo de API (tokens utilizados)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 8.5. Arquitectura -->
+    <section id="arquitectura" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">9</span>
+        Arquitectura del sistema
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-6">Softify Bot está diseñado con una arquitectura modular multi-tenant que separa memoria, contexto, razonamiento y canales de comunicación.</p>
+        
+        <h3 class="font-semibold text-gray-800 mb-3">Capas del Prompt</h3>
+        <p class="text-gray-600 text-sm mb-4">Cada mensaje pasa por un pipeline de enriquecimiento antes de llegar al motor de respuestas: catálogo Shopify → perfil Klaviyo → contexto de campaña → FAQs aprendidas → respuesta.</p>
+        <div class="bg-gray-50 rounded-lg p-4 mb-6 text-center">
+          <img src="img/bot_prompt_layers.svg" alt="Capas del Prompt - Softify Bot" class="mx-auto w-full max-w-2xl">
+          <p class="text-xs text-gray-400 mt-2">Pipeline de enriquecimiento de contexto por mensaje</p>
+        </div>
+
+        <h3 class="font-semibold text-gray-800 mb-3">Sistema de Memoria</h3>
+        <p class="text-gray-600 text-sm mb-4">Arquitectura de memoria con Redis como backend: contexto de conversación, historial de cliente, flags de estado y caché de catálogo.</p>
+        <div class="bg-gray-50 rounded-lg p-4 mb-6 text-center">
+          <img src="img/bot_memory_architecture.svg" alt="Arquitectura de Memoria - Softify Bot" class="mx-auto w-full max-w-2xl">
+          <p class="text-xs text-gray-400 mt-2">Sistema de memoria con Redis para persistencia de contexto</p>
+        </div>
+
+        <h3 class="font-semibold text-gray-800 mb-3">Progressive Summarizer</h3>
+        <p class="text-gray-600 text-sm mb-4">Las conversaciones largas se resumen progresivamente para mantener contexto sin saturar la ventana de tokens del motor de IA. Conversaciones recientes tienen detalle completo; las antiguas se comprimen.</p>
+        <div class="bg-gray-50 rounded-lg p-4 mb-6 text-center">
+          <img src="img/bot_progressive_summarizer.svg" alt="Progressive Summarizer - Softify Bot" class="mx-auto w-full max-w-2xl">
+          <p class="text-xs text-gray-400 mt-2">Resumen progresivo de conversaciones largas</p>
+        </div>
+
+        <h3 class="font-semibold text-gray-800 mb-3">Flujo de Carrito Abandonado</h3>
+        <p class="text-gray-600 text-sm mb-4">Detección de carritos abandonados vía webhook de Shopify → enriquecimiento con datos de producto → notificación por WhatsApp dentro de ventana horaria configurable.</p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-gray-50 rounded-lg p-4 text-center">
+            <img src="img/carrito_bot_contexto.svg" alt="Contexto del Bot en Carrito - Softify Bot" class="mx-auto w-full">
+            <p class="text-xs text-gray-400 mt-2">Contexto inyectado al bot durante recuperación de carrito</p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-4 text-center">
+            <img src="img/carrito_flujo_completo.svg" alt="Flujo Completo de Carrito - Softify Bot" class="mx-auto w-full">
+            <p class="text-xs text-gray-400 mt-2">Flujo completo desde abandono hasta recuperación o fallback</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FAQ -->
+    <section id="faq" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">10</span>
+      </h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-gray-800">¿El bot responde 24/7?</h3>
+          <p class="text-gray-600">Sí. En horario hábil responde normalmente. En horario nocturno (23:00 - 08:00) confirma recepción y avisa que responderán en la mañana.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-gray-800">¿Qué pasa si el bot no entiende la pregunta?</h3>
+          <p class="text-gray-600">Pide más detalles o sugiere al cliente visitar la web de la tienda. Si el cliente insiste, escala al equipo humano.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-gray-800">¿Puedo tener varias tiendas con el mismo sistema?</h3>
+          <p class="text-gray-600">Sí. Softify Bot usa arquitectura multi-tenant. Cada tienda tiene su propio catálogo, tono y configuración, todo en la misma infraestructura.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-gray-800">¿Se requiere App Review de Meta?</h3>
+          <p class="text-gray-600">Para WhatsApp sí (Business Verification). Para Instagram y Messenger, Softify Bot usa polling que no requiere permisos adicionales de Meta.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h3 class="text-xl font-bold mb-2">Softify Bot</h3>
+          <p class="text-sm text-gray-400">Atención al cliente inteligente para Shopify</p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+          <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Inicio</a>
+          <a href="documentacion.html" class="text-gray-300 hover:text-white transition-colors">Documentación</a>
+          <a href="changelog.html" class="text-gray-300 hover:text-white transition-colors">Changelog</a>
+          <a href="roadmap.html" class="text-gray-300 hover:text-white transition-colors">Roadmap</a>
+          <a href="politicas-privacidad.html" class="text-gray-300 hover:text-white transition-colors">Privacidad</a>
+          <a href="https://softify.cl" class="text-gray-300 hover:text-white transition-colors">Softify</a>
+        </div>
+      </div>
+      <div class="mt-6 text-center text-sm text-gray-400">
+        <p>&copy; 2025 Softify. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('menu-btn');
+      var nav = document.getElementById('main-nav');
+      var bar1 = document.getElementById('bar1');
+      var bar2 = document.getElementById('bar2');
+      var bar3 = document.getElementById('bar3');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function() {
+        var isOpen = nav.classList.contains('mobile-open');
+        if (isOpen) {
+          nav.classList.remove('mobile-open');
+          nav.style.display = 'none';
+          bar1.style.transform = '';
+          bar2.style.opacity = '1';
+          bar3.style.transform = '';
+        } else {
+          nav.classList.add('mobile-open');
+          nav.style.display = 'flex';
+          nav.style.flexDirection = 'column';
+          nav.style.position = 'absolute';
+          nav.style.top = '100%';
+          nav.style.left = '0';
+          nav.style.right = '0';
+          nav.style.backgroundColor = '#7c3aed';
+          nav.style.padding = '16px 24px';
+          nav.style.zIndex = '100';
+          nav.style.gap = '16px';
+          nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+          bar1.style.transform = 'translateY(8px) rotate(45deg)';
+          bar2.style.opacity = '0';
+          bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+        }
+      });
+      nav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (nav.classList.contains('mobile-open')) {
+            nav.classList.remove('mobile-open');
+            nav.style.display = 'none';
+            bar1.style.transform = '';
+            bar2.style.opacity = '1';
+            bar3.style.transform = '';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

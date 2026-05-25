@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog — Softify Bot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>#main-nav{display:none;}#menu-btn{display:flex;}@media(min-width:1024px){#main-nav{display:flex!important;flex-direction:row!important;position:static!important;background:none!important;padding:0!important;box-shadow:none!important;gap:24px!important;}#menu-btn{display:none!important;}}</style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <header class="bg-gradient-to-r from-purple-700 to-purple-500 text-white shadow-lg" style="position:relative;">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold flex items-center gap-2">
+        <i class="fas fa-robot"></i>
+        <span>Softify Bot</span>
+      </a>
+      <nav id="main-nav" class="md:flex gap-6 items-center text-sm font-medium">
+        <a href="index.html" class="hover:text-purple-200 transition-colors">Inicio</a>
+        <a href="documentacion.html" class="hover:text-purple-200 transition-colors">Documentación</a>
+        <a href="changelog.html" class="text-white border-b-2 border-white pb-0.5">Changelog</a>
+        <a href="roadmap.html" class="hover:text-purple-200 transition-colors">Roadmap</a>
+        <a href="mailto:hola@softify.cl?subject=Demo%20Softify%20Bot" class="px-4 py-2 bg-white text-purple-600 rounded-md hover:bg-gray-100 transition-all font-medium">Solicitar demo</a>
+      </nav>
+      <button id="menu-btn" style="display:flex;flex-direction:column;justify-content:center;align-items:center;width:36px;height:36px;gap:6px;background:none;border:none;cursor:pointer;padding:0;" aria-label="Menu">
+        <span id="bar1" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+        <span id="bar2" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+        <span id="bar3" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12 flex-grow max-w-3xl">
+    <div class="mb-10">
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">Changelog</h1>
+      <p class="text-gray-500">Historial de actualizaciones de Softify Bot. La plataforma recibe mejoras continuas.</p>
+    </div>
+
+    <!-- v1.0.0 -->
+    <div class="mb-10 bg-white rounded-lg shadow p-6">
+      <div class="flex items-start justify-between mb-4">
+        <div>
+          <h2 class="text-xl font-bold text-purple-600">v1.0.0 — Lanzamiento inicial</h2>
+          <p class="text-sm text-gray-500">Mayo 2026</p>
+        </div>
+        <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Lanzamiento</span>
+      </div>
+      <div class="space-y-3">
+        <div class="flex items-start gap-2">
+          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
+          <span class="text-gray-700">Chatbot multi-canal: WhatsApp, Instagram y Messenger</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
+          <span class="text-gray-700">Integración con catálogo Shopify en tiempo real</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
+          <span class="text-gray-700">Recuperación de carritos abandonados vía WhatsApp</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
+          <span class="text-gray-700">Personalización de respuestas por perfil Klaviyo</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
+          <span class="text-gray-700">Modo campaña para Cyber Days y peak seasons</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
+          <span class="text-gray-700">Arquitectura multi-tenant</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
+          <span class="text-gray-700">Handoff a equipo humano vía Slack</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
+          <span class="text-gray-700">Polling Instagram/Messenger cada 15 min (captura bandejas General y Requests)</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
+          <span class="text-gray-700">Respuesta a interacciones con historias de Instagram (replies y menciones)</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h3 class="text-xl font-bold mb-2">Softify Bot</h3>
+          <p class="text-sm text-gray-400">Atención al cliente inteligente para Shopify</p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+          <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Inicio</a>
+          <a href="documentacion.html" class="text-gray-300 hover:text-white transition-colors">Documentación</a>
+          <a href="changelog.html" class="text-gray-300 hover:text-white transition-colors">Changelog</a>
+          <a href="roadmap.html" class="text-gray-300 hover:text-white transition-colors">Roadmap</a>
+          <a href="politicas-privacidad.html" class="text-gray-300 hover:text-white transition-colors">Privacidad</a>
+          <a href="https://softify.cl" class="text-gray-300 hover:text-white transition-colors">Softify</a>
+        </div>
+      </div>
+      <div class="mt-6 text-center text-sm text-gray-400">
+        <p>&copy; 2025 Softify. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('menu-btn');
+      var nav = document.getElementById('main-nav');
+      var bar1 = document.getElementById('bar1');
+      var bar2 = document.getElementById('bar2');
+      var bar3 = document.getElementById('bar3');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function() {
+        var isOpen = nav.classList.contains('mobile-open');
+        if (isOpen) {
+          nav.classList.remove('mobile-open');
+          nav.style.display = 'none';
+          bar1.style.transform = '';
+          bar2.style.opacity = '1';
+          bar3.style.transform = '';
+        } else {
+          nav.classList.add('mobile-open');
+          nav.style.display = 'flex';
+          nav.style.flexDirection = 'column';
+          nav.style.position = 'absolute';
+          nav.style.top = '100%';
+          nav.style.left = '0';
+          nav.style.right = '0';
+          nav.style.backgroundColor = '#7c3aed';
+          nav.style.padding = '16px 24px';
+          nav.style.zIndex = '100';
+          nav.style.gap = '16px';
+          nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+          bar1.style.transform = 'translateY(8px) rotate(45deg)';
+          bar2.style.opacity = '0';
+          bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+        }
+      });
+      nav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (nav.classList.contains('mobile-open')) {
+            nav.classList.remove('mobile-open');
+            nav.style.display = 'none';
+            bar1.style.transform = '';
+            bar2.style.opacity = '1';
+            bar3.style.transform = '';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

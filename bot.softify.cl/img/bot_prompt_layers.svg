@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" font-family="Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dc2626"/><stop offset="1" stop-color="#991b1b"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d97706"/><stop offset="1" stop-color="#92400e"/></linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#047857"/></linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
+    <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#5b21b6"/></linearGradient>
+    <linearGradient id="g6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0891b2"/><stop offset="1" stop-color="#155e75"/></linearGradient>
+  </defs>
+
+  <rect width="900" height="540" fill="#f8fafc" rx="10"/>
+  <text x="450" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">Construcción del System Prompt — Capas (Layered Architecture)</text>
+
+  <!-- CAPA 1 -->
+  <rect x="20" y="48" width="860" height="70" rx="8" fill="url(#g1)" filter="url(#shadow)"/>
+  <text x="35" y="73" font-size="12" font-weight="bold" fill="white">LAYER 1 — prompt.md (identidad, tono, reglas)</text>
+  <text x="35" y="95" font-size="10" fill="rgba(255,255,255,0.9)">• Quién eres (Yeppo, cosmética coreana)   • Cómo responder (tono humano, sin asteriscos)   • Cuándo derivar [HANDOFF]</text>
+  <text x="35" y="111" font-size="10" fill="rgba(255,255,255,0.9)">• ⚠️ No saludar si ya saludaste antes   • ⚠️ SIEMPRE incluir link de producto al recomendar   • ⚠️ No repetir preguntas ya respondidas</text>
+
+  <!-- CAPA 2 -->
+  <rect x="20" y="128" width="860" height="55" rx="8" fill="url(#g2)" filter="url(#shadow)"/>
+  <text x="35" y="153" font-size="12" font-weight="bold" fill="white">LAYER 2 — knowledge_doc.md (datos concretos, NO inventar)</text>
+  <text x="35" y="175" font-size="10" fill="rgba(255,255,255,0.9)">• Sucursales y horarios EXACTOS (Patronato, Providencia, Alcántara, Recoleta)   • Políticas de despacho, cambios, garantía</text>
+
+  <!-- CAPA 3 -->
+  <rect x="20" y="193" width="860" height="55" rx="8" fill="url(#g3)" filter="url(#shadow)"/>
+  <text x="35" y="218" font-size="12" font-weight="bold" fill="white">LAYER 3 — learned_faqs.json (respuestas del equipo, evoluciona con el tiempo)</text>
+  <text x="35" y="240" font-size="10" fill="rgba(255,255,255,0.9)">• "Situación: cliente piel sensible 42 años → Respuesta: rutina base 3 pasos"   • Aprendido de conversaciones reales + aprobado por operadores</text>
+
+  <!-- CAPA 4 -->
+  <rect x="20" y="258" width="860" height="55" rx="8" fill="url(#g4)" filter="url(#shadow)"/>
+  <text x="35" y="283" font-size="12" font-weight="bold" fill="white">LAYER 4 — context.summary (memoria persistente del cliente, Redis infinito)</text>
+  <text x="35" y="305" font-size="10" fill="rgba(255,255,255,0.9)">• "Cliente piel grasa con manchas. Recomendé Oil Control SPF50 ($15.990) y Sérum Vit C ($12.990). Preguntó envío RM."</text>
+
+  <!-- CAPA 5 -->
+  <rect x="20" y="323" width="860" height="55" rx="8" fill="url(#g5)" filter="url(#shadow)"/>
+  <text x="35" y="348" font-size="12" font-weight="bold" fill="white">LAYER 5 — Contexto cliente + Campaña (datos en tiempo real)</text>
+  <text x="35" y="370" font-size="10" fill="rgba(255,255,255,0.9)">• name, orderNumber, skinType (Klaviyo), preocupaciones   • campaignCtx: carrito abandonado (productos, total, checkout URL)</text>
+
+  <!-- CAPA 6 -->
+  <rect x="20" y="388" width="860" height="55" rx="8" fill="url(#g6)" filter="url(#shadow)"/>
+  <text x="35" y="413" font-size="12" font-weight="bold" fill="white">LAYER 6 — Catálogo Shopify (searchCatalog + formatCatalogForPrompt)</text>
+  <text x="35" y="435" font-size="10" fill="rgba(255,255,255,0.9)">• Búsqueda semántica en 847 productos   • Resultado: "Protector Solar Oil Control SPF50 — $15.990 — ✅ — https://yeppo.cl/products/..."</text>
+
+  <!-- TOTAL TOKENS -->
+  <rect x="20" y="458" width="860" height="65" rx="8" fill="white" stroke="#0f172a" stroke-width="2" filter="url(#shadow)"/>
+  <text x="35" y="483" font-size="12" font-weight="bold" fill="#0f172a">📊 TOTAL: ~2,500-4,000 tokens de system prompt por mensaje</text>
+  <text x="35" y="503" font-size="10" fill="#64748b">Costo aprox: $0.005-0.008 USD por mensaje (DeepSeek V4, 75% dcto). Con 1,000 mensajes/día = $5-8 USD/día.</text>
+  <text x="35" y="519" font-size="10" fill="#64748b">Las capas 1-2 son estáticas (cargadas en RAM). Capas 3-6 son dinámicas (Redis + API calls).</text>
+
+</svg>

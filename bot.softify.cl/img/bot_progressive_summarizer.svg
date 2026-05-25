@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="600" fill="#f8fafc" rx="10"/>
+  <text x="450" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">Resumen Progresivo — Cómo Funciona</text>
+
+  <!-- ── FASE 1: Conversación Activa ── -->
+  <rect x="20" y="50" width="860" height="160" rx="8" fill="white" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="20" y="50" width="860" height="28" rx="8" fill="#1e293b"/>
+  <rect x="20" y="70" width="860" height="8" fill="#1e293b"/>
+  <text x="30" y="69" font-size="11" font-weight="bold" fill="white">FASE 1 — Conversación Activa (mensajes 1 a 10)</text>
+
+  <!-- Burbujas de mensajes -->
+  <rect x="35" y="90" width="400" height="24" rx="12" fill="#e2e8f0"/>
+  <text x="45" y="107" font-size="10" fill="#334155">👤 Cliente: "hola! tienen protector solar para piel grasa?"</text>
+
+  <rect x="445" y="90" width="420" height="38" rx="12" fill="#dbeafe"/>
+  <text x="455" y="107" font-size="10" fill="#1e40af">🤖 Bot: "buen día! sí, tenemos varias opciones. te recomiendo el</text>
+  <text x="455" y="121" font-size="10" fill="#1e40af">Protector Solar Oil Control SPF50 — $15.990"</text>
+
+  <rect x="35" y="120" width="400" height="24" rx="12" fill="#e2e8f0"/>
+  <text x="45" y="137" font-size="10" fill="#334155">👤 Cliente: "y para las manchas tienen algo?"</text>
+
+  <rect x="445" y="120" width="420" height="24" rx="12" fill="#dbeafe"/>
+  <text x="455" y="137" font-size="10" fill="#1e40af">🤖 Bot: "sí! el Sérum Vitamina C 23% es buenísimo para pigmentación — $12.990"</text>
+
+  <rect x="35" y="150" width="400" height="24" rx="12" fill="#e2e8f0"/>
+  <text x="45" y="167" font-size="10" fill="#334155">👤 Cliente: "perfecto, me llevo ambos. cuanto sale el envío?"</text>
+
+  <rect x="445" y="150" width="300" height="24" rx="12" fill="#dbeafe"/>
+  <text x="455" y="167" font-size="10" fill="#1e40af">🤖 Bot: "envío en RM $3.500, gratis sobre $30.000 🙌"</text>
+
+  <text x="855" y="200" text-anchor="end" font-size="10" fill="#94a3b8" font-style="italic">6 mensajes acumulados → falta para resumen</text>
+
+  <!-- ── FASE 2: Trigger del Resumen ── -->
+  <rect x="20" y="230" width="400" height="110" rx="8" fill="white" stroke="#d97706" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="20" y="230" width="400" height="28" rx="8" fill="#d97706"/>
+  <rect x="20" y="250" width="400" height="8" fill="#d97706"/>
+  <text x="30" y="249" font-size="11" font-weight="bold" fill="white">⚡ TRIGGER — Mensaje #10 (o cada ~10)</text>
+
+  <text x="35" y="278" font-size="10" fill="#334155">1. Contar mensajes desde último resumen</text>
+  <text x="35" y="296" font-size="10" fill="#334155">2. Si ≥ 10 mensajes → activar summarizer</text>
+  <text x="35" y="314" font-size="10" fill="#334155">3. Extraer últimos 20 mensajes de history:{phone}</text>
+  <text x="35" y="332" font-size="10" fill="#334155">4. Enviar a Claude con prompt de resumen</text>
+
+  <!-- ── FASE 3: Generación del Resumen ── -->
+  <rect x="445" y="230" width="435" height="110" rx="8" fill="white" stroke="#7c3aed" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="445" y="230" width="435" height="28" rx="8" fill="#7c3aed"/>
+  <rect x="445" y="250" width="435" height="8" fill="#7c3aed"/>
+  <text x="455" y="249" font-size="11" font-weight="bold" fill="white">🧠 FASE 3 — Claude Resume (1 solo mensaje = ~$0.001)</text>
+
+  <text x="460" y="278" font-size="10" fill="#334155">Prompt: "Resume esta conversación en máximo</text>
+  <text x="460" y="296" font-size="10" fill="#334155">3 líneas. Solo información que el bot deba recordar</text>
+  <text x="460" y="314" font-size="10" fill="#334155">para futuras interacciones:"</text>
+
+  <text x="460" y="335" font-size="10" fill="#6d28d9" font-weight="bold">→ "Cliente tiene piel grasa con manchas. Recomendé</text>
+  <text x="460" y="335" font-size="10" fill="#6d28d9" font-weight="bold"/>
+  <text x="460" y="355" font-size="10" fill="#6d28d9" font-weight="bold"/>
+
+  <!-- ── FASE 4: Almacenamiento ── -->
+  <rect x="20" y="365" width="860" height="80" rx="8" fill="white" stroke="#059669" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="20" y="365" width="860" height="28" rx="8" fill="#059669"/>
+  <rect x="20" y="385" width="860" height="8" fill="#059669"/>
+  <text x="30" y="384" font-size="11" font-weight="bold" fill="white">💾 FASE 4 — Persistencia en Redis (SIN TTL, contexto infinito)</text>
+
+  <text x="35" y="418" font-size="10" fill="#334155">Redis: context:{+569XXXXXXXX} .summary = "Cliente tiene piel grasa con manchas. Recomendé Protector Solar Oil Control ($15.990) y Sérum Vitamina C 23% ($12.990). Preguntó por envío RM."</text>
+  <text x="35" y="438" font-size="9" fill="#64748b">🔒 Sin expiración — sobrevive deploys, días, meses. El bot recordará esto aunque el cliente vuelva en 6 meses.</text>
+
+  <!-- ── FASE 5: Próxima Sesión ── -->
+  <rect x="20" y="470" width="860" height="110" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="20" y="470" width="860" height="28" rx="8" fill="#065f46"/>
+  <rect x="20" y="490" width="860" height="8" fill="#065f46"/>
+  <text x="30" y="489" font-size="11" font-weight="bold" fill="white">🔄 FASE 5 — Próxima Conversación (15 días después)</text>
+
+  <rect x="35" y="510" width="400" height="24" rx="12" fill="#e2e8f0"/>
+  <text x="45" y="527" font-size="10" fill="#334155">👤 Cliente: "hola de nuevo! me gustó el protector, quiero comprar otro"</text>
+
+  <text x="35" y="558" font-size="10" fill="#065f46" font-weight="bold">✅ El bot ve context.summary y SABE que ya recomendó Protector Solar Oil Control. No repite diagnóstico. No pregunta tipo de piel otra vez.</text>
+
+  <text x="35" y="575" font-size="10" fill="#64748b">Responde: "qué bueno que te gustó! 🌞 te pido otro Oil Control SPF50 entonces? misma dirección de envío en RM?"</text>
+</svg>
