@@ -50,7 +50,7 @@
     <div class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
       <button onclick="toggleVersion('v130')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
         <div class="flex-shrink-0 pt-0.5">
-          <span class="bg-green-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">Último</span>
+          <span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span>
         </div>
         <div class="flex-grow">
           <div class="flex items-center gap-3 mb-1">
@@ -60,10 +60,10 @@
           <p class="text-gray-700 font-medium">Transferencias por Lote entre Sucursales</p>
           <p class="text-gray-400 text-sm mt-1">Implementación completa del flujo formal de transferencias de inventario entre sucursales con trazabilidad por lote.</p>
         </div>
-        <span id="icon-v130" class="text-gray-400 text-sm mt-1">▲</span>
+        <span id="icon-v130" class="text-gray-400 text-sm mt-1">▼</span>
       </button>
 
-      <div id="body-v130" class="border-t border-gray-100 px-6 py-5 space-y-4">
+      <div id="body-v130" class="hidden border-t border-gray-100 px-6 py-5 space-y-4">
 
         <!-- Nueva Funcionalidad -->
         <div class="rounded-xl border border-green-200 bg-green-50 overflow-hidden">
@@ -134,6 +134,83 @@
             <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Una variante por documento</p><p class="text-xs text-gray-500 mt-0.5">Cada transferencia mueve solo una variante.</p></div></div>
             <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Solo transferencias desde FreshStock</p><p class="text-xs text-gray-500 mt-0.5">No se reconstruye trazabilidad de transferencias creadas manualmente en Shopify.</p></div></div>
             <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Cambios externos → revisión manual</p><p class="text-xs text-gray-500 mt-0.5">Si Shopify modifica una transferencia por fuera, el sistema no reconcilia automáticamente.</p></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== v1.4.0 ===== -->
+    <div class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v140')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5">
+          <span class="bg-green-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">Último</span>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="text-xl font-bold text-gray-900">v1.4.0</span>
+            <span class="text-sm text-gray-400">Julio 2026</span>
+          </div>
+          <p class="text-gray-700 font-medium">Ajuste Manual de Stock, Trazabilidad por Lote y UX Mobile</p>
+          <p class="text-gray-400 text-sm mt-1">Control granular del inventario con ajustes por lote, historial completo de movimientos y experiencia responsive.</p>
+        </div>
+        <span id="icon-v140" class="text-gray-400 text-sm mt-1">▲</span>
+      </button>
+
+      <div id="body-v140" class="border-t border-gray-100 px-6 py-5 space-y-4">
+
+        <!-- Reajuste de stock -->
+        <div class="rounded-xl border border-green-200 bg-green-50 overflow-hidden">
+          <button onclick="toggleSection('v140-ajuste')" class="section-toggle w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-green-700 uppercase tracking-wider">✨ Reajuste de Stock por Lote</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v140-ajuste" class="section-body px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Modal de Reajuste</p><p class="text-xs text-gray-500 mt-0.5">Desde la vista de inventario, cada lote tiene un botón "Reajustar stock" que abre un modal con: sucursal pre-seleccionada, selector de cantidad (+/- o ingreso manual directo), campo de motivo obligatorio, y confirmación.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Control de Cantidad</p><p class="text-xs text-gray-500 mt-0.5">El ajuste puede ser positivo (añadir stock) o negativo (descontar stock). El botón "Reajustar stock" se habilita solo cuando el motivo está completo, evitando ajustes sin justificación.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Ajustes por Sucursal</p><p class="text-xs text-gray-500 mt-0.5">Cada ajuste se registra contra una sucursal específica, permitiendo correcciones localizadas de inventario sin afectar otras ubicaciones.</p></div></div>
+            <img src="img/reajuste-stock-modal.png" alt="Modal de reajuste de stock — FreshStock FIFO" class="rounded-lg border border-gray-200 shadow-sm mt-3 max-w-full">
+          </div>
+        </div>
+
+        <!-- Historial de ajustes -->
+        <div class="rounded-xl border border-purple-200 bg-purple-50 overflow-hidden">
+          <button onclick="toggleSection('v140-historial')" class="section-toggle w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-purple-700 uppercase tracking-wider">📋 Historial de Ajustes</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v140-historial" class="section-body px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Trazabilidad Completa</p><p class="text-xs text-gray-500 mt-0.5">Cada ajuste de stock queda registrado con: tipo de movimiento ("Corrección de inventario"), responsable ("FreshStock FIFO"), timestamp, sucursal, y desglose de cantidades (disponible, en existencia, no disponible, comprometido, entrante).</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Vista por Producto</p><p class="text-xs text-gray-500 mt-0.5">El historial se presenta por producto con navegación back, filtro por sucursal, y timestamps relativos ("Ahora mismo", "hace 3 minutos") para interpretación inmediata.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Auditoría Operativa</p><p class="text-xs text-gray-500 mt-0.5">El historial permite auditar cada movimiento de inventario, identificar patrones de ajuste y justificar diferencias de stock ante controles internos o externos.</p></div></div>
+            <img src="img/reajuste-stock-historial.png" alt="Historial de ajustes de inventario — FreshStock FIFO" class="rounded-lg border border-gray-200 shadow-sm mt-3 max-w-full">
+          </div>
+        </div>
+
+        <!-- Trazabilidad por lote -->
+        <div class="rounded-xl border border-blue-200 bg-blue-50 overflow-hidden">
+          <button onclick="toggleSection('v140-bita')" class="section-toggle w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">🔍 Trazabilidad por Lote (Bitácora)</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v140-bita" class="section-body px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Bitácora Completa</p><p class="text-xs text-gray-500 mt-0.5">Cada lote ahora tiene una bitácora cronológica que registra todos los movimientos: reservas de venta, ventas completadas, ediciones manuales, transferencias entre sucursales y ajustes de stock.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Vínculo con Toda la App</p><p class="text-xs text-gray-500 mt-0.5">La bitácora unifica eventos de ventas, transferencias, webhooks de Shopify y acciones manuales en un solo timeline, dando visibilidad completa del ciclo de vida del lote.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Rastreo de Origen</p><p class="text-xs text-gray-500 mt-0.5">Para lotes creados por transferencia, la bitácora muestra el lote origen, permitiendo rastrear el camino completo del inventario entre sucursales.</p></div></div>
+          </div>
+        </div>
+
+        <!-- UX Mobile -->
+        <div class="rounded-xl border border-yellow-200 bg-yellow-50 overflow-hidden">
+          <button onclick="toggleSection('v140-mobile')" class="section-toggle w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-yellow-700 uppercase tracking-wider">📱 Experiencia Mobile</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v140-mobile" class="section-body px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Vista de Inventario Responsive</p><p class="text-xs text-gray-500 mt-0.5">El listado de inventario se adapta al dispositivo: tabla tradicional en desktop y vista de tarjetas apiladas en mobile, con la misma información disponible en ambos formatos.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Listado de Transferencias Agrupado</p><p class="text-xs text-gray-500 mt-0.5">Las transferencias se agrupan por documento con expansión en acordeón, paginación de 50 items por página y lazy loading, optimizando la navegación en pantallas pequeñas.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Acciones Touch-Friendly</p><p class="text-xs text-gray-500 mt-0.5">Botones y controles dimensionados para operación táctil en bodega o punto de venta, incluyendo el modal de reajuste de stock con controles +/- amplios.</p></div></div>
+            <img src="img/reajuste-stock-inventario.png" alt="Vista de inventario con botón Reajustar stock — FreshStock FIFO" class="rounded-lg border border-gray-200 shadow-sm mt-3 max-w-full">
           </div>
         </div>
 

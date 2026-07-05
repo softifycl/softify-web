@@ -43,18 +43,136 @@
     <!-- Items del roadmap — agregar aquí -->
     <div class="space-y-4" id="roadmap-items">
 
-      <!-- Placeholder hasta recibir roadmap real -->
+      <!-- ===== COMPLETADO ===== -->
+      <div class="mb-2">
+        <h2 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">✅ Julio 2026 — Completado recientemente</h2>
+      </div>
+
       <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
-        <div class="flex-shrink-0 w-10 h-10 bg-blue-50 text-blue-500 rounded-lg flex items-center justify-center text-xl">
-          <i class="fas fa-file-export"></i>
+        <div class="flex-shrink-0 w-10 h-10 bg-green-50 text-green-500 rounded-lg flex items-center justify-center text-xl">
+          <i class="fas fa-sliders-h"></i>
         </div>
         <div class="flex-grow">
           <div class="flex items-center gap-2 mb-1">
-            <span class="font-semibold text-gray-900">Exportación de reportes a Excel / CSV</span>
+            <span class="font-semibold text-gray-900">Reajuste de stock por lote</span>
+            <span class="bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full text-xs font-semibold">✅ Completado</span>
+          </div>
+          <p class="text-gray-500 text-sm">Ajuste manual de cantidades de un lote con motivo obligatorio e historial de ajustes con trazabilidad completa.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-green-50 text-green-500 rounded-lg flex items-center justify-center text-xl">
+          <i class="fas fa-magnifying-glass-chart"></i>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Trazabilidad completa por lote</span>
+            <span class="bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full text-xs font-semibold">✅ Completado</span>
+          </div>
+          <p class="text-gray-500 text-sm">Bitácora cronológica con todos los eventos del ciclo de vida: ventas, transferencias, ajustes, ediciones y webhooks de Shopify.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-green-50 text-green-500 rounded-lg flex items-center justify-center text-xl">
+          <i class="fas fa-truck-fast"></i>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Transferencias entre sucursales</span>
+            <span class="bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full text-xs font-semibold">✅ Completado</span>
+          </div>
+          <p class="text-gray-500 text-sm">Flujo formal de transferencias de inventario con integración Shopify API, 7 estados de ciclo de vida y sugerencia automática FEFO/FIFO de lotes.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-green-50 text-green-500 rounded-lg flex items-center justify-center text-xl">
+          <i class="fas fa-mobile-screen"></i>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Experiencia mobile responsive</span>
+            <span class="bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full text-xs font-semibold">✅ Completado</span>
+          </div>
+          <p class="text-gray-500 text-sm">Vista de inventario adaptativa (tabla en desktop, tarjetas en mobile), listado de transferencias agrupado con lazy loading y controles touch-friendly.</p>
+        </div>
+      </div>
+
+      <!-- ===== EN DESARROLLO ===== -->
+      <div class="mb-2 mt-8">
+        <h2 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">🚀 Próximas prioridades</h2>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-green-50 text-green-600 rounded-lg flex items-center justify-center text-xl">
+          <i class="fas fa-language"></i>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Inglés completo</span>
+            <span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold">🚀 En desarrollo</span>
+          </div>
+          <p class="text-gray-500 text-sm">Ficha, onboarding, documentación y soporte en inglés. Prioridad #1 para ampliar el mercado y eliminar la barrera comercial más fuerte.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-blue-50 text-blue-500 rounded-lg flex items-center justify-center text-xl">
+          <i class="fas fa-barcode"></i>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Código de barras y Shopify POS</span>
             <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-xs font-semibold">📋 Planificado</span>
           </div>
-          <p class="text-gray-500 text-sm">Permite descargar los reportes de inventario, vencimientos y costos directamente desde la app.</p>
+          <p class="text-gray-500 text-sm">Ingreso de lotes con escáner de código de barras y flujos de trabajo integrados en Shopify POS para operaciones físicas diarias.</p>
         </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-blue-50 text-blue-500 rounded-lg flex items-center justify-center text-xl">
+          <i class="fas fa-arrows-rotate"></i>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Sincronización profunda de inventario</span>
+            <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-xs font-semibold">📋 Planificado</span>
+          </div>
+          <p class="text-gray-500 text-sm">Sincronización bidireccional más profunda con Shopify para que la app opere el inventario, no solo lo observe.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-blue-50 text-blue-500 rounded-lg flex items-center justify-center text-xl">
+          <i class="fas fa-cubes"></i>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Soporte de Kits y paquetes</span>
+            <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-xs font-semibold">📋 Planificado</span>
+          </div>
+          <p class="text-gray-500 text-sm">Control de inventario FIFO para kits y paquetes (bundles) de Shopify, ampliando el mercado a tiendas con productos compuestos.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-blue-50 text-blue-500 rounded-lg flex items-center justify-center text-xl">
+          <i class="fas fa-file-csv"></i>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Carga masiva robusta (CSV)</span>
+            <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-xs font-semibold">📋 Planificado</span>
+          </div>
+          <p class="text-gray-500 text-sm">Herramientas más potentes de importación y exportación por CSV para reducir la fricción de adopción en tiendas con catálogos grandes.</p>
+        </div>
+      </div>
+
+      <!-- ===== EN EVALUACIÓN ===== -->
+      <div class="mb-2 mt-8">
+        <h2 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">💡 En evaluación</h2>
       </div>
 
       <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
@@ -66,20 +184,46 @@
             <span class="font-semibold text-gray-900">Alertas de vencimiento por email</span>
             <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-xs font-semibold">💡 En evaluación</span>
           </div>
-          <p class="text-gray-500 text-sm">Envío de resumen diario o semanal por email con los productos próximos a vencer.</p>
+          <p class="text-gray-500 text-sm">Resumen diario o semanal por email con los productos próximos a vencer, sin necesidad de abrir la app.</p>
         </div>
       </div>
 
       <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
         <div class="flex-shrink-0 w-10 h-10 bg-purple-50 text-purple-500 rounded-lg flex items-center justify-center text-xl">
-          <i class="fas fa-barcode"></i>
+          <i class="fas fa-chart-bar"></i>
         </div>
         <div class="flex-grow">
           <div class="flex items-center gap-2 mb-1">
-            <span class="font-semibold text-gray-900">Importación masiva de lotes por CSV</span>
+            <span class="font-semibold text-gray-900">Reportes de negocio avanzados</span>
             <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-xs font-semibold">💡 En evaluación</span>
           </div>
-          <p class="text-gray-500 text-sm">Carga múltiples lotes de inventario de una sola vez con un archivo CSV, sin ingreso manual.</p>
+          <p class="text-gray-500 text-sm">Stock salvado, valor en riesgo, stock bajo e indicadores de cumplimiento normativo para toma de decisiones.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-purple-50 text-purple-500 rounded-lg flex items-center justify-center text-xl">
+          <i class="fas fa-globe"></i>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Visibilidad en App Store</span>
+            <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-xs font-semibold">💡 En evaluación</span>
+          </div>
+          <p class="text-gray-500 text-sm">Optimizar posicionamiento, keywords, descripción y coherencia con la categoría real del producto en la Shopify App Store.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex gap-4 items-start">
+        <div class="flex-shrink-0 w-10 h-10 bg-purple-50 text-purple-500 rounded-lg flex items-center justify-center text-xl">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-semibold text-gray-900">Recursos públicos de confianza</span>
+            <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-xs font-semibold">💡 En evaluación</span>
+          </div>
+          <p class="text-gray-500 text-sm">FAQ, tutoriales, documentación en video y demos para mejorar la conversión de la landing page y reducir soporte.</p>
         </div>
       </div>
 

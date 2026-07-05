@@ -39,6 +39,9 @@
         <ul class="space-y-1 mb-6">
           <li><a href="#dashboard" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Dashboard de métricas</a></li>
           <li><a href="#inventario-fifo" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Control de inventario FIFO</a></li>
+          <li><a href="#transferencias" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Transferencias</a></li>
+          <li><a href="#ajuste-stock" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Ajuste de inventario</a></li>
+          <li><a href="#trazabilidad" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Trazabilidad</a></li>
           <li><a href="#alertas" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Alertas de vencimiento</a></li>
           <li><a href="#ofertas" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Ofertas automáticas</a></li>
           <li><a href="#reportes" class="block px-3 py-1.5 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors">Reportes y análisis</a></li>
@@ -116,6 +119,116 @@
             <li>Guarda el lote.</li>
           </ol>
           <p class="mt-2">El sistema priorizará automáticamente los lotes más antiguos al mostrar alertas y al crear ofertas (First In, First Out).</p>
+        </div>
+      </section>
+
+      <!-- Transferencias entre sucursales -->
+      <section id="transferencias" class="mb-12 scroll-mt-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <i class="fas fa-truck-fast text-green-500"></i> Transferencias entre sucursales
+        </h2>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-6 space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>FreshStock FIFO permite crear transferencias de inventario entre sucursales con trazabilidad completa por lote, integradas directamente con la API de Shopify.</p>
+
+          <p class="font-semibold mt-4">📦 Cómo crear una transferencia:</p>
+          <ol class="list-decimal list-inside space-y-1 ml-2">
+            <li>Ve a <em>Transferencias</em> en la app.</li>
+            <li>Selecciona la sucursal de origen, sucursal de destino, el producto y la cantidad.</li>
+            <li>FreshStock sugiere automáticamente los lotes a transferir usando lógica FEFO/FIFO (primero vence, primero sale).</li>
+            <li>Ajusta manualmente los lotes si lo necesitas y confirma la transferencia.</li>
+            <li>La transferencia se crea en Shopify y queda en estado <strong>READY_TO_SHIP</strong> hasta que se reciba en destino.</li>
+          </ol>
+
+          <p class="font-semibold mt-4">🔄 Estados de transferencia:</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs border-collapse">
+              <thead><tr class="bg-gray-50"><th class="text-left px-3 py-2 border-b font-semibold">Estado</th><th class="text-left px-3 py-2 border-b font-semibold">Significado</th></tr></thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr><td class="px-3 py-2 font-mono text-purple-700">CREATING</td><td class="px-3 py-2">FreshStock está creando la transferencia</td></tr>
+                <tr><td class="px-3 py-2 font-mono text-blue-700">READY_TO_SHIP</td><td class="px-3 py-2">Creada, pendiente de recepción en destino</td></tr>
+                <tr><td class="px-3 py-2 font-mono text-yellow-700">PARTIALLY_RECEIVED</td><td class="px-3 py-2">Shopify confirmó recepción parcial</td></tr>
+                <tr><td class="px-3 py-2 font-mono text-green-700">COMPLETED</td><td class="px-3 py-2">Toda la cantidad fue recibida en destino</td></tr>
+                <tr><td class="px-3 py-2 font-mono text-red-700">CANCELLED</td><td class="px-3 py-2">Shopify canceló la transferencia; se restaura stock en origen</td></tr>
+                <tr><td class="px-3 py-2 font-mono text-red-700">FAILED</td><td class="px-3 py-2">Falló la creación o sincronización con Shopify</td></tr>
+                <tr><td class="px-3 py-2 font-mono text-orange-700">MANUAL_REVIEW</td><td class="px-3 py-2">Modificada externamente; requiere revisión humana</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="mt-3 font-semibold">📱 Vista responsive:</p>
+          <p>Las transferencias se agrupan por documento en un acordeón expandible, con paginación de 50 items y lazy loading para una navegación ágil incluso en dispositivos móviles.</p>
+
+          <p class="mt-3 text-yellow-700 bg-yellow-50 px-3 py-2 rounded-lg text-xs"><strong>Nota:</strong> Actualmente cada transferencia mueve <strong>una variante por documento</strong>. Solo se registra trazabilidad de transferencias creadas desde FreshStock, no de las creadas manualmente en Shopify.</p>
+        </div>
+      </section>
+
+      <!-- Ajuste de inventario -->
+      <section id="ajuste-stock" class="mb-12 scroll-mt-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <i class="fas fa-sliders-h text-green-500"></i> Ajuste de inventario
+        </h2>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-6 space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>El módulo de ajuste de stock permite corregir manualmente las cantidades de un lote, registrando cada cambio con motivo y trazabilidad completa.</p>
+
+          <p class="font-semibold mt-4">✏️ Cómo reajustar el stock de un lote:</p>
+          <ol class="list-decimal list-inside space-y-1 ml-2">
+            <li>Ve a <em>Inventario</em> y selecciona la sucursal.</li>
+            <li>Busca el producto y expande el lote que quieres ajustar.</li>
+            <li>Haz clic en <strong>"Reajustar stock"</strong>.</li>
+            <li>En el modal, usa los controles <strong>+/-</strong> o ingresa la cantidad directamente (valores negativos para descontar, positivos para añadir).</li>
+            <li>Escribe el <strong>motivo del ajuste</strong> (obligatorio).</li>
+            <li>Haz clic en <strong>"Reajustar stock"</strong> para confirmar.</li>
+          </ol>
+
+          <div class="bg-gray-50 rounded-lg p-4 mt-4">
+            <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-2">Vista del modal de reajuste</p>
+            <img src="img/reajuste-stock-modal.png" alt="Modal de reajuste de stock por lote — FreshStock FIFO" class="rounded-lg border border-gray-200 shadow-sm max-w-full">
+          </div>
+
+          <p class="mt-4">Cada ajuste queda registrado en el <strong>Historial de ajustes</strong> del producto, accesible desde la misma vista de inventario. El historial muestra:</p>
+          <ul class="list-disc list-inside space-y-1 ml-2">
+            <li>Tipo de movimiento ("Corrección de inventario")</li>
+            <li>Timestamp y responsable</li>
+            <li>Desglose de cantidades: disponible, en existencia, no disponible, comprometido, entrante</li>
+            <li>Filtro por sucursal</li>
+          </ul>
+
+          <div class="bg-gray-50 rounded-lg p-4 mt-4">
+            <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-2">Vista del historial de ajustes</p>
+            <img src="img/reajuste-stock-historial.png" alt="Historial de ajustes de inventario — FreshStock FIFO" class="rounded-lg border border-gray-200 shadow-sm max-w-full">
+          </div>
+
+          <p class="mt-3 text-yellow-700 bg-yellow-50 px-3 py-2 rounded-lg text-xs"><strong>Importante:</strong> El botón "Reajustar stock" solo se habilita cuando el motivo está completo. Esto asegura que todo ajuste tenga justificación documentada para auditoría.</p>
+        </div>
+      </section>
+
+      <!-- Trazabilidad -->
+      <section id="trazabilidad" class="mb-12 scroll-mt-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <i class="fas fa-magnifying-glass-chart text-green-500"></i> Trazabilidad
+        </h2>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-6 space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>Cada lote tiene una <strong>bitácora cronológica</strong> que registra todos los eventos de su ciclo de vida. Esto permite trazabilidad completa desde el ingreso hasta la venta o vencimiento.</p>
+
+          <p class="font-semibold mt-4">🔍 La bitácora incluye:</p>
+          <ul class="list-disc list-inside space-y-1 ml-2">
+            <li><strong>Creación del lote:</strong> fecha, cantidad inicial, costo y origen.</li>
+            <li><strong>Reservas de venta:</strong> unidades comprometidas a órdenes no completadas.</li>
+            <li><strong>Ventas completadas:</strong> unidades despachadas y facturadas.</li>
+            <li><strong>Transferencias:</strong> movimientos entre sucursales con vínculo al lote origen.</li>
+            <li><strong>Ajustes manuales:</strong> correcciones de stock con motivo y responsable.</li>
+            <li><strong>Ediciones:</strong> cambios en fechas de vencimiento, costos u otros atributos.</li>
+            <li><strong>Eventos de Shopify:</strong> sincronización de cambios detectados vía webhooks.</li>
+          </ul>
+
+          <div class="bg-gray-50 rounded-lg p-4 mt-4">
+            <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-2">Vista de inventario con acceso al ajuste y bitácora</p>
+            <img src="img/reajuste-stock-inventario.png" alt="Vista de inventario con botón Reajustar stock y acceso a trazabilidad — FreshStock FIFO" class="rounded-lg border border-gray-200 shadow-sm max-w-full">
+          </div>
+
+          <p class="mt-4">La trazabilidad unifica eventos de ventas, transferencias, webhooks de Shopify y acciones manuales en un solo timeline, dando visibilidad completa del ciclo de vida de cada lote.</p>
+
+          <p class="mt-3 text-yellow-700 bg-yellow-50 px-3 py-2 rounded-lg text-xs"><strong>Nota:</strong> Los lotes creados por transferencia heredan el número de lote y costo del origen. La fecha de recepción corresponde al momento real de llegada a destino, permitiendo rastrear el camino completo entre sucursales.</p>
         </div>
       </section>
 
