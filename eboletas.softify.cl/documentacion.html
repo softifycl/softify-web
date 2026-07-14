@@ -87,7 +87,11 @@
             <li><a href="centralizar-firma-sii.html" class="text-blue-500 hover:text-blue-700 hover:underline text-sm"><i class="fas fa-external-link-alt text-xs mr-1"></i>Guía: Centralizar Firma Electrónica en el SII</a></li>
           </ul>
         </li>
-        <li><a href="#generar-boletas" class="text-blue-600 hover:text-blue-800 hover:underline">3. Generar boletas automáticas</a></li>
+        <li><a href="#generar-boletas" class="text-blue-600 hover:text-blue-800 hover:underline">3. Generar boletas automáticas</a>
+          <ul class="ml-5 mt-1 space-y-1">
+            <li><a href="#qr-shopify-pos" class="text-blue-500 hover:text-blue-700 hover:underline text-sm"><i class="fas fa-qrcode text-xs mr-1"></i>QR en comprobante Shopify POS</a></li>
+          </ul>
+        </li>
         <li><a href="#conversion-facturas" class="text-blue-600 hover:text-blue-800 hover:underline">4. Conversión de boletas a facturas</a></li>
         <li><a href="#marketplaces" class="text-blue-600 hover:text-blue-800 hover:underline">5. Integración con marketplaces (AnyMarket)</a></li>
         <li><a href="#faq" class="text-blue-600 hover:text-blue-800 hover:underline">6. Preguntas frecuentes (FAQ)</a></li>
@@ -289,6 +293,24 @@
             <p class="text-sm text-green-800">
               <i class="fas fa-check-circle mr-2"></i>
               <strong>Resultado:</strong> Cada vez que un pedido sea pagado y confirmado, la boleta se generará automáticamente y estará disponible en el historial.
+            </p>
+          </div>
+
+          <!-- Subsección: QR en comprobante Shopify POS -->
+          <div id="qr-shopify-pos" class="mt-8 pt-6 border-t border-gray-200">
+            <h3 class="text-xl font-semibold text-blue-600 mb-3">
+              <i class="fas fa-qrcode mr-2"></i>
+              QR en comprobante Shopify POS
+            </h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Al usar <strong>Shopify POS</strong> en tu tienda física, el comprobante impreso incluye automáticamente un <strong>código QR</strong> que el cliente puede escanear para acceder a su boleta electrónica. No requiere pasos adicionales de configuración.
+            </p>
+            <img src="img/qr-comprobante-shopify-pos.png"
+                 alt="QR en comprobante Shopify POS — el cliente escanea para ver su boleta electrónica"
+                 class="rounded-lg border border-gray-200 shadow-sm w-full max-w-md mx-auto block">
+            <p class="text-gray-500 text-sm text-center mt-3">
+              <i class="fas fa-info-circle mr-1"></i>
+              El QR dirige al cliente a su boleta electrónica oficial emitida por el SII.
             </p>
           </div>
         </div>
