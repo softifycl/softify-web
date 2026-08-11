@@ -39,8 +39,8 @@
       <p class="text-gray-500">Historial de actualizaciones de e-Boleta Chile. La app recibe mantenimiento y mejoras continuas.</p>
       <div class="flex gap-6 mt-6">
         <div><p class="text-xl font-bold text-gray-900">3</p><p class="text-xs text-gray-400 uppercase tracking-wider">Emisores</p></div>
-        <div><p class="text-xl font-bold text-gray-900">8</p><p class="text-xs text-gray-400 uppercase tracking-wider">Versiones</p></div>
-        <div><p class="text-xl font-bold text-gray-900">Abr 2026</p><p class="text-xs text-gray-400 uppercase tracking-wider">Última actualización</p></div>
+        <div><p class="text-xl font-bold text-gray-900">10</p><p class="text-xs text-gray-400 uppercase tracking-wider">Versiones</p></div>
+        <div><p class="text-xl font-bold text-gray-900">Jul 2026</p><p class="text-xs text-gray-400 uppercase tracking-wider">Última actualización</p></div>
       </div>
     </div>
 
@@ -53,10 +53,115 @@
       <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full">📁 Archivos modificados</span>
     </div>
 
+    <!-- ===== v2.0.0 ===== -->
+    <div class="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v200')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5"><span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">Último</span></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="text-xl font-bold text-gray-900">v2.0.0</span>
+            <span class="text-sm text-gray-400">Mayo–Julio 2026</span>
+          </div>
+          <p class="text-gray-700 font-medium">Facturas y Notas de Crédito en Managed + Certificación SII Automatizada + Modo Demo</p>
+          <p class="text-gray-400 text-sm mt-1">Emisión de Factura 33 y Nota de Crédito 61 con SII Direct, plataforma de certificación v4, modo demo para revisión de Shopify y buscador por número de orden.</p>
+        </div>
+        <span id="icon-v200" class="text-gray-400 text-sm mt-1">▲</span>
+      </button>
+      <div id="body-v200" class="border-t border-gray-100 px-6 py-5 space-y-4">
+
+        <div class="rounded-xl border border-blue-200 bg-blue-50 overflow-hidden">
+          <button onclick="toggleSection('v200-feature')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">✨ Nueva Funcionalidad</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v200-feature" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Facturas 33 y Notas de Crédito 61 en flujo managed (SII Direct)</p><p class="text-xs text-gray-500 mt-0.5">Emisión desde administración y autoservicio, con reserva atómica de folios, idempotencia, persistencia transaccional y PDF local. Anulación total mediante Nota de Crédito 61 (parciales pendientes).</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Modo demo en el onboarding managed</p><p class="text-xs text-gray-500 mt-0.5">Alternativa que no solicita certificado, contraseña, API key ni cuenta SII. Documentos demo con tags DEMO-BO-*, DEMO-NC-* y DEMO-FA-*, sin contacto con el SII, sin consumir plan ni enviar correos. Permite completar la revisión de Shopify de principio a fin.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Buscador por número visible de orden</p><p class="text-xs text-gray-500 mt-0.5">Busca por 33654, #33654 o n33654. Para documentos antiguos consulta Shopify. Pantalla "No se encontraron documentos" separada de tienda sin documentos, debounce de escritura y botón X siempre funcional.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Avisos de consumo desde formularios públicos</p><p class="text-xs text-gray-500 mt-0.5">Las boletas generadas por enlace o formulario público recuperan la sesión permanente de la tienda y participan en los avisos de consumo aunque el administrador no esté conectado. Si no se recupera la sesión, la emisión no se bloquea.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Asistente paso a paso para acciones manuales en el SII</p><p class="text-xs text-gray-500 mt-0.5">Muestra nombre y RUT de la empresa, RUT del certificado, los cinco permisos requeridos, enlace a guía oficial y qué enviar al representante. Solo se reanuda tras acciones válidas, sin botón genérico de reintento.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Compatibilidad con certificados PFX</p><p class="text-xs text-gray-500 mt-0.5">Lectura ampliada para reconocer ambas formas de almacenar el RUT (estructura estándar y alternativa). Un certificado válido ya no se rechaza por formato del proveedor.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Plataforma de certificación SII automatizada (v4)</p><p class="text-xs text-gray-500 mt-0.5">Preflight de solo lectura (certificado, cinco permisos, receptores), execution intents, operation locks por ruta/tamaño/SHA-256, ledgers durables, claims atómicos y máximo un POST irreversible por operación.</p></div></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-purple-200 bg-purple-50 overflow-hidden">
+          <button onclick="toggleSection('v200-fix')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-purple-700 uppercase tracking-wider">🐛 Corrección</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v200-fix" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Mantención de Usuarios SII accionable</p><p class="text-xs text-gray-500 mt-0.5">Los errores técnicos del portal SII se convierten en instrucciones claras (requires_action) en lugar de mensajes poco accionables.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">ACTECO obligatorio y consulta STC robusta</p><p class="text-xs text-gray-500 mt-0.5">ACTECO es obligatorio al guardar configuración managed. Fallback nativo con TLS 1.2 cuando la consulta STC falla por errores TLS/OpenSSL desde Node.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Desafiliación del sistema gratuito SII detectada</p><p class="text-xs text-gray-500 mt-0.5">Detección del caso (código 890 / texto SII) con banners accionables en inicio, configuración y generación manual. Solo exige desafiliación si no existe fecha de desautorización.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Reparación de CAF con razón social corrupta</p><p class="text-xs text-gray-500 mt-0.5">Folios rechazados por CAF con razón social mal codificada se repararon localmente y se reemitieron aceptados, sin descargar CAF nuevo.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Cierre de sesiones SII explícito</p><p class="text-xs text-gray-500 mt-0.5">Scripts y runtime cierran sesión explícitamente (autTermino.cgi) al terminar, reduciendo el bloqueo por máximo de sesiones autenticadas. Nuevo mensaje claro para ese caso.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Error 404 en "Guía" corregido</p><p class="text-xs text-gray-500 mt-0.5">Nueva ruta /app/guia con resumen del contenido y botón que abre la documentación completa en pestaña externa.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Billing de Shopify con errores claros</p><p class="text-xs text-gray-500 mt-0.5">Diferenciación de errores HTTP, GraphQL, red y respuestas vacías. Mensaje seguro al cliente con identificador de seguimiento; detalle técnico solo en logs.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Reconciliación de suscripciones con Shopify</p><p class="text-xs text-gray-500 mt-0.5">Corrección de suscripciones marcadas vencidas en DB con suscripción ACTIVE vigente en Shopify (caso JJ GLOBAL con 103.951 boletas históricas). Rechazo de webhooks antiguos y sincronización automática.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Botón WhatsApp en Shopify Mobile</p><p class="text-xs text-gray-500 mt-0.5">Usa el área segura de Shopify (calc(2.5rem + var(--shopify-safe-area-inset-bottom))) y ya no queda tapado por la barra inferior en mobile.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Devoluciones duplicadas de Shopify identificadas</p><p class="text-xs text-gray-500 mt-0.5">Detección de devoluciones que Shopify reporta dos veces (productos + movimiento de dinero) para no emitir notas de crédito duplicadas.</p></div></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-green-200 bg-green-50 overflow-hidden">
+          <button onclick="toggleSection('v200-research')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-green-700 uppercase tracking-wider">🔬 Investigación Técnica</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v200-research" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Auditoría de emisión y suscripciones</p><p class="text-xs text-gray-500 mt-0.5">168 fallas confirmadas y 103 sin confirmación; 95 órdenes sin DTE en ECP/La Pausa por límite de plan. Auditoría de 215 intentos de notas de crédito Yeppo: 201 correctos, 14 fallidos, sin duplicados.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Diagnóstico Falabella–AnyMarket (22 casos)</p><p class="text-xs text-gray-500 mt-0.5">Las 18 boletas sí fueron emitidas; el fallo ocurrió al adjuntar el PDF en AnyMarket (limitación de API para órdenes concluidas). Expediente de evidencia preparado para soporte.</p></div></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-yellow-200 bg-yellow-50 overflow-hidden">
+          <button onclick="toggleSection('v200-constraint')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-yellow-700 uppercase tracking-wider">⚠️ Limitaciones</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v200-constraint" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">QR en ticket POS implementado, pendiente de despliegue</p><p class="text-xs text-gray-500 mt-0.5">La generación server-side del QR (PNG 260×260 en contenedor 360px) está implementada para managed y legacy, pero quedó sin commit y pendiente de prueba física de impresión.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Catálogo de planes rediseñado, pendiente de despliegue</p><p class="text-xs text-gray-500 mt-0.5">Nuevo catálogo (Gratis 100 docs / Básico USD 12,99 / Pro USD 24,99 / Retail USD 39,99 / Pro ECP privado) implementado en el repositorio con capacidades reforzadas en servidor, pero no desplegado en producción.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== v1.9.0 ===== -->
+    <div class="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v190')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5"><span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span></div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="text-xl font-bold text-gray-900">v1.9.0</span>
+            <span class="text-sm text-gray-400">29 Abril 2026</span>
+          </div>
+          <p class="text-gray-700 font-medium">Boleta Manual SII Direct + Selección Automática de Tipo</p>
+          <p class="text-gray-400 text-sm mt-1">Generación manual de boletas con SII Direct, selección automática 39 vs 41 e integración del teléfono de tienda a Slack.</p>
+        </div>
+        <span id="icon-v190" class="text-gray-400 text-sm mt-1">▼</span>
+      </button>
+      <div id="body-v190" class="hidden border-t border-gray-100 px-6 py-5 space-y-4">
+
+        <div class="rounded-xl border border-blue-200 bg-blue-50 overflow-hidden">
+          <button onclick="toggleSection('v190-feature')" class="w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">✨ Nueva Funcionalidad</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v190-feature" class="px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Boleta manual con SII Direct</p><p class="text-xs text-gray-500 mt-0.5">Generación manual de boletas usando el flujo SII Direct.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Selección automática de tipo de boleta</p><p class="text-xs text-gray-500 mt-0.5">El sistema elige automáticamente boleta afecta (39) vs exenta (41) según corresponda.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Teléfonos de tienda a Slack</p><p class="text-xs text-gray-500 mt-0.5">Helper nuevo app/utils/shop-contact.server.ts que integra el teléfono de contacto de la tienda a Slack para soporte.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ===== v1.8.0 ===== -->
     <div class="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
       <button onclick="toggleVersion('v180')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
-        <div class="flex-shrink-0 pt-0.5"><span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">Último</span></div>
+        <div class="flex-shrink-0 pt-0.5"><span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span></div>
         <div class="flex-grow">
           <div class="flex items-center gap-3 mb-1">
             <span class="text-xl font-bold text-gray-900">v1.8.0</span>
