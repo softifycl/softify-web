@@ -144,7 +144,7 @@
     <div class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
       <button onclick="toggleVersion('v140')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
         <div class="flex-shrink-0 pt-0.5">
-          <span class="bg-green-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">Último</span>
+          <span class="bg-gray-400 text-white text-xs font-bold px-2.5 py-1 rounded-full">Estable</span>
         </div>
         <div class="flex-grow">
           <div class="flex items-center gap-3 mb-1">
@@ -154,10 +154,10 @@
           <p class="text-gray-700 font-medium">Ajuste Manual de Stock, Trazabilidad por Lote y UX Mobile</p>
           <p class="text-gray-400 text-sm mt-1">Control granular del inventario con ajustes por lote, historial completo de movimientos y experiencia responsive.</p>
         </div>
-        <span id="icon-v140" class="text-gray-400 text-sm mt-1">▲</span>
+        <span id="icon-v140" class="text-gray-400 text-sm mt-1">▼</span>
       </button>
 
-      <div id="body-v140" class="border-t border-gray-100 px-6 py-5 space-y-4">
+      <div id="body-v140" class="hidden border-t border-gray-100 px-6 py-5 space-y-4">
 
         <!-- Reajuste de stock -->
         <div class="rounded-xl border border-green-200 bg-green-50 overflow-hidden">
@@ -211,6 +211,39 @@
             <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Listado de Transferencias Agrupado</p><p class="text-xs text-gray-500 mt-0.5">Las transferencias se agrupan por documento con expansión en acordeón, paginación de 50 items por página y lazy loading, optimizando la navegación en pantallas pequeñas.</p></div></div>
             <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Acciones Touch-Friendly</p><p class="text-xs text-gray-500 mt-0.5">Botones y controles dimensionados para operación táctil en bodega o punto de venta, incluyendo el modal de reajuste de stock con controles +/- amplios.</p></div></div>
             <img src="img/reajuste-stock-inventario.png" alt="Vista de inventario con botón Reajustar stock — FreshStock FIFO" class="rounded-lg border border-gray-200 shadow-sm mt-3 max-w-full">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== v1.4.1 ===== -->
+    <div class="mb-8 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button onclick="toggleVersion('v141')" class="w-full text-left px-6 py-5 flex items-start gap-4 hover:bg-gray-50 transition-colors">
+        <div class="flex-shrink-0 pt-0.5">
+          <span class="bg-green-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">Último</span>
+        </div>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="text-xl font-bold text-gray-900">v1.4.1</span>
+            <span class="text-sm text-gray-400">Julio 2026</span>
+          </div>
+          <p class="text-gray-700 font-medium">Corrección: Filtro de Estado de Vencimiento Dinámico</p>
+          <p class="text-gray-400 text-sm mt-1">El filtro de estado del inventario ahora lee los días desde la configuración de urgencia.</p>
+        </div>
+        <span id="icon-v141" class="text-gray-400 text-sm mt-1">▲</span>
+      </button>
+
+      <div id="body-v141" class="border-t border-gray-100 px-6 py-5 space-y-4">
+
+        <!-- Correcciones -->
+        <div class="rounded-xl border border-rose-200 bg-rose-50 overflow-hidden">
+          <button onclick="toggleSection('v141-fix')" class="section-toggle w-full flex items-center justify-between px-4 py-3">
+            <span class="text-xs font-bold text-rose-700 uppercase tracking-wider">🐛 Correcciones</span>
+            <span class="text-gray-400 text-sm">−</span>
+          </button>
+          <div id="v141-fix" class="section-body px-4 pb-4 space-y-3">
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-rose-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Filtro de Estado de Vencimiento Dinámico</p><p class="text-xs text-gray-500 mt-0.5">El filtro "Estado" de la vista de inventario ahora usa los días configurados en Configuración de estados de urgencia, en lugar de valores fijos (≤3, ≤7, ≤30, >30). Si cambias los días en la configuración, el filtro se actualiza automáticamente.</p></div></div>
           </div>
         </div>
 
