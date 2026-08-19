@@ -82,6 +82,7 @@
             <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Asistente paso a paso para acciones manuales en el SII</p><p class="text-xs text-gray-500 mt-0.5">Muestra nombre y RUT de la empresa, RUT del certificado, los cinco permisos requeridos, enlace a guía oficial y qué enviar al representante. Solo se reanuda tras acciones válidas, sin botón genérico de reintento.</p></div></div>
             <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Compatibilidad con certificados PFX</p><p class="text-xs text-gray-500 mt-0.5">Lectura ampliada para reconocer ambas formas de almacenar el RUT (estructura estándar y alternativa). Un certificado válido ya no se rechaza por formato del proveedor.</p></div></div>
             <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Plataforma de certificación SII automatizada (v4)</p><p class="text-xs text-gray-500 mt-0.5">Preflight de solo lectura (certificado, cinco permisos, receptores), execution intents, operation locks por ruta/tamaño/SHA-256, ledgers durables, claims atómicos y máximo un POST irreversible por operación.</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">QR en ticket POS desplegado</p><p class="text-xs text-gray-500 mt-0.5">El ticket POS imprime un código QR (PNG 260×260 en contenedor 360px) para flujo managed y legacy: el cliente lo escanea y accede a su boleta electrónica sin pedir el correo. Desplegado en producción y validado en impresión física (ago 2026).</p></div></div>
           </div>
         </div>
 
@@ -121,7 +122,6 @@
             <span class="text-gray-400 text-sm">−</span>
           </button>
           <div id="v200-constraint" class="px-4 pb-4 space-y-3">
-            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">QR en ticket POS implementado, pendiente de despliegue</p><p class="text-xs text-gray-500 mt-0.5">La generación server-side del QR (PNG 260×260 en contenedor 360px) está implementada para managed y legacy, pero quedó sin commit y pendiente de prueba física de impresión.</p></div></div>
             <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Catálogo de planes rediseñado, pendiente de despliegue</p><p class="text-xs text-gray-500 mt-0.5">Nuevo catálogo (Gratis 100 docs / Básico USD 12,99 / Pro USD 24,99 / Retail USD 39,99 / Pro ECP privado) implementado en el repositorio con capacidades reforzadas en servidor, pero no desplegado en producción.</p></div></div>
           </div>
         </div>
