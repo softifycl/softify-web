@@ -83,6 +83,7 @@
             <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Compatibilidad con certificados PFX</p><p class="text-xs text-gray-500 mt-0.5">Lectura ampliada para reconocer ambas formas de almacenar el RUT (estructura estándar y alternativa). Un certificado válido ya no se rechaza por formato del proveedor.</p></div></div>
             <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Plataforma de certificación SII automatizada (v4)</p><p class="text-xs text-gray-500 mt-0.5">Preflight de solo lectura (certificado, cinco permisos, receptores), execution intents, operation locks por ruta/tamaño/SHA-256, ledgers durables, claims atómicos y máximo un POST irreversible por operación.</p></div></div>
             <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">QR en ticket POS desplegado</p><p class="text-xs text-gray-500 mt-0.5">El ticket POS imprime un código QR (PNG 260×260 en contenedor 360px) para flujo managed y legacy: el cliente lo escanea y accede a su boleta electrónica sin pedir el correo. Desplegado en producción y validado en impresión física (ago 2026).</p></div></div>
+            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Catálogo de planes rediseñado desplegado</p><p class="text-xs text-gray-500 mt-0.5">Nuevo catálogo (Gratis 100 docs / Básico USD 12,99 / Pro USD 24,99 / Retail USD 39,99 / Pro ECP privado) con capacidades reforzadas en servidor. Desplegado en producción (ago 2026).</p></div></div>
           </div>
         </div>
 
@@ -115,17 +116,6 @@
             <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Diagnóstico Falabella–AnyMarket (22 casos)</p><p class="text-xs text-gray-500 mt-0.5">Las 18 boletas sí fueron emitidas; el fallo ocurrió al adjuntar el PDF en AnyMarket (limitación de API para órdenes concluidas). Expediente de evidencia preparado para soporte.</p></div></div>
           </div>
         </div>
-
-        <div class="rounded-xl border border-yellow-200 bg-yellow-50 overflow-hidden">
-          <button onclick="toggleSection('v200-constraint')" class="w-full flex items-center justify-between px-4 py-3">
-            <span class="text-xs font-bold text-yellow-700 uppercase tracking-wider">⚠️ Limitaciones</span>
-            <span class="text-gray-400 text-sm">−</span>
-          </button>
-          <div id="v200-constraint" class="px-4 pb-4 space-y-3">
-            <div class="flex gap-3"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></span><div><p class="text-sm font-semibold text-gray-800">Catálogo de planes rediseñado, pendiente de despliegue</p><p class="text-xs text-gray-500 mt-0.5">Nuevo catálogo (Gratis 100 docs / Básico USD 12,99 / Pro USD 24,99 / Retail USD 39,99 / Pro ECP privado) implementado en el repositorio con capacidades reforzadas en servidor, pero no desplegado en producción.</p></div></div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- ===== v1.9.0 ===== -->
