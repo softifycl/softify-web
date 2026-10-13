@@ -97,6 +97,7 @@
         <li><a href="#handoff" class="hover:text-purple-600 underline">Handoff a humano (Slack 0-UI o Chatwoot)</a></li>
         <li><a href="#notion" class="hover:text-purple-600 underline">Base de conocimiento en Notion</a></li>
         <li><a href="#precios" class="hover:text-purple-600 underline">Precios</a></li>
+        <li><a href="#alcance" class="hover:text-purple-600 underline">Alcance por plan</a></li>
         <li><a href="#onboarding-bot" class="hover:text-purple-600 underline">Solicitud de configuración vía el bot</a></li>
         <li><a href="#proceso" class="hover:text-purple-600 underline">Proceso paso a paso</a></li>
         <li><a href="#checklist" class="hover:text-purple-600 underline">Checklist de arranque</a></li>
@@ -207,7 +208,7 @@
               <tr class="border-t"><td class="p-2">Límite diario</td><td class="p-2">Máximo de mensajes por cliente al día</td><td class="p-2">5</td></tr>
               <tr class="border-t"><td class="p-2">Modo nocturno</td><td class="p-2">Respuesta fuera de horario (23:00 – 08:00)</td><td class="p-2">Confirma recepción</td></tr>
               <tr class="border-t"><td class="p-2">Tono</td><td class="p-2">Estilo y tratamiento del bot</td><td class="p-2">Cercano, "tú"</td></tr>
-              <tr class="border-t"><td class="p-2">Escalamiento</td><td class="p-2">Canal y destinatario del handoff humano</td><td class="p-2">Slack (0-UI)</td></tr>
+              <tr class="border-t"><td class="p-2">Escalamiento</td><td class="p-2">Canal y destinatario del handoff humano</td><td class="p-2">Chatwoot (bandeja); Slack como alternativa</td></tr>
             </tbody>
           </table>
         </div>
@@ -253,9 +254,9 @@
         Handoff a humano
       </h2>
       <div class="bg-white rounded-lg shadow p-6">
-        <p class="text-gray-600 mb-4">El bot escala a tu equipo cuando el cliente pide una persona, cuando el caso es complejo, o cuando el setter cierra y hay que confirmar. Definimos <strong>dos modelos</strong>; partimos con el primero.</p>
+        <p class="text-gray-600 mb-4">El bot escala a tu equipo cuando el cliente pide una persona, cuando el caso es complejo, o cuando el setter cierra y hay que confirmar. Definimos <strong>dos modelos</strong>; partimos con <strong>Chatwoot</strong> (bandeja con UI).</p>
 
-        <h3 class="font-semibold text-gray-800 mb-2 flex items-center gap-2"><i class="fab fa-slack text-purple-600"></i> Modelo A — Slack, sin interfaz extra (0-UI) · por defecto</h3>
+        <h3 class="font-semibold text-gray-800 mb-2 flex items-center gap-2"><i class="fab fa-slack text-purple-600"></i> Modelo A — Slack, sin interfaz extra (0-UI) · alternativa</h3>
         <ul class="list-disc list-inside space-y-1 text-gray-600 mb-2">
           <li>El bot abre un <strong>hilo en Slack</strong> (canal o DM del equipo) con el contexto completo: historial de la conversación, canal, teléfono y el motivo del escalamiento.</li>
           <li>Tu equipo responde <strong>desde Slack</strong> y el bot publica esa respuesta en el canal del cliente (WhatsApp/Instagram/Messenger).</li>
@@ -263,15 +264,15 @@
           <li>Ideal si tu equipo vive en Slack y quieres <strong>cero herramientas nuevas</strong>.</li>
         </ul>
 
-        <h3 class="font-semibold text-gray-800 mb-3 mt-6 flex items-center gap-2"><i class="fas fa-comments text-purple-600"></i> Modelo B — Chatwoot (open source) · si quieres interfaz de agentes</h3>
+        <h3 class="font-semibold text-gray-800 mb-3 mt-6 flex items-center gap-2"><i class="fas fa-comments text-purple-600"></i> Modelo B — Chatwoot (open source) · <span class="text-purple-700 font-bold">por defecto</span></h3>
         <ul class="list-disc list-inside space-y-1 text-gray-600 mb-2">
           <li><strong>Chatwoot</strong> es una bandeja omnicanal open source (self-hosted, licencia MIT/AGPL, gratis) que se conecta a la WhatsApp Cloud API y a Slack.</li>
           <li>Da asignación de conversaciones, macros, etiquetas y reportes de equipo — una UI real de agentes.</li>
-          <li>Lo recomendamos cuando hay <strong>varios agentes</strong> o volumen alto; no es necesario para partir.</li>
-          <li>Alternativa gestionada: lo hosteamos nosotros (add-on mensual, ver precios).</li>
+          <li>Es nuestro modelo <strong>por defecto</strong>: asignación de conversaciones, macros, etiquetas y reportes de equipo — una UI real de agentes.</li>
+          <li>Incluido (gestionado por nosotros) en el plan <strong>Business</strong>; en Starter/Pro el cliente puede self-hostearlo (gratis) o tomarlo gestionado como add-on (ver precios).</li>
         </ul>
         <div class="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mt-4">
-          <p class="text-sm text-purple-800"><strong>Recomendación:</strong> arrancar con <strong>Slack 0-UI</strong> (cero costo extra, ya funciona) y migrar a <strong>Chatwoot</strong> solo si luego necesitas bandeja con UI y varios agentes.</p>
+          <p class="text-sm text-purple-800"><strong>Default:</strong> arrancamos con <strong>Chatwoot</strong> (bandeja con UI, open source, self-hosted). El <strong>Modelo A (Slack 0-UI)</strong> queda como alternativa para equipos que ya viven en Slack y no quieren sumar una herramienta.</p>
         </div>
       </div>
     </section>
@@ -367,6 +368,75 @@
       </div>
     </section>
 
+    <!-- Alcance por plan -->
+    <section id="alcance" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <i class="fas fa-layer-group text-purple-600"></i>
+        Alcance por plan
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-6">Qué incluye exactamente cada plan. Todos parten con la implementación (US$490) e incluyen base de conocimiento en Notion, handoff a humano y monitoreo.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h3 class="font-bold text-gray-800 mb-2">Starter · US$149/mes</h3>
+            <p class="font-semibold text-gray-700 mb-1">Incluye</p>
+            <ul class="list-disc list-inside text-gray-600 space-y-1 mb-3">
+              <li>1 canal: WhatsApp</li>
+              <li>Hasta 1.000 conversaciones/mes</li>
+              <li>Atención + agendamiento (1 calendario)</li>
+              <li>Base de conocimiento en Notion (sync diario)</li>
+              <li>Handoff: Chatwoot self-hosted o Slack</li>
+              <li>1 usuario</li>
+              <li>Soporte por correo (48 h hábiles)</li>
+            </ul>
+            <p class="font-semibold text-gray-700 mb-1">No incluye</p>
+            <ul class="list-disc list-inside text-gray-500 space-y-1">
+              <li>Instagram / Messenger</li>
+              <li>CRM y recordatorios multi-paso</li>
+              <li>Reportes y SLA</li>
+            </ul>
+          </div>
+          <div class="border-2 border-purple-500 rounded-lg p-4">
+            <h3 class="font-bold text-gray-800 mb-2">Pro · US$299/mes</h3>
+            <p class="font-semibold text-gray-700 mb-1">Incluye</p>
+            <ul class="list-disc list-inside text-gray-600 space-y-1 mb-3">
+              <li>WhatsApp + Instagram + Messenger</li>
+              <li>Hasta 3.000 conversaciones/mes</li>
+              <li>Setter completo: califica, agenda, confirma y recuerda (T-24h / T-1h)</li>
+              <li>Notion con sync programado (cada 6 h)</li>
+              <li>1 CRM (HubSpot/Pipedrive)</li>
+              <li>Reportes y métricas</li>
+              <li>Handoff Chatwoot/Slack · hasta 3 usuarios</li>
+              <li>Soporte por correo (24 h hábiles)</li>
+            </ul>
+            <p class="font-semibold text-gray-700 mb-1">No incluye</p>
+            <ul class="list-disc list-inside text-gray-500 space-y-1">
+              <li>Multi-agente ilimitado y SLA</li>
+              <li>Integraciones a medida</li>
+            </ul>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h3 class="font-bold text-gray-800 mb-2">Business · US$590/mes</h3>
+            <p class="font-semibold text-gray-700 mb-1">Incluye</p>
+            <ul class="list-disc list-inside text-gray-600 space-y-1 mb-3">
+              <li>Todo lo de Pro, con hasta 10.000 conversaciones/mes</li>
+              <li>Chatwoot gestionado incluido (bandeja con UI)</li>
+              <li>Multi-agente + reportes de equipo</li>
+              <li>SLA 99,5% y respuesta a incidente &le; 4 h hábiles</li>
+              <li>Hasta 2 integraciones a medida</li>
+              <li>Onboarding prioritario (1-2 días)</li>
+              <li>Soporte por canal directo (8 h hábiles)</li>
+            </ul>
+            <p class="font-semibold text-gray-700 mb-1">No incluye</p>
+            <ul class="list-disc list-inside text-gray-500 space-y-1">
+              <li>Garantías de resultados (reuniones o cierres)</li>
+              <li>Costos y trámites de Meta</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 8. Onboarding vía bot -->
     <section id="onboarding-bot" class="mb-12">
       <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -451,7 +521,7 @@
         </div>
         <div class="bg-white rounded-lg shadow p-6">
           <h3 class="font-semibold text-gray-800">¿Cómo pasa la conversación a una persona?</h3>
-          <p class="text-gray-600">Por defecto el bot abre un hilo en Slack con todo el contexto y tu equipo responde desde ahí. Si quieres una bandeja con interfaz, conectamos Chatwoot (open source).</p>
+          <p class="text-gray-600">Por defecto usamos <strong>Chatwoot</strong> (bandeja open source): cada conversación llega con su contexto y tu equipo la toma desde ahí. Como alternativa, el bot puede escalar a un hilo de Slack (0-UI), sin herramienta extra.</p>
         </div>
         <div class="bg-white rounded-lg shadow p-6">
           <h3 class="font-semibold text-gray-800">¿Necesito saber programar o mantener servidores?</h3>
