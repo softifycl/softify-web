@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Configuración e Implementación — Softify Bot | Softify</title>
-  <meta name="description" content="Guía de configuración e implementación de Softify Bot para nuevas tiendas: qué necesitamos de ti, parámetros que definimos juntos, proceso paso a paso y checklist de arranque.">
-  <meta name="keywords" content="configurar chatbot shopify, onboarding softify bot, implementar bot whatsapp shopify, requisitos chatbot, puesta en marcha bot atencion cliente">
+  <title>Configuración, Handoff y Precios — Softify Setter Bot | Softify</title>
+  <meta name="description" content="Guía de configuración e implementación del Softify Bot / Setter: qué necesitamos de ti, parámetros, rol de agendamiento, handoff a humano (Slack 0-UI o Chatwoot open source), base de conocimiento en Notion, precios y onboarding vía el propio bot.">
+  <meta name="keywords" content="configurar setter whatsapp, agendar reuniones whatsapp ia, handoff slack chatbot, chatwoot open source, base de conocimiento notion bot, precios chatbot shopify">
   <meta name="author" content="Softify">
   <link rel="canonical" href="https://bot.softify.cl/configuracion.html">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Configuración e Implementación — Softify Bot">
-  <meta property="og:description" content="Todo lo que tu tienda necesita para poner en marcha Softify Bot: requisitos, parámetros, proceso y checklist.">
+  <meta property="og:title" content="Configuración, Handoff y Precios — Softify Setter Bot">
+  <meta property="og:description" content="Todo lo que tu negocio necesita para poner en marcha el setter: requisitos, rol de agendamiento, handoff, base de conocimiento en Notion, precios y onboarding vía el bot.">
   <meta property="og:url" content="https://bot.softify.cl/configuracion.html">
   <meta property="og:site_name" content="Softify">
   <meta property="og:locale" content="es_CL">
@@ -21,13 +21,14 @@
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Cómo configurar Softify Bot en tu tienda Shopify",
-    "description": "Guía de configuración e implementación del chatbot multi-canal para Shopify: requisitos, parámetros y proceso de puesta en marcha",
+    "name": "Cómo configurar Softify Bot / Setter",
+    "description": "Guía de configuración e implementación del agente de IA para WhatsApp: requisitos, agendamiento, handoff, base de conocimiento en Notion, precios y onboarding",
     "step": [
-      { "@type": "HowToStep", "name": "Kick-off", "text": "Nos envías los datos y accesos de tu tienda (Shopify, WhatsApp, Instagram, Facebook, Klaviyo)" },
-      { "@type": "HowToStep", "name": "Configuración", "text": "Nuestro equipo crea el entorno de tu tienda, conecta canales, carga catálogo y ajusta el tono" },
-      { "@type": "HowToStep", "name": "Pruebas", "text": "Validamos mensajes de prueba en cada canal y ajustamos respuestas" },
-      { "@type": "HowToStep", "name": "Go-live", "text": "Activamos el bot y monitoreamos métricas en tiempo real" }
+      { "@type": "HowToStep", "name": "Onboarding por el bot", "text": "El cliente conversa con el propio bot Softify, que levanta el checklist y guarda las respuestas en Notion" },
+      { "@type": "HowToStep", "name": "Configuración", "text": "Creamos el tenant, conectamos canales, cargamos la base de conocimiento desde Notion y definimos el tono" },
+      { "@type": "HowToStep", "name": "Agendamiento", "text": "Conectamos el calendario para que el setter califique y agende reuniones con prospectos" },
+      { "@type": "HowToStep", "name": "Handoff", "text": "Configuramos el escalamiento a humano (Slack 0-UI por defecto, o Chatwoot open source)" },
+      { "@type": "HowToStep", "name": "Pruebas y go-live", "text": "Validamos conversaciones de prueba en cada canal y activamos con monitoreo" }
     ]
   }
   </script>
@@ -66,12 +67,13 @@
       </div>
       <h1 class="text-4xl font-bold text-purple-600 mb-4">
         <i class="fas fa-sliders mr-2"></i>
-        Configuración e implementación
+        Configuración, handoff y precios
       </h1>
       <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
-        Softify Bot no es un panel que tengas que armar por tu cuenta: es un servicio gestionado.
-        Nuestro equipo crea el entorno de tu tienda, conecta tus canales y ajusta el tono del bot a tu marca.
-        Aquí está todo lo que necesitamos de ti y cómo es el proceso, paso a paso.
+        Softify Bot es un agente de IA para WhatsApp, Instagram y Messenger. Atiende consultas, recupera carritos
+        y además funciona como <strong>setter</strong>: califica prospectos y agenda reuniones. Nuestro equipo monta
+        todo; tú solo supervisas. Aquí está lo que necesitamos de ti, cómo se escala a un humano, dónde vive el
+        conocimiento, cuánto cuesta y cómo arrancar.
       </p>
       <div class="mt-8 flex justify-center gap-4 flex-wrap">
         <a href="mailto:hola@softify.cl?subject=Configuraci%C3%B3n%20Softify%20Bot" class="px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors shadow-md">
@@ -91,6 +93,11 @@
         <li><a href="#implementacion" class="hover:text-purple-600 underline">Cómo se implementa</a></li>
         <li><a href="#necesitamos" class="hover:text-purple-600 underline">Lo que necesitamos de ti</a></li>
         <li><a href="#parametros" class="hover:text-purple-600 underline">Parámetros que definimos juntos</a></li>
+        <li><a href="#setter" class="hover:text-purple-600 underline">Setter: agenda reuniones por ti</a></li>
+        <li><a href="#handoff" class="hover:text-purple-600 underline">Handoff a humano (Slack 0-UI o Chatwoot)</a></li>
+        <li><a href="#notion" class="hover:text-purple-600 underline">Base de conocimiento en Notion</a></li>
+        <li><a href="#precios" class="hover:text-purple-600 underline">Precios</a></li>
+        <li><a href="#onboarding-bot" class="hover:text-purple-600 underline">Solicitud de configuración vía el bot</a></li>
         <li><a href="#proceso" class="hover:text-purple-600 underline">Proceso paso a paso</a></li>
         <li><a href="#checklist" class="hover:text-purple-600 underline">Checklist de arranque</a></li>
         <li><a href="#faq" class="hover:text-purple-600 underline">Preguntas frecuentes</a></li>
@@ -104,17 +111,17 @@
         Cómo se implementa
       </h2>
       <div class="bg-white rounded-lg shadow p-6">
-        <p class="text-gray-600 mb-4">Cada tienda corre en su propio entorno aislado dentro de nuestra plataforma. No compartes infraestructura ni datos con otras tiendas: tu catálogo, tu tono y tu configuración viven solo en tu entorno.</p>
+        <p class="text-gray-600 mb-4">Cada negocio corre en su propio entorno aislado dentro de nuestra plataforma. No compartes infraestructura ni datos con otras cuentas: tu catálogo, tu tono, tu base de conocimiento y tu configuración viven solo en tu entorno (multi-tenant).</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
           <div class="bg-purple-50 rounded-lg p-4">
             <i class="fas fa-screwdriver-wrench text-purple-600 text-xl mb-2"></i>
             <h3 class="font-semibold text-gray-800 mb-1">Lo hacemos nosotros</h3>
-            <p class="text-gray-600">Creamos tu entorno, conectamos canales, cargamos catálogo, escribimos el tono y activamos métricas.</p>
+            <p class="text-gray-600">Creamos tu entorno, conectamos canales, cargamos catálogo y conocimiento, escribimos el tono y activamos métricas.</p>
           </div>
           <div class="bg-purple-50 rounded-lg p-4">
             <i class="fas fa-user-check text-purple-600 text-xl mb-2"></i>
             <h3 class="font-semibold text-gray-800 mb-1">Lo aportas tú</h3>
-            <p class="text-gray-600">Accesos, información de tu marca, políticas de atención y decisiones de configuración.</p>
+            <p class="text-gray-600">Accesos, información de tu marca, políticas de atención, tu calendario y las decisiones de configuración.</p>
           </div>
           <div class="bg-purple-50 rounded-lg p-4">
             <i class="fas fa-shield-halved text-purple-600 text-xl mb-2"></i>
@@ -135,42 +142,44 @@
         <div>
           <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-plug text-purple-500 mr-2"></i>Accesos y cuentas</h3>
           <ul class="list-disc list-inside space-y-1 text-gray-600">
-            <li>Tienda <strong>Shopify</strong> (dominio) + invitación de colaborador con permisos de app.</li>
             <li><strong>WhatsApp Business API (Meta)</strong>: número dedicado y cuenta de WhatsApp Business (WABA). Podemos migrar tu número actual o asignar uno nuevo.</li>
-            <li><strong>Instagram Business</strong> vinculado a una página de Facebook.</li>
-            <li><strong>Página de Facebook</strong> para Messenger.</li>
-            <li><strong>Klaviyo</strong> (opcional, para personalizar respuestas por perfil de cliente).</li>
+            <li><strong>Instagram Business</strong> vinculado a una página de Facebook, y <strong>página de Facebook</strong> para Messenger (si quieres multi-canal).</li>
+            <li><strong>Calendario</strong> para agendar reuniones (Google Calendar, Calendly o calendario del CRM).</li>
+            <li><strong>CRM</strong> (HubSpot, Pipedrive, etc.) si quieres que los leads caigan ordenados ahí (opcional).</li>
+            <li><strong>Notion</strong>: la base de conocimiento vive en Notion (ver sección 6).</li>
           </ul>
         </div>
         <div>
           <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-palette text-purple-500 mr-2"></i>Marca y tono</h3>
           <ul class="list-disc list-inside space-y-1 text-gray-600">
             <li>Nombre con el que firma el bot (o sin firma).</li>
-            <li>Personalidad: cercano, formal, técnico, juguetón.</li>
+            <li>Personalidad: cercano, formal, técnico, directo.</li>
             <li>Tratamiento: "tú" o "usted". Uso de emojis sí/no.</li>
             <li>Cosas que el bot <strong>nunca</strong> debe decir o prometer.</li>
           </ul>
         </div>
         <div>
-          <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-circle-info text-purple-500 mr-2"></i>Conocimiento del negocio</h3>
+          <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-circle-info text-purple-500 mr-2"></i>Conocimiento del negocio (va en Notion)</h3>
           <ul class="list-disc list-inside space-y-1 text-gray-600">
-            <li>Políticas: envíos, devoluciones, cambios, pagos, garantía.</li>
+            <li>Oferta y servicios, diferenciadores, casos de éxito.</li>
             <li>Preguntas frecuentes reales (las que más te escriben).</li>
-            <li>Tiempos de despacho, cobertura y métodos de pago aceptados.</li>
+            <li>Políticas: precios, plazos, garantías, condiciones.</li>
+            <li>Objeciones típicas y cómo responderlas.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-calendar-check text-purple-500 mr-2"></i>Agendamiento (si usas el modo setter)</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-600">
+            <li>Qué hace que un prospecto esté "calificado" (criterios de cualificación).</li>
+            <li>Días y horarios disponibles para reuniones, duración y con quién se agenda.</li>
+            <li>Zona horaria y link de reunión (Zoom, Meet, etc.).</li>
           </ul>
         </div>
         <div>
           <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-headset text-purple-500 mr-2"></i>Operación y escalamiento humano</h3>
           <ul class="list-disc list-inside space-y-1 text-gray-600">
             <li>Horario de atención y qué debe responder el bot fuera de horario.</li>
-            <li>Quién recibe los escalamientos (Slack, correo o WhatsApp interno) y en qué horario.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-tags text-purple-500 mr-2"></i>Comercial</h3>
-          <ul class="list-disc list-inside space-y-1 text-gray-600">
-            <li>Promociones o campañas activas (Cyber, Black Friday, lanzamientos) y códigos de descuento.</li>
-            <li>Productos estrella o categorías que quieras priorizar.</li>
+            <li>Quién recibe los escalamientos y por dónde (ver sección 5).</li>
           </ul>
         </div>
       </div>
@@ -191,23 +200,197 @@
             </thead>
             <tbody class="text-gray-600">
               <tr class="border-t"><td class="p-2">Canales activos</td><td class="p-2">En qué canales responde el bot</td><td class="p-2">WhatsApp + Instagram</td></tr>
+              <tr class="border-t"><td class="p-2">Modo del agente</td><td class="p-2">Soporte, setter (agenda) o mixto</td><td class="p-2">Setter</td></tr>
+              <tr class="border-t"><td class="p-2">Criterios de cualificación</td><td class="p-2">Qué lead califica para reunión</td><td class="p-2">A definir contigo</td></tr>
               <tr class="border-t"><td class="p-2">Delay de carrito</td><td class="p-2">Minutos de espera antes del recordatorio</td><td class="p-2">45 min</td></tr>
               <tr class="border-t"><td class="p-2">Horario de envío</td><td class="p-2">Ventana en que se envían recordatorios</td><td class="p-2">10:00 – 22:00</td></tr>
               <tr class="border-t"><td class="p-2">Límite diario</td><td class="p-2">Máximo de mensajes por cliente al día</td><td class="p-2">5</td></tr>
-              <tr class="border-t"><td class="p-2">Verificación de compra</td><td class="p-2">Revisa si ya compró antes de enviar</td><td class="p-2">Activado</td></tr>
               <tr class="border-t"><td class="p-2">Modo nocturno</td><td class="p-2">Respuesta fuera de horario (23:00 – 08:00)</td><td class="p-2">Confirma recepción</td></tr>
               <tr class="border-t"><td class="p-2">Tono</td><td class="p-2">Estilo y tratamiento del bot</td><td class="p-2">Cercano, "tú"</td></tr>
-              <tr class="border-t"><td class="p-2">Escalamiento</td><td class="p-2">Canal y destinatario del handoff humano</td><td class="p-2">Slack del equipo</td></tr>
+              <tr class="border-t"><td class="p-2">Escalamiento</td><td class="p-2">Canal y destinatario del handoff humano</td><td class="p-2">Slack (0-UI)</td></tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
 
-    <!-- 4. Proceso -->
-    <section id="proceso" class="mb-12">
+    <!-- 4. Setter -->
+    <section id="setter" class="mb-12">
       <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
         <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">4</span>
+        Setter: agenda reuniones por ti
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">Además de atender consultas, el bot puede operar como <strong>setter</strong>: un agendador de reuniones con prospectos que conversa, califica y reserva la reunión sin intervención humana.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="bg-purple-50 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-filter text-purple-600 mr-2"></i>Califica</h3>
+            <p class="text-gray-600">Hace las preguntas de cualificación que definas (industria, tamaño, necesidad, presupuesto, urgencia) y descarta o prioriza leads.</p>
+          </div>
+          <div class="bg-purple-50 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-calendar-plus text-purple-600 mr-2"></i>Agenda</h3>
+            <p class="text-gray-600">Consulta tu disponibilidad en el calendario conectado, propone horarios y reserva la reunión (Zoom/Meet) directo en tu agenda.</p>
+          </div>
+          <div class="bg-purple-50 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-bell text-purple-600 mr-2"></i>Confirma y recuerda</h3>
+            <p class="text-gray-600">Confirma la reunión, manda el link y envía recordatorios para bajar el no-show.</p>
+          </div>
+          <div class="bg-purple-50 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-database text-purple-600 mr-2"></i>Registra el lead</h3>
+            <p class="text-gray-600">Deja el lead y el resumen de la conversación en tu CRM o en Notion, con todos los datos recogidos.</p>
+          </div>
+        </div>
+        <div class="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mt-4">
+          <p class="text-sm text-purple-800"><strong>Importante:</strong> el setter no inventa disponibilidad ni promete lo que no está en tu base de conocimiento. Si el lead pide algo fuera de alcance, escala a un humano (sección 5).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Handoff -->
+    <section id="handoff" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">5</span>
+        Handoff a humano
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">El bot escala a tu equipo cuando el cliente pide una persona, cuando el caso es complejo, o cuando el setter cierra y hay que confirmar. Definimos <strong>dos modelos</strong>; partimos con el primero.</p>
+
+        <h3 class="font-semibold text-gray-800 mb-2 flex items-center gap-2"><i class="fab fa-slack text-purple-600"></i> Modelo A — Slack, sin interfaz extra (0-UI) · por defecto</h3>
+        <ul class="list-disc list-inside space-y-1 text-gray-600 mb-2">
+          <li>El bot abre un <strong>hilo en Slack</strong> (canal o DM del equipo) con el contexto completo: historial de la conversación, canal, teléfono y el motivo del escalamiento.</li>
+          <li>Tu equipo responde <strong>desde Slack</strong> y el bot publica esa respuesta en el canal del cliente (WhatsApp/Instagram/Messenger).</li>
+          <li>Sin dashboard aparte: Slack es la bandeja. Ya está probado en producción con el bot Softify.</li>
+          <li>Ideal si tu equipo vive en Slack y quieres <strong>cero herramientas nuevas</strong>.</li>
+        </ul>
+
+        <h3 class="font-semibold text-gray-800 mb-3 mt-6 flex items-center gap-2"><i class="fas fa-comments text-purple-600"></i> Modelo B — Chatwoot (open source) · si quieres interfaz de agentes</h3>
+        <ul class="list-disc list-inside space-y-1 text-gray-600 mb-2">
+          <li><strong>Chatwoot</strong> es una bandeja omnicanal open source (self-hosted, licencia MIT/AGPL, gratis) que se conecta a la WhatsApp Cloud API y a Slack.</li>
+          <li>Da asignación de conversaciones, macros, etiquetas y reportes de equipo — una UI real de agentes.</li>
+          <li>Lo recomendamos cuando hay <strong>varios agentes</strong> o volumen alto; no es necesario para partir.</li>
+          <li>Alternativa gestionada: lo hosteamos nosotros (add-on mensual, ver precios).</li>
+        </ul>
+        <div class="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mt-4">
+          <p class="text-sm text-purple-800"><strong>Recomendación:</strong> arrancar con <strong>Slack 0-UI</strong> (cero costo extra, ya funciona) y migrar a <strong>Chatwoot</strong> solo si luego necesitas bandeja con UI y varios agentes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Notion -->
+    <section id="notion" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">6</span>
+        Base de conocimiento en Notion
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">El bot no se configura con un panel propio: su conocimiento vive en <strong>Notion</strong>. Ahí escribes y actualizas la información, y un sincronizador la baja al bot automáticamente. Es requisito del servicio.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mb-4">
+          <div class="bg-purple-50 rounded-lg p-4">
+            <i class="fas fa-pen-to-square text-purple-600 text-xl mb-2"></i>
+            <h3 class="font-semibold text-gray-800 mb-1">Escribes en Notion</h3>
+            <p class="text-gray-600">Tú o tu equipo editan una base de datos por temas (preguntas y respuestas, políticas, oferta).</p>
+          </div>
+          <div class="bg-purple-50 rounded-lg p-4">
+            <i class="fas fa-rotate text-purple-600 text-xl mb-2"></i>
+            <h3 class="font-semibold text-gray-800 mb-1">Sincronización</h3>
+            <p class="text-gray-600">Un sync baja el contenido al bot (cada tema por separado). Se puede programar o correr a demanda.</p>
+          </div>
+          <div class="bg-purple-50 rounded-lg p-4">
+            <i class="fas fa-toggle-on text-purple-600 text-xl mb-2"></i>
+            <h3 class="font-semibold text-gray-800 mb-1">Control por tema</h3>
+            <p class="text-gray-600">Cada tema trae <strong>"Ocultar"</strong> (para desactivarlo) y <strong>"Vigencia hasta"</strong> (para que caduque solo, ideal para promos).</p>
+          </div>
+        </div>
+        <div class="bg-purple-50 border-l-4 border-purple-500 p-3 rounded">
+          <p class="text-sm text-purple-800"><strong>Regla de contenido:</strong> políticas, procesos, plazos y FAQs van a Notion. Productos, stock y precios salen del catálogo conectado (Shopify u otro), no del conocimiento estático — así nunca queda información vieja.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Precios -->
+    <section id="precios" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">7</span>
+        Precios
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">Precios en USD. La implementación es única; luego se paga un plan mensual según canales y volumen.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div class="border border-gray-200 rounded-lg p-5">
+            <h3 class="font-bold text-gray-800">Starter</h3>
+            <p class="text-3xl font-bold text-purple-600 my-2">US$ 149<span class="text-base text-gray-500 font-normal">/mes</span></p>
+            <ul class="text-sm text-gray-600 space-y-1 list-disc list-inside">
+              <li>1 canal (WhatsApp)</li>
+              <li>Hasta 1.000 conversaciones/mes</li>
+              <li>Agendamiento (Google Calendar)</li>
+              <li>Base de conocimiento en Notion</li>
+              <li>Handoff a Slack (0-UI)</li>
+            </ul>
+          </div>
+          <div class="border-2 border-purple-500 rounded-lg p-5 relative">
+            <span class="absolute -top-3 left-5 bg-purple-600 text-white text-xs font-semibold px-2 py-0.5 rounded">Recomendado</span>
+            <h3 class="font-bold text-gray-800">Pro</h3>
+            <p class="text-3xl font-bold text-purple-600 my-2">US$ 299<span class="text-base text-gray-500 font-normal">/mes</span></p>
+            <ul class="text-sm text-gray-600 space-y-1 list-disc list-inside">
+              <li>WhatsApp + Instagram + Messenger</li>
+              <li>Hasta 3.000 conversaciones/mes</li>
+              <li>Modo setter completo (califica + agenda + recordatorios)</li>
+              <li>Integración CRM (HubSpot/Pipedrive)</li>
+              <li>Reportes y métricas</li>
+            </ul>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-5">
+            <h3 class="font-bold text-gray-800">Business</h3>
+            <p class="text-3xl font-bold text-purple-600 my-2">US$ 590<span class="text-base text-gray-500 font-normal">/mes</span></p>
+            <ul class="text-sm text-gray-600 space-y-1 list-disc list-inside">
+              <li>Hasta 10.000 conversaciones/mes</li>
+              <li>Multi-agente + SLA</li>
+              <li>Chatwoot incluido (bandeja con UI)</li>
+              <li>Integraciones a medida</li>
+              <li>Onboarding prioritario</li>
+            </ul>
+          </div>
+        </div>
+        <div class="overflow-x-auto mb-4">
+          <table class="w-full text-sm text-left">
+            <thead class="bg-gray-100"><tr><th class="p-2">Concepto</th><th class="p-2">Valor</th><th class="p-2">Nota</th></tr></thead>
+            <tbody class="text-gray-600">
+              <tr class="border-t"><td class="p-2">Implementación (one-time)</td><td class="p-2">US$ 490</td><td class="p-2">Tenant, canales, conocimiento en Notion, tono, calendario y pruebas</td></tr>
+              <tr class="border-t"><td class="p-2">Conversación adicional</td><td class="p-2">US$ 0,04 c/u</td><td class="p-2">Sobre el límite del plan</td></tr>
+              <tr class="border-t"><td class="p-2">Número dedicado / migración WABA</td><td class="p-2">US$ 190</td><td class="p-2">One-time (costos de Meta aparte)</td></tr>
+              <tr class="border-t"><td class="p-2">Chatwoot gestionado</td><td class="p-2">US$ 90/mes</td><td class="p-2">Self-hosted gratis si lo prefieres</td></tr>
+              <tr class="border-t"><td class="p-2">Integración a medida</td><td class="p-2">A cotizar</td><td class="p-2">Según alcance</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-gray-500">Los cargos de conversación de WhatsApp (Meta) se facturan a costo y se informan mensualmente. Precios en USD, no incluyen impuestos.</p>
+      </div>
+    </section>
+
+    <!-- 8. Onboarding vía bot -->
+    <section id="onboarding-bot" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">8</span>
+        Solicitud de configuración vía el bot
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">No hace falta llenar un formulario web: <strong>conversas con el propio bot</strong>. Es la mejor demostración del producto y, de paso, levanta toda la configuración.</p>
+        <ol class="list-decimal list-inside space-y-2 text-gray-600 mb-4">
+          <li>Escribes al bot de Softify por WhatsApp (o pides el enlace de demo).</li>
+          <li>El bot hace las preguntas del checklist una por una: negocio, canales, tono, oferta, criterios de cualificación, calendario, escalamiento.</li>
+          <li>Va guardando cada respuesta en Notion (una fila por tema).</li>
+          <li>Al terminar, esa base de conocimiento ya queda lista: nuestro equipo revisa y activa el entorno.</li>
+        </ol>
+        <div class="bg-purple-50 border-l-4 border-purple-500 p-3 rounded">
+          <p class="text-sm text-purple-800">Ventaja: el prospecto vive el producto mientras lo configura. Si algo no cuadra, lo corrige en la misma conversación.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Proceso -->
+    <section id="proceso" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">9</span>
         Proceso paso a paso
       </h2>
       <div class="bg-white rounded-lg shadow p-6">
@@ -217,37 +400,37 @@
               <tr><th class="p-2">Etapa</th><th class="p-2">Qué pasa</th><th class="p-2">Responsable</th></tr>
             </thead>
             <tbody class="text-gray-600">
-              <tr class="border-t"><td class="p-2 font-semibold">Día 0 · Kick-off</td><td class="p-2">Nos envías este checklist con datos y accesos. Agendamos una llamada de 30 min.</td><td class="p-2">Cliente + Softify</td></tr>
-              <tr class="border-t"><td class="p-2 font-semibold">Día 1 · Configuración</td><td class="p-2">Creamos tu entorno, conectamos canales, cargamos catálogo y políticas, y escribimos el tono.</td><td class="p-2">Softify</td></tr>
-              <tr class="border-t"><td class="p-2 font-semibold">Día 2 · Pruebas</td><td class="p-2">Enviamos mensajes de prueba en cada canal, revisamos respuestas y afinamos juntos.</td><td class="p-2">Softify + Cliente</td></tr>
-              <tr class="border-t"><td class="p-2 font-semibold">Día 3 · Go-live</td><td class="p-2">Activamos el bot, conectamos métricas en Slack y quedamos monitoreando.</td><td class="p-2">Softify</td></tr>
+              <tr class="border-t"><td class="p-2 font-semibold">Día 0 · Kick-off</td><td class="p-2">Conversas con el bot (onboarding) y nos das accesos. Agendamos una llamada de 30 min.</td><td class="p-2">Cliente + Softify</td></tr>
+              <tr class="border-t"><td class="p-2 font-semibold">Día 1 · Configuración</td><td class="p-2">Creamos tu entorno, conectamos canales, cargamos el conocimiento desde Notion y definimos el tono.</td><td class="p-2">Softify</td></tr>
+              <tr class="border-t"><td class="p-2 font-semibold">Día 2 · Pruebas</td><td class="p-2">Conversaciones de prueba en cada canal (incluido el setter agendando), ajustes finos.</td><td class="p-2">Softify + Cliente</td></tr>
+              <tr class="border-t"><td class="p-2 font-semibold">Día 3 · Go-live</td><td class="p-2">Activamos el bot, conectamos métricas y handoff, y quedamos monitoreando.</td><td class="p-2">Softify</td></tr>
             </tbody>
           </table>
         </div>
         <div class="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mt-4">
-          <p class="text-sm text-purple-800"><strong>Nota:</strong> si ya tienes WhatsApp Business API verificada por Meta, el proceso suele ser más rápido. Si hay que migrar el número o hacer la verificación de negocio, ese trámite depende de los tiempos de Meta.</p>
+          <p class="text-sm text-purple-800"><strong>Nota:</strong> si ya tienes WhatsApp Business API verificada por Meta, el proceso es más rápido. Si hay que migrar el número o hacer la verificación de negocio, ese trámite depende de los tiempos de Meta.</p>
         </div>
       </div>
     </section>
 
-    <!-- 5. Checklist -->
+    <!-- 10. Checklist -->
     <section id="checklist" class="mb-12">
       <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">5</span>
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">10</span>
         Checklist de arranque
       </h2>
       <div class="bg-white rounded-lg shadow p-6">
-        <p class="text-gray-600 mb-4">Copia esta lista y respóndela en un correo a <a href="mailto:hola@softify.cl" class="text-purple-600 underline">hola@softify.cl</a>. Con esto podemos dejar tu bot listo.</p>
+        <p class="text-gray-600 mb-4">Puedes responder todo esto conversando con el bot, o usar esta lista como referencia.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700 text-sm">
-          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Dominio de la tienda Shopify</span></label>
-          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Invitación de colaborador en Shopify</span></label>
           <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Número de WhatsApp para el bot</span></label>
           <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Cuenta WhatsApp Business (WABA) o autorización para crearla</span></label>
-          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Instagram Business y página de Facebook</span></label>
-          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Acceso a Klaviyo (opcional)</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Instagram Business y página de Facebook (multi-canal)</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Calendario para agendar (Google/Calendly)</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Acceso a CRM (opcional)</span></label>
           <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Nombre y tono del bot</span></label>
-          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Políticas de envío, devoluciones y pagos</span></label>
-          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Top 10 preguntas frecuentes</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Oferta, diferenciadores y casos de éxito</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Criterios de cualificación de leads</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Top 10 preguntas frecuentes y objeciones</span></label>
           <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Horario de atención</span></label>
           <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Destinatario de escalamientos y su canal</span></label>
           <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Promociones activas y códigos de descuento</span></label>
@@ -255,43 +438,47 @@
       </div>
     </section>
 
-    <!-- 6. FAQ -->
+    <!-- 11. FAQ -->
     <section id="faq" class="mb-12">
       <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">6</span>
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">11</span>
         Preguntas frecuentes
       </h2>
       <div class="space-y-4">
         <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-gray-800">¿El bot agenda reuniones solo?</h3>
+          <p class="text-gray-600">Sí, en modo setter: califica al prospecto, consulta tu disponibilidad y reserva la reunión en tu calendario, con confirmación y recordatorios.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-gray-800">¿Cómo pasa la conversación a una persona?</h3>
+          <p class="text-gray-600">Por defecto el bot abre un hilo en Slack con todo el contexto y tu equipo responde desde ahí. Si quieres una bandeja con interfaz, conectamos Chatwoot (open source).</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
           <h3 class="font-semibold text-gray-800">¿Necesito saber programar o mantener servidores?</h3>
-          <p class="text-gray-600">No. Softify Bot es un servicio gestionado: nosotros montamos y operamos todo. Tú solo supervisas conversaciones y métricas.</p>
+          <p class="text-gray-600">No. Softify es un servicio gestionado: montamos y operamos todo. Tú editas el conocimiento en Notion y supervisas las conversaciones.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-gray-800">¿Dónde vive la información del bot?</h3>
+          <p class="text-gray-600">En tu base de Notion. Ahí actualizas precios de servicio, políticas y FAQs, y el bot queda al día con la sincronización.</p>
         </div>
         <div class="bg-white rounded-lg shadow p-6">
           <h3 class="font-semibold text-gray-800">¿Puedo usar mi número actual de WhatsApp?</h3>
-          <p class="text-gray-600">Sí. Podemos migrar tu número a la API oficial de WhatsApp Business. Si prefieres, también se puede partir con un número nuevo para no interrumpir la atención actual.</p>
-        </div>
-        <div class="bg-white rounded-lg shadow p-6">
-          <h3 class="font-semibold text-gray-800">¿El bot reemplaza a mi equipo de atención?</h3>
-          <p class="text-gray-600">No. El bot resuelve las consultas repetitivas y escala a tu equipo cuando el caso lo amerita — reclamos, casos complejos o cuando el cliente pide hablar con una persona.</p>
+          <p class="text-gray-600">Sí. Podemos migrar tu número a la API oficial de WhatsApp Business o asignar uno nuevo para no interrumpir la atención actual.</p>
         </div>
         <div class="bg-white rounded-lg shadow p-6">
           <h3 class="font-semibold text-gray-800">¿Cómo sé qué está pasando?</h3>
-          <p class="text-gray-600">Todo se monitorea en tiempo real: mensajes por canal, carritos recuperados, escalamientos, errores y costo de API.</p>
+          <p class="text-gray-600">Todo se monitorea en tiempo real: conversaciones por canal, reuniones agendadas, escalamientos, errores y costo de API.</p>
         </div>
         <div class="bg-white rounded-lg shadow p-6">
-          <h3 class="font-semibold text-gray-800">¿Puedo tener varias tiendas?</h3>
-          <p class="text-gray-600">Sí. La plataforma es multi-tenant: cada tienda tiene su propio catálogo, tono y configuración, aislada del resto.</p>
-        </div>
-        <div class="bg-white rounded-lg shadow p-6">
-          <h3 class="font-semibold text-gray-800">¿Se puede personalizar por cliente?</h3>
-          <p class="text-gray-600">Sí. Si el cliente comparte su correo, el bot lo cruza con Klaviyo y adapta la recomendación a su perfil e historial de compras.</p>
+          <h3 class="font-semibold text-gray-800">¿Puedo tener varias tiendas o marcas?</h3>
+          <p class="text-gray-600">Sí. La plataforma es multi-tenant: cada marca tiene su propio conocimiento, tono y configuración, aislada del resto.</p>
         </div>
       </div>
     </section>
 
     <section class="bg-purple-600 text-white rounded-lg shadow-lg p-8 text-center">
-      <h2 class="text-2xl font-bold mb-3">¿Listo para poner en marcha tu bot?</h2>
-      <p class="text-purple-100 mb-6 max-w-2xl mx-auto">Envíanos el checklist completado y coordinamos el kick-off. En 2-3 días hábiles tu bot está respondiendo.</p>
+      <h2 class="text-2xl font-bold mb-3">¿Listo para poner en marcha tu setter?</h2>
+      <p class="text-purple-100 mb-6 max-w-2xl mx-auto">Conversa con el bot y en 2-3 días hábiles está calificando y agendando por ti.</p>
       <a href="mailto:hola@softify.cl?subject=Configuraci%C3%B3n%20Softify%20Bot" class="inline-block px-6 py-3 bg-white text-purple-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-md">
         <i class="fas fa-envelope mr-2"></i>Escribir a hola@softify.cl
       </a>
@@ -303,7 +490,7 @@
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <h3 class="text-xl font-bold mb-2">Softify Bot</h3>
-          <p class="text-sm text-gray-400">Atención al cliente inteligente para Shopify</p>
+          <p class="text-sm text-gray-400">Atención al cliente y agendamiento con IA para Shopify</p>
         </div>
         <div class="flex flex-col md:flex-row gap-4 md:gap-8">
           <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Inicio</a>
