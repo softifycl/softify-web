@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuración e Implementación — Softify Bot | Softify</title>
+  <meta name="description" content="Guía de configuración e implementación de Softify Bot para nuevas tiendas: qué necesitamos de ti, parámetros que definimos juntos, proceso paso a paso y checklist de arranque.">
+  <meta name="keywords" content="configurar chatbot shopify, onboarding softify bot, implementar bot whatsapp shopify, requisitos chatbot, puesta en marcha bot atencion cliente">
+  <meta name="author" content="Softify">
+  <link rel="canonical" href="https://bot.softify.cl/configuracion.html">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Configuración e Implementación — Softify Bot">
+  <meta property="og:description" content="Todo lo que tu tienda necesita para poner en marcha Softify Bot: requisitos, parámetros, proceso y checklist.">
+  <meta property="og:url" content="https://bot.softify.cl/configuracion.html">
+  <meta property="og:site_name" content="Softify">
+  <meta property="og:locale" content="es_CL">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo configurar Softify Bot en tu tienda Shopify",
+    "description": "Guía de configuración e implementación del chatbot multi-canal para Shopify: requisitos, parámetros y proceso de puesta en marcha",
+    "step": [
+      { "@type": "HowToStep", "name": "Kick-off", "text": "Nos envías los datos y accesos de tu tienda (Shopify, WhatsApp, Instagram, Facebook, Klaviyo)" },
+      { "@type": "HowToStep", "name": "Configuración", "text": "Nuestro equipo crea el entorno de tu tienda, conecta canales, carga catálogo y ajusta el tono" },
+      { "@type": "HowToStep", "name": "Pruebas", "text": "Validamos mensajes de prueba en cada canal y ajustamos respuestas" },
+      { "@type": "HowToStep", "name": "Go-live", "text": "Activamos el bot y monitoreamos métricas en tiempo real" }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>#main-nav{display:none;}#menu-btn{display:flex;}@media(min-width:1024px){#main-nav{display:flex!important;flex-direction:row!important;position:static!important;background:none!important;padding:0!important;box-shadow:none!important;gap:24px!important;}#menu-btn{display:none!important;}}</style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col overflow-x-hidden">
+  <header class="bg-gradient-to-r from-purple-700 to-purple-500 text-white shadow-lg" style="position:relative;">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+      <a href="index.html" class="text-3xl font-bold flex items-center gap-2">
+        <i class="fas fa-robot"></i>
+        <span>Softify Bot</span>
+      </a>
+      <nav id="main-nav" class="md:flex gap-6 items-center text-sm font-medium">
+        <a href="index.html" class="hover:text-purple-200 transition-colors">Inicio</a>
+        <a href="configuracion.html" class="text-white border-b-2 border-white pb-0.5">Configuración</a>
+        <a href="documentacion.html" class="hover:text-purple-200 transition-colors">Documentación</a>
+        <a href="changelog.html" class="hover:text-purple-200 transition-colors">Changelog</a>
+        <a href="roadmap.html" class="hover:text-purple-200 transition-colors">Roadmap</a>
+        <a href="mailto:hola@softify.cl?subject=Configuraci%C3%B3n%20Softify%20Bot" class="px-4 py-2 bg-white text-purple-600 rounded-md hover:bg-gray-100 transition-all font-medium">Solicitar demo</a>
+      </nav>
+      <button id="menu-btn" style="display:flex;flex-direction:column;justify-content:center;align-items:center;width:36px;height:36px;gap:6px;background:none;border:none;cursor:pointer;padding:0;" aria-label="Menu">
+        <span id="bar1" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+        <span id="bar2" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+        <span id="bar3" style="display:block;width:24px;height:2px;background:white;transition:all 0.3s;"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-10 flex-grow max-w-5xl">
+    <section class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 bg-purple-100 text-purple-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+        <i class="fas fa-wand-magic-sparkles"></i> Servicio gestionado · listo en 2-3 días hábiles
+      </div>
+      <h1 class="text-4xl font-bold text-purple-600 mb-4">
+        <i class="fas fa-sliders mr-2"></i>
+        Configuración e implementación
+      </h1>
+      <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+        Softify Bot no es un panel que tengas que armar por tu cuenta: es un servicio gestionado.
+        Nuestro equipo crea el entorno de tu tienda, conecta tus canales y ajusta el tono del bot a tu marca.
+        Aquí está todo lo que necesitamos de ti y cómo es el proceso, paso a paso.
+      </p>
+      <div class="mt-8 flex justify-center gap-4 flex-wrap">
+        <a href="mailto:hola@softify.cl?subject=Configuraci%C3%B3n%20Softify%20Bot" class="px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors shadow-md">
+          <i class="fas fa-paper-plane mr-2"></i>Iniciar implementación
+        </a>
+        <a href="documentacion.html" class="px-6 py-3 border border-purple-600 text-purple-700 font-semibold rounded-lg hover:bg-purple-50 transition-colors">
+          <i class="fas fa-book mr-2"></i>Ver documentación técnica
+        </a>
+      </div>
+    </section>
+
+    <nav class="bg-purple-50 rounded-lg p-6 mb-10 border-l-4 border-purple-500">
+      <h2 class="text-xl font-bold text-purple-700 mb-4">
+        <i class="fas fa-list mr-2"></i>Contenidos
+      </h2>
+      <ol class="list-decimal list-inside space-y-2 text-purple-800">
+        <li><a href="#implementacion" class="hover:text-purple-600 underline">Cómo se implementa</a></li>
+        <li><a href="#necesitamos" class="hover:text-purple-600 underline">Lo que necesitamos de ti</a></li>
+        <li><a href="#parametros" class="hover:text-purple-600 underline">Parámetros que definimos juntos</a></li>
+        <li><a href="#proceso" class="hover:text-purple-600 underline">Proceso paso a paso</a></li>
+        <li><a href="#checklist" class="hover:text-purple-600 underline">Checklist de arranque</a></li>
+        <li><a href="#faq" class="hover:text-purple-600 underline">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <!-- 1. Cómo se implementa -->
+    <section id="implementacion" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">1</span>
+        Cómo se implementa
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">Cada tienda corre en su propio entorno aislado dentro de nuestra plataforma. No compartes infraestructura ni datos con otras tiendas: tu catálogo, tu tono y tu configuración viven solo en tu entorno.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div class="bg-purple-50 rounded-lg p-4">
+            <i class="fas fa-screwdriver-wrench text-purple-600 text-xl mb-2"></i>
+            <h3 class="font-semibold text-gray-800 mb-1">Lo hacemos nosotros</h3>
+            <p class="text-gray-600">Creamos tu entorno, conectamos canales, cargamos catálogo, escribimos el tono y activamos métricas.</p>
+          </div>
+          <div class="bg-purple-50 rounded-lg p-4">
+            <i class="fas fa-user-check text-purple-600 text-xl mb-2"></i>
+            <h3 class="font-semibold text-gray-800 mb-1">Lo aportas tú</h3>
+            <p class="text-gray-600">Accesos, información de tu marca, políticas de atención y decisiones de configuración.</p>
+          </div>
+          <div class="bg-purple-50 rounded-lg p-4">
+            <i class="fas fa-shield-halved text-purple-600 text-xl mb-2"></i>
+            <h3 class="font-semibold text-gray-800 mb-1">No tocas código</h3>
+            <p class="text-gray-600">No hay servidores que administrar ni plugins que mantener. Nosotros operamos, tú supervisas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Lo que necesitamos de ti -->
+    <section id="necesitamos" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">2</span>
+        Lo que necesitamos de ti
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6 space-y-6">
+        <div>
+          <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-plug text-purple-500 mr-2"></i>Accesos y cuentas</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-600">
+            <li>Tienda <strong>Shopify</strong> (dominio) + invitación de colaborador con permisos de app.</li>
+            <li><strong>WhatsApp Business API (Meta)</strong>: número dedicado y cuenta de WhatsApp Business (WABA). Podemos migrar tu número actual o asignar uno nuevo.</li>
+            <li><strong>Instagram Business</strong> vinculado a una página de Facebook.</li>
+            <li><strong>Página de Facebook</strong> para Messenger.</li>
+            <li><strong>Klaviyo</strong> (opcional, para personalizar respuestas por perfil de cliente).</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-palette text-purple-500 mr-2"></i>Marca y tono</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-600">
+            <li>Nombre con el que firma el bot (o sin firma).</li>
+            <li>Personalidad: cercano, formal, técnico, juguetón.</li>
+            <li>Tratamiento: "tú" o "usted". Uso de emojis sí/no.</li>
+            <li>Cosas que el bot <strong>nunca</strong> debe decir o prometer.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-circle-info text-purple-500 mr-2"></i>Conocimiento del negocio</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-600">
+            <li>Políticas: envíos, devoluciones, cambios, pagos, garantía.</li>
+            <li>Preguntas frecuentes reales (las que más te escriben).</li>
+            <li>Tiempos de despacho, cobertura y métodos de pago aceptados.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-headset text-purple-500 mr-2"></i>Operación y escalamiento humano</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-600">
+            <li>Horario de atención y qué debe responder el bot fuera de horario.</li>
+            <li>Quién recibe los escalamientos (Slack, correo o WhatsApp interno) y en qué horario.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-tags text-purple-500 mr-2"></i>Comercial</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-600">
+            <li>Promociones o campañas activas (Cyber, Black Friday, lanzamientos) y códigos de descuento.</li>
+            <li>Productos estrella o categorías que quieras priorizar.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Parámetros -->
+    <section id="parametros" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">3</span>
+        Parámetros que definimos juntos
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">Estos son los ajustes principales. Te proponemos un valor por defecto y lo afinamos contigo durante las pruebas.</p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left">
+            <thead class="bg-gray-100">
+              <tr><th class="p-2">Parámetro</th><th class="p-2">Qué define</th><th class="p-2">Default sugerido</th></tr>
+            </thead>
+            <tbody class="text-gray-600">
+              <tr class="border-t"><td class="p-2">Canales activos</td><td class="p-2">En qué canales responde el bot</td><td class="p-2">WhatsApp + Instagram</td></tr>
+              <tr class="border-t"><td class="p-2">Delay de carrito</td><td class="p-2">Minutos de espera antes del recordatorio</td><td class="p-2">45 min</td></tr>
+              <tr class="border-t"><td class="p-2">Horario de envío</td><td class="p-2">Ventana en que se envían recordatorios</td><td class="p-2">10:00 – 22:00</td></tr>
+              <tr class="border-t"><td class="p-2">Límite diario</td><td class="p-2">Máximo de mensajes por cliente al día</td><td class="p-2">5</td></tr>
+              <tr class="border-t"><td class="p-2">Verificación de compra</td><td class="p-2">Revisa si ya compró antes de enviar</td><td class="p-2">Activado</td></tr>
+              <tr class="border-t"><td class="p-2">Modo nocturno</td><td class="p-2">Respuesta fuera de horario (23:00 – 08:00)</td><td class="p-2">Confirma recepción</td></tr>
+              <tr class="border-t"><td class="p-2">Tono</td><td class="p-2">Estilo y tratamiento del bot</td><td class="p-2">Cercano, "tú"</td></tr>
+              <tr class="border-t"><td class="p-2">Escalamiento</td><td class="p-2">Canal y destinatario del handoff humano</td><td class="p-2">Slack del equipo</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Proceso -->
+    <section id="proceso" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">4</span>
+        Proceso paso a paso
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left">
+            <thead class="bg-gray-100">
+              <tr><th class="p-2">Etapa</th><th class="p-2">Qué pasa</th><th class="p-2">Responsable</th></tr>
+            </thead>
+            <tbody class="text-gray-600">
+              <tr class="border-t"><td class="p-2 font-semibold">Día 0 · Kick-off</td><td class="p-2">Nos envías este checklist con datos y accesos. Agendamos una llamada de 30 min.</td><td class="p-2">Cliente + Softify</td></tr>
+              <tr class="border-t"><td class="p-2 font-semibold">Día 1 · Configuración</td><td class="p-2">Creamos tu entorno, conectamos canales, cargamos catálogo y políticas, y escribimos el tono.</td><td class="p-2">Softify</td></tr>
+              <tr class="border-t"><td class="p-2 font-semibold">Día 2 · Pruebas</td><td class="p-2">Enviamos mensajes de prueba en cada canal, revisamos respuestas y afinamos juntos.</td><td class="p-2">Softify + Cliente</td></tr>
+              <tr class="border-t"><td class="p-2 font-semibold">Día 3 · Go-live</td><td class="p-2">Activamos el bot, conectamos métricas en Slack y quedamos monitoreando.</td><td class="p-2">Softify</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mt-4">
+          <p class="text-sm text-purple-800"><strong>Nota:</strong> si ya tienes WhatsApp Business API verificada por Meta, el proceso suele ser más rápido. Si hay que migrar el número o hacer la verificación de negocio, ese trámite depende de los tiempos de Meta.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Checklist -->
+    <section id="checklist" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">5</span>
+        Checklist de arranque
+      </h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600 mb-4">Copia esta lista y respóndela en un correo a <a href="mailto:hola@softify.cl" class="text-purple-600 underline">hola@softify.cl</a>. Con esto podemos dejar tu bot listo.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700 text-sm">
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Dominio de la tienda Shopify</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Invitación de colaborador en Shopify</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Número de WhatsApp para el bot</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Cuenta WhatsApp Business (WABA) o autorización para crearla</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Instagram Business y página de Facebook</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Acceso a Klaviyo (opcional)</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Nombre y tono del bot</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Políticas de envío, devoluciones y pagos</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Top 10 preguntas frecuentes</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Horario de atención</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Destinatario de escalamientos y su canal</span></label>
+          <label class="flex items-start gap-2 bg-gray-50 rounded p-3"><input type="checkbox" class="mt-1"> <span>Promociones activas y códigos de descuento</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FAQ -->
+    <section id="faq" class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="bg-purple-600 text-white text-sm font-bold w-8 h-8 rounded-full flex items-center justify-center">6</span>
+        Preguntas frecuentes
+      </h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-gray-800">¿Necesito saber programar o mantener servidores?</h3>
+          <p class="text-gray-600">No. Softify Bot es un servicio gestionado: nosotros montamos y operamos todo. Tú solo supervisas conversaciones y métricas.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-gray-800">¿Puedo usar mi número actual de WhatsApp?</h3>
+          <p class="text-gray-600">Sí. Podemos migrar tu número a la API oficial de WhatsApp Business. Si prefieres, también se puede partir con un número nuevo para no interrumpir la atención actual.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-gray-800">¿El bot reemplaza a mi equipo de atención?</h3>
+          <p class="text-gray-600">No. El bot resuelve las consultas repetitivas y escala a tu equipo cuando el caso lo amerita — reclamos, casos complejos o cuando el cliente pide hablar con una persona.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-gray-800">¿Cómo sé qué está pasando?</h3>
+          <p class="text-gray-600">Todo se monitorea en tiempo real: mensajes por canal, carritos recuperados, escalamientos, errores y costo de API.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-gray-800">¿Puedo tener varias tiendas?</h3>
+          <p class="text-gray-600">Sí. La plataforma es multi-tenant: cada tienda tiene su propio catálogo, tono y configuración, aislada del resto.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="font-semibold text-gray-800">¿Se puede personalizar por cliente?</h3>
+          <p class="text-gray-600">Sí. Si el cliente comparte su correo, el bot lo cruza con Klaviyo y adapta la recomendación a su perfil e historial de compras.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-purple-600 text-white rounded-lg shadow-lg p-8 text-center">
+      <h2 class="text-2xl font-bold mb-3">¿Listo para poner en marcha tu bot?</h2>
+      <p class="text-purple-100 mb-6 max-w-2xl mx-auto">Envíanos el checklist completado y coordinamos el kick-off. En 2-3 días hábiles tu bot está respondiendo.</p>
+      <a href="mailto:hola@softify.cl?subject=Configuraci%C3%B3n%20Softify%20Bot" class="inline-block px-6 py-3 bg-white text-purple-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-md">
+        <i class="fas fa-envelope mr-2"></i>Escribir a hola@softify.cl
+      </a>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h3 class="text-xl font-bold mb-2">Softify Bot</h3>
+          <p class="text-sm text-gray-400">Atención al cliente inteligente para Shopify</p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+          <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Inicio</a>
+          <a href="configuracion.html" class="text-gray-300 hover:text-white transition-colors">Configuración</a>
+          <a href="documentacion.html" class="text-gray-300 hover:text-white transition-colors">Documentación</a>
+          <a href="changelog.html" class="text-gray-300 hover:text-white transition-colors">Changelog</a>
+          <a href="roadmap.html" class="text-gray-300 hover:text-white transition-colors">Roadmap</a>
+          <a href="politicas-privacidad.html" class="text-gray-300 hover:text-white transition-colors">Privacidad</a>
+          <a href="https://softify.cl" class="text-gray-300 hover:text-white transition-colors">Softify</a>
+        </div>
+      </div>
+      <div class="mt-6 text-center text-sm text-gray-400">
+        <p>&copy; 2025 Softify. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('menu-btn');
+      var nav = document.getElementById('main-nav');
+      var bar1 = document.getElementById('bar1');
+      var bar2 = document.getElementById('bar2');
+      var bar3 = document.getElementById('bar3');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function() {
+        var isOpen = nav.classList.contains('mobile-open');
+        if (isOpen) {
+          nav.classList.remove('mobile-open');
+          nav.style.display = 'none';
+          bar1.style.transform = '';
+          bar2.style.opacity = '1';
+          bar3.style.transform = '';
+        } else {
+          nav.classList.add('mobile-open');
+          nav.style.display = 'flex';
+          nav.style.flexDirection = 'column';
+          nav.style.position = 'absolute';
+          nav.style.top = '100%';
+          nav.style.left = '0';
+          nav.style.right = '0';
+          nav.style.backgroundColor = '#7c3aed';
+          nav.style.padding = '16px 24px';
+          nav.style.zIndex = '100';
+          nav.style.gap = '16px';
+          nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+          bar1.style.transform = 'translateY(8px) rotate(45deg)';
+          bar2.style.opacity = '0';
+          bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+        }
+      });
+      nav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (nav.classList.contains('mobile-open')) {
+            nav.classList.remove('mobile-open');
+            nav.style.display = 'none';
+            bar1.style.transform = '';
+            bar2.style.opacity = '1';
+            bar3.style.transform = '';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
