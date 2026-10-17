@@ -4,9 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Changelog — Softify Bot</title>
+  <meta name="description" content="Historial de actualizaciones de Softify Bot: el agente de IA que atiende por WhatsApp, Instagram y Messenger y que desde la v1.0.0 incorpora el Setter (califica y agenda ventas).">
+  <link rel="canonical" href="https://bot.softify.cl/changelog.html">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<style>#main-nav{display:none;}#menu-btn{display:flex;}@media(min-width:1024px){#main-nav{display:flex!important;flex-direction:row!important;position:static!important;background:none!important;padding:0!important;box-shadow:none!important;gap:24px!important;}#menu-btn{display:none!important;}}</style>
+<style>
+  #main-nav{display:none;}#menu-btn{display:flex;}@media(min-width:1024px){#main-nav{display:flex!important;flex-direction:row!important;position:static!important;background:none!important;padding:0!important;box-shadow:none!important;gap:24px!important;}#menu-btn{display:none!important;}}
+  .badge-added{background:#DCFCE7;color:#15803D;}
+  .badge-changed{background:#EDE9FE;color:#5B21B6;}
+  .badge-fixed{background:#FEF3C7;color:#B45309;}
+  .badge-latest{background:#7C3AED;color:#fff;}
+  .rel-link{color:#7C3AED;}
+  .rel-link:hover{text-decoration:underline;}
+</style>
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 
@@ -18,7 +28,7 @@
       </a>
       <nav id="main-nav" class="md:flex gap-6 items-center text-sm font-medium">
         <a href="index.html" class="hover:text-purple-200 transition-colors">Inicio</a>
-        "<a href="documentacion.html" class="hover:text-purple-200 transition-colors">Documentación</a>"
+        <a href="documentacion.html" class="hover:text-purple-200 transition-colors">Documentación</a>
         <a href="configuracion.html" class="hover:text-purple-200 transition-colors">Configuración</a>
         <a href="changelog.html" class="text-white border-b-2 border-white pb-0.5">Changelog</a>
         <a href="roadmap.html" class="hover:text-purple-200 transition-colors">Roadmap</a>
@@ -34,58 +44,138 @@
 
   <main class="container mx-auto px-4 py-12 flex-grow max-w-3xl">
     <div class="mb-10">
-      <h1 class="text-3xl font-bold text-gray-900 mb-2">Changelog</h1>
-      <p class="text-gray-500">Historial de actualizaciones de Softify Bot. La plataforma recibe mejoras continuas.</p>
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">Changelog — Softify Bot</h1>
+      <p class="text-gray-500">Historial de <strong>Softify Bot</strong>: el agente de IA que atiende por WhatsApp, Instagram y Messenger usando tu catálogo de Shopify y que, desde la <strong>v1.0.0</strong>, incorpora el <strong>Setter</strong> (califica prospectos y agenda ventas). Las versiones anteriores a la v1.0.0 se agruparon por fecha.</p>
+      <p class="text-sm text-gray-400 mt-2">Última actualización: 16 de octubre de 2026 · <a class="rel-link" href="https://softify.cl/changelog.html">Ver el changelog del Softify Setter</a></p>
     </div>
 
-    <!-- v1.0.0 -->
-    <div class="mb-10 bg-white rounded-lg shadow p-6">
-      <div class="flex items-start justify-between mb-4">
+    <!-- v1.1.0 -->
+    <article class="mb-8 bg-white rounded-lg shadow p-6">
+      <div class="flex items-start justify-between mb-4 flex-wrap gap-2">
         <div>
-          <h2 class="text-xl font-bold text-purple-600">v1.0.0 — Lanzamiento inicial</h2>
-          <p class="text-sm text-gray-500">Mayo 2026</p>
+          <h2 class="text-xl font-bold text-purple-600">v1.1.0</h2>
+          <p class="text-sm text-gray-500">16 de octubre de 2026</p>
         </div>
-        <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Lanzamiento</span>
+        <span class="badge-latest text-xs font-semibold px-3 py-1 rounded-full">Última versión</span>
       </div>
-      <div class="space-y-3">
-        <div class="flex items-start gap-2">
-          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
-          <span class="text-gray-700">Chatbot multi-canal: WhatsApp, Instagram y Messenger</span>
+      <p class="text-gray-600 mb-4">El bot suma el <strong>Setter completo</strong>: además de atender, califica, agenda y deja el lead ordenado en el CRM.</p>
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Añadido</h3>
+      <ul class="space-y-2 mb-4">
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Integración con CRM</strong> (EspoCRM, <code>crm.softify.cl</code>): el bot lee la ficha y el historial del contacto y escribe la etapa y una nota al cerrar la conversación o al alcanzar un hito. Si el CRM falla, no responde o el contacto no existe, el bot <strong>nunca se bloquea</strong>.</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Resumen estructurado en la ficha</strong>: quién es, motivo, necesidad, oferta mostrada, etapa, próximos pasos y fecha.</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Flujo Lead → Cuenta + Contacto → Oportunidad</strong> al calificar.</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Agendador de ventas (beta)</strong>: ofrece <strong>horarios reales</strong> según la disponibilidad del calendario y <strong>crea el evento</strong> al elegir el cliente (Lun–Vie 10:00–12:00 y 15:00–17:00, slots de 30 min, <code>America/Santiago</code>).</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Conector de pipeline</strong>: escribe producto, plan, etapa de venta y canal de origen en el CRM (<code>cProducto</code>, <code>cPlan</code>, <code>cEtapaVenta</code>, <code>cCanalFuente</code>).</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Branding Softify</strong> en las apps de soporte: CRM (<code>crm.softify.cl</code>) y Firma electrónica (<code>firma.softify.cl</code>) con nombre, logo, tema y remitentes propios.</span></li>
+      </ul>
+      <p class="text-sm text-gray-500"><i class="fas fa-circle-info text-gray-400 mr-1"></i>CRM y agendador fueron probados contra el CRM y el calendario reales; su operación en vivo con el bot queda sujeta a la configuración del entorno.</p>
+    </article>
+
+    <!-- v1.0.0 -->
+    <article class="mb-8 bg-white rounded-lg shadow p-6">
+      <div class="flex items-start justify-between mb-4 flex-wrap gap-2">
+        <div>
+          <h2 class="text-xl font-bold text-purple-600">v1.0.0</h2>
+          <p class="text-sm text-gray-500">15 de octubre de 2026</p>
         </div>
-        <div class="flex items-start gap-2">
-          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
-          <span class="text-gray-700">Integración con catálogo Shopify en tiempo real</span>
-        </div>
-        <div class="flex items-start gap-2">
-          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
-          <span class="text-gray-700">Recuperación de carritos abandonados vía WhatsApp</span>
-        </div>
-        <div class="flex items-start gap-2">
-          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
-          <span class="text-gray-700">Personalización de respuestas por perfil Klaviyo</span>
-        </div>
-        <div class="flex items-start gap-2">
-          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
-          <span class="text-gray-700">Modo campaña para Cyber Days y peak seasons</span>
-        </div>
-        <div class="flex items-start gap-2">
-          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
-          <span class="text-gray-700">Arquitectura multi-tenant</span>
-        </div>
-        <div class="flex items-start gap-2">
-          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
-          <span class="text-gray-700">Handoff a equipo humano vía Slack</span>
-        </div>
-        <div class="flex items-start gap-2">
-          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
-          <span class="text-gray-700">Polling Instagram/Messenger cada 15 min (captura bandejas General y Requests)</span>
-        </div>
-        <div class="flex items-start gap-2">
-          <i class="fas fa-plus-circle text-green-500 mt-1"></i>
-          <span class="text-gray-700">Respuesta a interacciones con historias de Instagram (replies y menciones)</span>
+        <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Se incorpora el Setter</span>
+      </div>
+      <p class="text-gray-600 mb-4">Punto de partida del <strong>Setter</strong>: el bot de atención pasa a incluir la función de ventas (califica y agenda) en el mismo agente.</p>
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Añadido</h3>
+      <ul class="space-y-2 mb-4">
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Base de conocimiento del producto Softify Setter</strong>: qué es, flujo completo (calificar → agendar → confirmar), modos de uso (Setter / Soporte / Mixto), planes y precios (Starter / Pro / Business), add-ons, cliente ideal (ICP) y anti-ICP, y reglas <strong>anti-alucinación</strong> para no inventar precios ni capacidades.</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Prompt mixto soporte + setter</strong>: el mismo bot atiende soporte y cumple función de setter según el caso.</span></li>
+      </ul>
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Cambiado</h3>
+      <ul class="space-y-2">
+        <li class="flex items-start gap-2"><i class="fas fa-sync-alt text-purple-500 mt-1"></i><span class="text-gray-700">Deploy de la base de conocimiento y el prompt a producción (healthcheck <code>/status</code> OK).</span></li>
+      </ul>
+    </article>
+
+    <!-- v0.4.0 -->
+    <article class="mb-8 bg-white rounded-lg shadow p-6">
+      <div class="flex items-start justify-between mb-4 flex-wrap gap-2">
+        <div>
+          <h2 class="text-xl font-bold text-purple-600">v0.4.0</h2>
+          <p class="text-sm text-gray-500">30 de agosto de 2026</p>
         </div>
       </div>
-    </div>
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Añadido</h3>
+      <ul class="space-y-2 mb-4">
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Identidad y tono humano</strong>: nunca se autodeclara bot/asistente, escribe <strong>sin markdown</strong>, sin signos dobles, una idea por mensaje.</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Imágenes de clientes</strong> enviadas por WhatsApp llegan correctamente al hilo de supervisión del equipo.</span></li>
+      </ul>
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Arreglado</h3>
+      <ul class="space-y-2">
+        <li class="flex items-start gap-2"><i class="fas fa-wrench text-amber-500 mt-1"></i><span class="text-gray-700">Identidad coherente: el bot nunca impersona a personas del equipo y deriva al desarrollador cuando corresponde.</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-wrench text-amber-500 mt-1"></i><span class="text-gray-700">Codificación UTF-8 en los textos de respuesta y aislamiento del upsell por cliente.</span></li>
+      </ul>
+    </article>
+
+    <!-- v0.3.x -->
+    <article class="mb-8 bg-white rounded-lg shadow p-6">
+      <div class="flex items-start justify-between mb-4 flex-wrap gap-2">
+        <div>
+          <h2 class="text-xl font-bold text-purple-600">v0.3.x</h2>
+          <p class="text-sm text-gray-500">6 – 17 de agosto de 2026</p>
+        </div>
+      </div>
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Añadido</h3>
+      <ul class="space-y-2 mb-4">
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700">Template de <strong>upgrade a plan de pago</strong> y aviso al equipo cuando un cliente sube de plan.</span></li>
+      </ul>
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Arreglado</h3>
+      <ul class="space-y-2">
+        <li class="flex items-start gap-2"><i class="fas fa-wrench text-amber-500 mt-1"></i><span class="text-gray-700">Se eliminó el mensaje de fallback intermitente (validación del hilo) y se corrigió el modelo de IA.</span></li>
+      </ul>
+    </article>
+
+    <!-- v0.2.x -->
+    <article class="mb-8 bg-white rounded-lg shadow p-6">
+      <div class="flex items-start justify-between mb-4 flex-wrap gap-2">
+        <div>
+          <h2 class="text-xl font-bold text-purple-600">v0.2.x</h2>
+          <p class="text-sm text-gray-500">14 de julio – 2 de agosto de 2026</p>
+        </div>
+      </div>
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Añadido</h3>
+      <ul class="space-y-2 mb-4">
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Template de reactivación a 24 h</strong> para retomar conversaciones.</span></li>
+      </ul>
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Cambiado</h3>
+      <ul class="space-y-2 mb-4">
+        <li class="flex items-start gap-2"><i class="fas fa-sync-alt text-purple-500 mt-1"></i><span class="text-gray-700">Identificador WABA de Softify correcto y nombre del modelo de IA actualizado.</span></li>
+      </ul>
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Arreglado</h3>
+      <ul class="space-y-2">
+        <li class="flex items-start gap-2"><i class="fas fa-wrench text-amber-500 mt-1"></i><span class="text-gray-700"><strong>Aislamiento multi-cliente</strong>: el bot filtra los eventos por número e ignora los de otros negocios; restauración de UTF-8.</span></li>
+      </ul>
+    </article>
+
+    <!-- v0.1.x -->
+    <article class="mb-8 bg-white rounded-lg shadow p-6">
+      <div class="flex items-start justify-between mb-4 flex-wrap gap-2">
+        <div>
+          <h2 class="text-xl font-bold text-purple-600">v0.1.x</h2>
+          <p class="text-sm text-gray-500">19 de mayo – 5 de junio de 2026</p>
+        </div>
+        <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full">Lanzamiento inicial</span>
+      </div>
+      <p class="text-gray-600 mb-4">Nace <strong>Softify Bot</strong> como chatbot multi-canal para tiendas Shopify, con el soporte técnico de las apps de Softify (e-Boleta y FreshStock FIFO) como primeros casos de uso.</p>
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Añadido</h3>
+      <ul class="space-y-2">
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700">Bot <strong>multi-cliente</strong> (multi-tenant) con atención en WhatsApp, Instagram y Messenger.</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Integración con el catálogo de Shopify</strong> en tiempo real: responde con productos reales y, si no hay match, lo dice (no inventa).</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Recuperación de carritos abandonados</strong> por WhatsApp, con delay inteligente, límite diario y respeto por horarios.</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700">Personalización de respuestas por <strong>perfil del cliente</strong> (Klaviyo).</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Modo campaña</strong> para Cyber Days y peak seasons.</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Onboarding conversacional</strong> (configuración, certificado SII y seguimiento) y bienvenida a nuevas tiendas vía webhook.</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700"><strong>Handoff a equipo humano</strong> con hilo de supervisión por conversación (Slack).</span></li>
+        <li class="flex items-start gap-2"><i class="fas fa-plus-circle text-green-500 mt-1"></i><span class="text-gray-700">Polling de Instagram/Messenger cada 15 min (bandejas General y Requests) y respuesta a interacciones con historias de Instagram.</span></li>
+      </ul>
+    </article>
+
+    <p class="text-sm text-gray-400 mt-10">Las versiones anteriores a la <strong>v1.0.0</strong> fueron asignadas retroactivamente agrupando por fecha los cambios reales (el bot no llevaba versionado). Solo se documenta lo que existe y fue probado. ¿Necesitas el detalle? <a href="mailto:hola@softify.cl" class="rel-link">Escríbenos a hola@softify.cl</a>.</p>
   </main>
 
   <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
@@ -93,7 +183,7 @@
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <h3 class="text-xl font-bold mb-2">Softify Bot</h3>
-          <p class="text-sm text-gray-400">Atención al cliente inteligente para Shopify</p>
+          <p class="text-sm text-gray-400">Atención al cliente y agendamiento con IA para Shopify</p>
         </div>
         <div class="flex flex-col md:flex-row gap-4 md:gap-8">
           <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Inicio</a>
@@ -106,7 +196,7 @@
         </div>
       </div>
       <div class="mt-6 text-center text-sm text-gray-400">
-        <p>&copy; 2025 Softify. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Softify. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
